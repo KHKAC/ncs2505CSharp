@@ -6,7 +6,14 @@
         //Console.WriteLine(Soultion0704(3, 2));
 
         //문제풀이 250707
-        Console.WriteLine(Soultion0707(100, 2));
+        //Console.WriteLine(Soultion0707(100, 2));
+        Console.WriteLine(Soultion07072(27, 19));
+    }
+
+    public static int Soultion07072(int num1, int num2)
+    {
+        int answer = num1 * num2;
+        return answer;
     }
 
     public static int Soultion0707(int num1, int num2)
@@ -20,5 +27,4 @@
         int answer = num1 % num2;
         return answer;
     }
-
 }
