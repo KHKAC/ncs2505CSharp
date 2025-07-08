@@ -6,15 +6,24 @@
     /// <param name="args"></param>
     private static void Main(string[] args)
     {
-        // 문제풀이 250704
-        // Console.WriteLine(Soultion0704(3, 2));
+        Console.WriteLine(Soultion07082(11, 10));
+    }
 
-        // 문제풀이 250707
-        // Console.WriteLine(Soultion0707(100, 2));
-        // Console.WriteLine(Soultion07072(27, 19));
 
-        // 문제풀이 250708
-        Console.WriteLine(Soultion0708(7, 2));
+    /// <summary>
+    /// 숫자 비교하기
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public static int Soultion07082(int num1, int num2)
+    {
+        if (num1 == num2)
+        {
+            return 1;
+        }
+        return -1;
+        
     }
 
     /// <summary>
