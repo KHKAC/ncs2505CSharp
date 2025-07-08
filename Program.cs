@@ -11,10 +11,24 @@
 
         // 문제풀이 250707
         // Console.WriteLine(Soultion0707(100, 2));
-        Console.WriteLine(Soultion07072(27, 19));
+        // Console.WriteLine(Soultion07072(27, 19));
+
+        // 문제풀이 250708
+        Console.WriteLine(Soultion0708(7, 2));
     }
 
-    
+    /// <summary>
+    /// 몫 구하기
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public static int Soultion0708(int num1, int num2)
+    {
+        int answer = num1 / num2;
+        return answer;
+    }
+
     /// <summary>
     /// 두 수의 곱 구하기
     /// </summary>
