@@ -9,8 +9,8 @@
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
         //sol.Soultion07082(7, 7);
-        cSharpStudy.ArrayExample();
-        //Console.WriteLine(sol.Soultion07092(1, 16));
+        //cSharpStudy.ArrayExample();
+        Console.WriteLine(sol.Soultion07102(100));
     }
     
 }

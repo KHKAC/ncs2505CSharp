@@ -1,5 +1,98 @@
 class ProgramSolution
 {
+    public int Soultion07102(int angle)
+    {
+        int answer = 3;
+        string str = "둔";
+        Console.Write(angle + "도는 ");
+        if (angle == 90)
+        {
+            answer = 2;
+            str = "직";
+        }
+        else if (angle == 180)
+        {
+            answer = 4;
+            str = "평";
+        }
+        else if (angle > 0 && angle < 90)
+        {
+            answer = 1;
+            str = "예";
+        }
+        // else
+        // {
+        //     answer = 3;
+        //     str = "둔";
+        // }
+        Console.WriteLine(str + "각입니다");
+        /*
+        if (angle > 0 && angle < 90)
+        {
+            answer = 1;
+            answerWord = "예각입니다";
+        }
+        else if (angle == 90)
+        {
+            answer = 2;
+            answerWord = "직각입니다";
+        }
+        else if (angle > 90 && angle < 180)
+        {
+            answer = 3;
+            answerWord = "둔각입니다";
+        }
+        else if (angle == 180)
+        {
+            answer = 4;
+            answerWord = "평각입니다";
+        }
+        */
+        return answer;
+    }
+
+    void Soultion07102_2()
+    {
+        int angle = 0;
+        int answer = 0;
+        string answerWord;
+
+        if (angle > 0 && angle < 90)
+        {
+            answer = 1;
+            answerWord = "예각입니다";
+        }
+        else if (angle == 90)
+        {
+            answer = 2;
+            answerWord = "직각입니다";
+        }
+        else if (angle > 90 && angle < 180)
+        {
+            answer = 3;
+            answerWord = "둔각입니다";
+        }
+        else if (angle == 180)
+        {
+            answer = 4;
+            answerWord = "평각입니다";
+        }
+        
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int Soultion0710(int num1, int num2)
+    {
+        int answer = num1 + num2;
+        int answer2 = 0;
+        answer2 = num2 + num1;
+        return answer;
+    }
     /// <summary>
     /// 두 수의 나눗셈
     /// </summary>
