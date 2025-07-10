@@ -1,5 +1,33 @@
 class CSharpStudy
 {
+    public void ArrayExample()
+    {
+        int sum = 0;
+        //int[] nums = new int[10] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] nums = new int[10];
+
+        nums[0] = 1;
+        nums[1] = 2;
+        //
+        nums[9] = 0;
+        //배열 넘어가면 안 된다...큰일난다...
+        //nums[10] = 11;
+
+        Random rand = new Random();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            nums[i] = rand.Next() % 100;
+        }
+
+        for (int i = 0; i < nums.Length; i++)
+        {
+            Console.WriteLine($"No.{i} = " + nums[i]);
+            sum += nums[i];
+        }
+
+        Console.WriteLine("sum = " + sum);
+    }
+
     /// <summary>
     /// 데이터 타입
     /// </summary>
@@ -37,8 +65,4 @@ class CSharpStudy
 
     }
 
-    public void Lambda()
-    {
-
-    }
 }
