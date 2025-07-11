@@ -1,5 +1,16 @@
 class ProgramSolution
 {
+    public int Soultion0711(int n, int k)
+    {
+        int answer = 0;
+        return answer;
+    }
+    #region 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="angle"></param>
+    /// <returns></returns>
     public int Soultion07102(int angle)
     {
         int answer = 3;
@@ -51,35 +62,6 @@ class ProgramSolution
         return answer;
     }
 
-    void Soultion07102_2()
-    {
-        int angle = 0;
-        int answer = 0;
-        string answerWord;
-
-        if (angle > 0 && angle < 90)
-        {
-            answer = 1;
-            answerWord = "예각입니다";
-        }
-        else if (angle == 90)
-        {
-            answer = 2;
-            answerWord = "직각입니다";
-        }
-        else if (angle > 90 && angle < 180)
-        {
-            answer = 3;
-            answerWord = "둔각입니다";
-        }
-        else if (angle == 180)
-        {
-            answer = 4;
-            answerWord = "평각입니다";
-        }
-        
-    }
-
     /// <summary>
     /// 
     /// </summary>
@@ -93,6 +75,7 @@ class ProgramSolution
         answer2 = num2 + num1;
         return answer;
     }
+
     /// <summary>
     /// 두 수의 나눗셈
     /// </summary>
@@ -140,7 +123,7 @@ class ProgramSolution
         return -1;
 
     }
-    
+
     /// <summary>
     /// 몫 구하기
     /// </summary>
@@ -188,4 +171,5 @@ class ProgramSolution
         int answer = num1 % num2;
         return answer;
     }
+    #endregion
 }

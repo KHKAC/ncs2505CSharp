@@ -1,5 +1,47 @@
+using System.Collections;
+
 class CSharpStudy
 {
+    public void ListSample()
+    {
+        //List<int> myList = new List<int>();
+        var myList = new List<int>();
+        myList.Add(90);
+        myList.Add(88);
+        myList.Add(75);
+
+        int val = myList[1];
+
+        var chrList = new List<char>();
+        chrList.Add('b');
+        chrList.Add('c');
+
+        var boolList = new List<bool>();
+        boolList.Add(false);
+
+        var intArray = new int[100];
+        intArray[2] = 10;
+        myList.Add(10);
+        Console.WriteLine(intArray.Length);
+        Console.WriteLine(myList.Count);
+
+        //리스트 정렬
+        myList.Sort();
+    }
+    public void ArrrayListSample()
+    {
+        //ArrayList myList = new ArrayList();
+        var myList = new ArrayList();
+        var yourList = true;
+
+        myList.Add(90);
+        myList.Add(88);
+        myList.Add(75);
+
+        int val = (int)myList[1];
+        //Console.WriteLine(val);
+        //Console.WriteLine((int)myList[0]);
+    }
     public void ArrayExample()
     {
         int sum = 0;
