@@ -1,11 +1,46 @@
 class ProgramSolution
 {
+
+    #region 
+    /// <summary>
+    /// 짝수의 합
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Soultion07112(int n)
+    {
+        int answer = 0;
+        //for문으로 n까지
+
+        for (int i = 1; i <= n; i++)
+        {
+            //짝수?
+            if (i % 2 == 0)
+            {
+                //짝수이면 answer에 더하기
+                answer += i;
+            }
+        }
+        return answer;
+    }
+    
+    /// <summary>
+    /// 양꼬치
+    /// </summary>
+    /// <param name="n">양꼬치</param>
+    /// <param name="k">음료수</param>
+    /// <returns></returns>
     public int Soultion0711(int n, int k)
     {
         int answer = 0;
+        int numN = 12000 * n;
+        int numK = 2000 * k;
+        float serviceK = 0.1f * (float)n;
+
+        answer = numN + numK - ((int)serviceK * 2000);
         return answer;
     }
-    #region 
+    
     /// <summary>
     /// 
     /// </summary>
