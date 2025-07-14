@@ -8,10 +8,30 @@
     {
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
-        //sol.Soultion07082(7, 7);
-        //cSharpStudy.ListSample();
-        //Console.WriteLine(sol.Soultion07112(4));
-        MakeLotto();
+        //cSharpStudy.StackQueueSample();
+        var intArray = new int[] { 1, 1, 1, 1, 1, 2 };
+        //Console.WriteLine(sol.Solution07142(intArray));
+        PrintIntArray(sol.Solution07142(intArray));
+        //MakeLotto();
+        
+    }
+
+    /// <summary>
+    /// 정수 배열을 출력시키는 함수
+    /// </summary>
+    /// <param name="answerArray"></param>
+    public static void PrintIntArray(int[] answerArray)
+    {
+        Console.Write("[ ");
+        for (int i = 0; i < answerArray.Length; i++)
+        {
+            Console.Write(answerArray[i]);
+            if (i != answerArray.Length - 1)
+            {
+                Console.Write(", ");
+            }
+        }
+        Console.Write(" ]");
     }
 
     /// <summary>

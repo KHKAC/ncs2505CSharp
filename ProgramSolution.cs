@@ -1,7 +1,52 @@
 class ProgramSolution
 {
 
-    #region 
+    #region
+    /// <summary>
+    /// 배열 뒤집기
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution07142(int[] num_list)
+    {
+        int len = num_list.Length;
+        int[] answer = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            //answer[len - i - 1] = num_list[i];
+            answer[i] = num_list[len - i - 1];
+
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열의 평균 값
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public float Solution0714(int[] numbers)
+    {
+        float answer = 0f;
+        /*
+        //for문을 사용해서 int[]을 돌린다.
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            //answer에 현재 배열 값을 더한다
+            answer += numbers[i];
+        }
+        //더해진 결과 값을 int[]의 길이로 나눈다
+        */
+        foreach (var item in numbers)
+        {
+            answer += item;
+        }
+        answer /= (float)numbers.Length;
+        //answer = (float)numbers.Average();
+
+        return answer;
+    }
+    
     /// <summary>
     /// 짝수의 합
     /// </summary>

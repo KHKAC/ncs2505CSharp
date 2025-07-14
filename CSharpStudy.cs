@@ -2,6 +2,59 @@ using System.Collections;
 
 class CSharpStudy
 {
+    public void StackQueueSample()
+    {
+        //Stack<float> s = new Stack<float>();
+        var s = new Stack<float>();
+        s.Push(10.5f);
+        s.Push(3.54f);
+        s.Push(4.22f);
+
+        float pp = s.Peek(); // Stack의 Pop했을 때의 값을 제거하지 않고 미리 보여줌.
+        Console.WriteLine("pp : " + pp);
+
+        float p3 = s.Pop();
+        Console.WriteLine("p3 : " + p3);
+
+        float p4 = s.Pop();
+        Console.WriteLine("p4 : " + p4);
+
+        var q = new Queue<int>();
+        q.Enqueue(120);
+        q.Enqueue(130);
+        q.Enqueue(150);
+
+        int qq = q.Peek();
+        Console.WriteLine("qq : " + qq);
+        int next = q.Dequeue();
+        Console.WriteLine("next : " + next);
+        next = q.Dequeue();
+        Console.WriteLine("next : " + next);
+    }
+    public void LinkedListSample()
+    {
+        // int a = 1, b = 2; -> 가능
+        // var va = 1, va = 2; -> var는 한 줄에 하나만 정의 가능
+        // LinkedList<string> list = new LinkedList<string>();
+        var list = new LinkedList<string>();
+        list.AddLast("Apple");
+        list.AddLast("Banana");
+        list.AddLast("Lemon");
+
+        //LinkedListNode<string> node = list.Find("Banana");
+        var node = list.Find("Banana");
+        //LinkedListNode<string> newNode = new LinkedListNode<string>("Grape");
+        var newNode = new LinkedListNode<string>("Grape");
+
+        list.AddAfter(node, newNode);
+        list.AddAfter(node, "Kiwi");
+
+        list.ToList<string>().ForEach(p => Console.WriteLine(p));
+        foreach (var item in list)
+        {
+            Console.WriteLine(item);
+        }
+    }
     public void ListSample()
     {
         //List<int> myList = new List<int>();
