@@ -1,7 +1,98 @@
+using System.Text;
+
 class ProgramSolution
 {
 
     #region
+    /// <summary>
+    /// 특정 문자 제거하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="letter"></param>
+    /// <returns></returns>
+    public string Solultion07152(string my_string, string letter)
+    {
+        string answer = string.Empty;
+        answer = my_string.Replace(letter, string.Empty);
+
+        //StringBuilder
+        /*
+        var sb = new StringBuilder();
+        foreach (var item in my_string)
+        {
+            if (item.ToString().CompareTo(letter) != 0)
+            {
+                sb.Append(item);
+            }
+        }
+        answer = sb.ToString();
+        */
+
+        /*
+        my_string의 문자열
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            if (my_string[i].ToString() != letter)
+            {
+                answer += my_string[i];
+            }
+        }
+        */
+
+        /*
+        foreach (var item in my_string)
+        {
+            if (item.ToString() != letter)
+            {
+                answer += item;
+            }
+        }
+        */
+        return answer;
+    }
+
+    /// <summary>
+    /// 짝수 홀수 개수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution0715(int[] num_list)
+    {
+
+        //int[] answer = new int[2];
+
+        var answer = new int[2] { 0, 0 };
+        foreach (var item in num_list)
+        {
+            if (item % 2 == 0)
+            {
+                answer[0]++;
+            }
+            else
+            {
+                answer[1]++;
+            }
+        }
+        /*
+        for (int i = 0; i < num_list.Length; i++)
+        {
+            //값이 짝수인가?
+            if (num_list[i] % 2 == 0)
+            {
+                //answer[0] 값에 +1
+                answer[0]++;
+            }
+            //짝수가 아닌가?
+            else
+            {
+                //answer[1] 값에 +1
+                answer[1]++;
+            }
+        }
+        */
+        return answer;
+    }
+
     /// <summary>
     /// 배열 뒤집기
     /// </summary>
@@ -52,7 +143,7 @@ class ProgramSolution
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
-    public int Soultion07112(int n)
+    public int Solution07112(int n)
     {
         int answer = 0;
         //for문으로 n까지
@@ -75,7 +166,7 @@ class ProgramSolution
     /// <param name="n">양꼬치</param>
     /// <param name="k">음료수</param>
     /// <returns></returns>
-    public int Soultion0711(int n, int k)
+    public int Solution0711(int n, int k)
     {
         int answer = 0;
         int numN = 12000 * n;
@@ -91,7 +182,7 @@ class ProgramSolution
     /// </summary>
     /// <param name="angle"></param>
     /// <returns></returns>
-    public int Soultion07102(int angle)
+    public int Solution07102(int angle)
     {
         int answer = 3;
         string str = "둔";
@@ -148,7 +239,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion0710(int num1, int num2)
+    public int Solultion0710(int num1, int num2)
     {
         int answer = num1 + num2;
         int answer2 = 0;
@@ -162,7 +253,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion07092(int num1, int num2)
+    public int Solution07092(int num1, int num2)
     {
         int answer = 0;
         // float fnum1 = (float)num1;
@@ -181,7 +272,7 @@ class ProgramSolution
     /// </summary>
     /// <param name="age"></param>
     /// <returns></returns>
-    public int Soultion0709(int age)
+    public int Solution0709(int age)
     {
         int nowYear = 2022;
         int answer = nowYear - age + 1;
@@ -194,7 +285,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion07082(int num1, int num2)
+    public int Solution07082(int num1, int num2)
     {
         if (num1 == num2)
         {
@@ -210,7 +301,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion0708(int num1, int num2)
+    public int Solution0708(int num1, int num2)
     {
         int answer = num1 / num2;
         return answer;
@@ -222,7 +313,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion07072(int num1, int num2)
+    public int Solution07072(int num1, int num2)
     {
         int answer = num1 * num2;
         return answer;
@@ -234,7 +325,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion0707(int num1, int num2)
+    public int Solution0707(int num1, int num2)
     {
         int answer = num1 - num2;
         return answer;
@@ -246,7 +337,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Soultion0704(int num1, int num2)
+    public int Solution0704(int num1, int num2)
     {
         int answer = num1 % num2;
         return answer;

@@ -8,12 +8,28 @@
     {
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
-        //cSharpStudy.StackQueueSample();
-        var intArray = new int[] { 1, 1, 1, 1, 1, 2 };
+        var intArray = new int[] { 1, 3, 5, 7 };
+        var strings = "BCBdbe";
         //Console.WriteLine(sol.Solution07142(intArray));
-        PrintIntArray(sol.Solution07142(intArray));
+        //PrintIntArray(sol.Solution0715(intArray));
+        PrintString(sol.Solultion07152(strings, "B"));
+        //cSharpStudy.HashTableSample();
         //MakeLotto();
-        
+
+    }
+
+    public static void PrintString(string strings)
+    {
+        Console.Write("[ ");
+        for (int i = 0; i < strings.Length; i++)
+        {
+            Console.Write(strings[i]);
+            // if (i != strings.Length - 1)
+            // {
+            //     Console.Write(", ");
+            // }
+        }
+        Console.Write(" ]");
     }
 
     /// <summary>

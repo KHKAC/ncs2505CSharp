@@ -2,6 +2,34 @@ using System.Collections;
 
 class CSharpStudy
 {
+
+#region
+    public void HashTableSample()
+    {
+        // Hashtable ht = new Hashtable();
+        // ht.Add("irina", "Irina SP");
+        // ht.Add("tom", "Tom Cr");
+        // ht.Add(3, 'a');
+
+        // if (ht.Contains("tom"))
+        // {
+        //     Console.WriteLine(ht[tom]);
+        // }
+
+        //Dictionary<int, string> emp = new Dictionary<int, string>();
+        var emp = new Dictionary<int, string>();
+        emp.Add(1001, "Jane");
+        //emp.Add(1002, "Tom");
+        emp.Add(1003, "Cindy");
+        if (emp.ContainsKey(1002) == false)
+        {
+            emp.Add(1002, "Kim");    
+        }
+
+        string name = emp[1002];
+        Console.WriteLine(name);
+    }
+
     public void StackQueueSample()
     {
         //Stack<float> s = new Stack<float>();
@@ -31,6 +59,7 @@ class CSharpStudy
         next = q.Dequeue();
         Console.WriteLine("next : " + next);
     }
+
     public void LinkedListSample()
     {
         // int a = 1, b = 2; -> 가능
@@ -55,6 +84,7 @@ class CSharpStudy
             Console.WriteLine(item);
         }
     }
+
     public void ListSample()
     {
         //List<int> myList = new List<int>();
@@ -81,6 +111,7 @@ class CSharpStudy
         //리스트 정렬
         myList.Sort();
     }
+
     public void ArrrayListSample()
     {
         //ArrayList myList = new ArrayList();
@@ -95,6 +126,7 @@ class CSharpStudy
         //Console.WriteLine(val);
         //Console.WriteLine((int)myList[0]);
     }
+
     public void ArrayExample()
     {
         int sum = 0;
@@ -159,5 +191,5 @@ class CSharpStudy
         }
 
     }
-
+#endregion
 }
