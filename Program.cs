@@ -15,7 +15,7 @@
         PrintString(sol.Solultion07152(strings, "B"));
         //cSharpStudy.HashTableSample();
         //MakeLotto();
-
+        
     }
 
     public static void PrintString(string strings)
@@ -55,17 +55,21 @@
     /// </summary>
     public static void MakeLotto()
     {
+        //상수
+        const int TOTAL_BALLS = 45; //전체 공 개수
+        const int PICK_BALLS = 6; // 뽑는 공 개수
+
         //랜덤 함수 선언 필요
         var random = new Random();
         //볼이 담긴 리스트 선언
         var ballList = new List<int>();
         //리스트에 볼 45개 넣기
-        for (int i = 1; i <= 45; i++)
+        for (int i = 1; i <= TOTAL_BALLS; i++)
         {
             ballList.Add(i);
         }
         //리스트에서 볼을 하나씩 6번 꺼내기
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < PICK_BALLS; i++)
         {
             //남아있는 볼 갯수 중 랜덤하게 인덱스 고르기
             int index = random.Next() % ballList.Count;
