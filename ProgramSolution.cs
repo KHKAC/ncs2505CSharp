@@ -2,11 +2,63 @@ using System.Text;
 
 class ProgramSolution
 {
-    public string Solultion0716(string my_string)
+    /// <summary>
+    /// 문자열 뒤집기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solultion07162(string my_string)
     {
-        string answer = string.Empty;
+        var list = new List<char>(my_string);
+        list.Reverse();
+        string answer = new string(list.ToArray());
+        
+        /*
+            var sb = new StringBuilder();
+            foreach (var item in my_string)
+            {
+                sb.Insert(0, item);
+            }
+            string answer = sb.ToString();
+            */
+
+            /*
+            string answer = string.Empty;
+            int len = my_string.Length;
+            char[] answerArray = new char[len];
+
+            //for / foreach 사용
+            for (int i = 0; i < len; i++)
+            {
+                //위치를 주의해서 배열로 바꾼 answer에 넣자
+                answerArray[len - 1 - i] = my_string[i];
+            }
+            answer = new string(answerArray);
+            */
+
+            /*
+            var my_strings = my_string.Reverse();
+            foreach (var item in my_strings)
+            {
+                answer += item;
+            }
+            */
+            return answer;
+
+    }
+
+    /// <summary>
+    /// 편지
+    /// </summary>
+    /// <param name="message"></param>
+    /// <returns></returns>
+    public int Solultion0716(string message)
+    {
+        int answer = 0;
+        answer = 2 * message.Length;
         return answer;
     }
+    
     #region
     /// <summary>
     /// 특정 문자 제거하기

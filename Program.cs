@@ -9,11 +9,11 @@
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
         var intArray = new int[] { 1, 3, 5, 7 };
-        var strings = "BCBdbe";
-        //Console.WriteLine(sol.Solution07142(intArray));
+        var strings = "bread";
+        Console.WriteLine(sol.Solultion07162(strings));
         //PrintIntArray(sol.Solution0715(intArray));
-        //PrintString(sol.Solultion07152(strings, "B"));
-        cSharpStudy.SortedDicSample();
+        //PrintString(sol.Solultion07162(strings));
+        //cSharpStudy.SortedDicSample();
         //MakeLotto();
         
     }
