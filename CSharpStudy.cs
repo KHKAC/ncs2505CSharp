@@ -2,8 +2,23 @@ using System.Collections;
 
 class CSharpStudy
 {
+    public void SortedDicSample()
+    {
+        var tMap = new SortedDictionary<int, string>();
+        tMap.Add(1001, "Tom");
+        tMap.Add(1003, "John");
+        tMap.Add(1010, "Irina");
+        tMap.Add(1005, "Lee");
 
-#region
+        string name101 = tMap[1010];
+        //Iterator 사용
+        foreach (KeyValuePair<int, string> kv in tMap)
+        {
+            Console.WriteLine("{2}{0} : {1}", kv.Key, kv.Value, "*");
+        }
+    }
+
+    #region
     public void HashTableSample()
     {
         // Hashtable ht = new Hashtable();
@@ -23,7 +38,7 @@ class CSharpStudy
         emp.Add(1003, "Cindy");
         if (emp.ContainsKey(1002) == false)
         {
-            emp.Add(1002, "Kim");    
+            emp.Add(1002, "Kim");
         }
 
         string name = emp[1002];

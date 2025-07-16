@@ -2,7 +2,11 @@ using System.Text;
 
 class ProgramSolution
 {
-
+    public string Solultion0716(string my_string)
+    {
+        string answer = string.Empty;
+        return answer;
+    }
     #region
     /// <summary>
     /// 특정 문자 제거하기

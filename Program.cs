@@ -12,8 +12,8 @@
         var strings = "BCBdbe";
         //Console.WriteLine(sol.Solution07142(intArray));
         //PrintIntArray(sol.Solution0715(intArray));
-        PrintString(sol.Solultion07152(strings, "B"));
-        //cSharpStudy.HashTableSample();
+        //PrintString(sol.Solultion07152(strings, "B"));
+        cSharpStudy.SortedDicSample();
         //MakeLotto();
         
     }
