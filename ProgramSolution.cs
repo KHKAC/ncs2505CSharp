@@ -2,8 +2,10 @@ using System.Text;
 
 class ProgramSolution
 {
+
+    #region
     /// <summary>
-    /// 문자열 뒤집기
+    /// 뒤집힌 문자열
     /// </summary>
     /// <param name="my_string"></param>
     /// <returns></returns>
@@ -58,8 +60,7 @@ class ProgramSolution
         answer = 2 * message.Length;
         return answer;
     }
-    
-    #region
+
     /// <summary>
     /// 특정 문자 제거하기
     /// </summary>
