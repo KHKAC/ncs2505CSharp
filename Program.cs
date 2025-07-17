@@ -10,12 +10,29 @@
         CSharpStudy cSharpStudy = new CSharpStudy();
         var intArray = new int[] { 1, 3, 5, 7 };
         var strings = "bread";
-        Console.WriteLine(sol.Solultion07162(strings));
+        Console.WriteLine(sol.Solution07172(7, 15));
         //PrintIntArray(sol.Solution0715(intArray));
         //PrintString(sol.Solultion07162(strings));
-        //cSharpStudy.SortedDicSample();
+        //cSharpStudy.ArrraySample();
         //MakeLotto();
-        
+        // int[] scores = { 80, 78, 60, 90, 100 };
+        // int sum = CalculateSum(scores); // 배열 전달 : 배열명 사용
+        // Console.WriteLine(sum);
+    }
+
+    /// <summary>
+    /// 정수 배열의 합을 구하는 함수
+    /// </summary>
+    /// <param name="scoreArray"></param>
+    /// <returns></returns>
+    public static int CalculateSum(int[] scoreArray) //배열 받는쪽 
+    {
+        int sum = 0;
+        for (int i = 0; i < scoreArray.Length; i++)
+        {
+            sum += scoreArray[i];
+        }
+        return sum;
     }
 
     public static void PrintString(string strings)

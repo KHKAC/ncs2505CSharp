@@ -2,6 +2,44 @@ using System.Collections;
 
 class CSharpStudy
 {
+    //var는 전역변수로는 쓸 수 없다. 오직 지역변수로만 가능
+    public void ArrraySample()
+    {
+        // 1차 배열
+        var players = new string[10];
+        string[] regions = { "서울", "경기,", "부산" };
+
+        // 2차원 배열
+        string[,] depts = { { "김과장", "경리부" }, { "이과장", "총리부" } };
+
+        // 3차원 배열 <- 사람이 이해할 수 있는 마지노선
+        string[,,] cubes;
+
+        // 가변 배열
+        int[,] aa = new int[3, 2]; // 앞,뒤 전부 크기 지정해야함 (2차 배열)
+        int[][] a = new int[3][]; // 앞만 크기 지정해야함, 뒤는 크기 지정하면 안 됨(가변 배열)
+        a[0] = new int[2];
+        a[1] = new int[3] { 1, 2, 3 };
+        a[2] = new int[4] { 1, 2, 3, 4 };
+        a[0][0] = 1;
+        a[0][1] = 2;
+        aa[0, 0] = 1;
+        aa[0, 1] = 3;
+        // aa[0, 3] = 2; <- OutOfRange 오류 발생
+        aa[2, 1] = 7;
+
+        int sum = 0;
+        int[] scores = { 80, 78, 60, 90, 100 };
+        for (int i = 0; i < scores.Length; i++)
+        {
+            sum += scores[i];
+        }
+        // Console.WriteLine("sum = " + sum);
+        // Console.WriteLine("sum = {0}", sum);
+        Console.WriteLine($"sum = {sum}");
+    }
+
+    #region
     public void SortedDicSample()
     {
         var tMap = new SortedDictionary<int, string>();
@@ -11,14 +49,13 @@ class CSharpStudy
         tMap.Add(1005, "Lee");
 
         string name101 = tMap[1010];
-        //Iterator 사용
+        // Iterator 사용
         foreach (KeyValuePair<int, string> kv in tMap)
         {
             Console.WriteLine("{2}{0} : {1}", kv.Key, kv.Value, "*");
         }
     }
 
-    #region
     public void HashTableSample()
     {
         // Hashtable ht = new Hashtable();

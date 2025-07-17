@@ -3,18 +3,58 @@ using System.Text;
 class ProgramSolution
 {
 
+
     #region
+    /// <summary>
+    /// 세균 증식
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="t"></param>
+    /// <returns></returns>
+    public int Solution07172(int n, int t)
+    {
+        /*
+        int answer = 0;
+        //Math
+        answer = (int)(n * (Math.Pow(2, t)));
+
+        //for문
+        for (int i = 0; i < t; i++)
+        {
+            answer *= 2;
+        }
+        return answer;
+        */
+        return n << t;
+    }
+
+    /// <summary>
+    /// 피자 나눠 먹기(1)
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0717(int n)
+    {
+        int answer = 0;
+        int piz = n / 7;
+        int res = ((n % 7) == 0) ? 0 : 1;
+
+        answer = piz + res;
+
+        return answer;
+    }
+
     /// <summary>
     /// 뒤집힌 문자열
     /// </summary>
     /// <param name="my_string"></param>
     /// <returns></returns>
-    public string Solultion07162(string my_string)
+    public string Solution07162(string my_string)
     {
         var list = new List<char>(my_string);
         list.Reverse();
         string answer = new string(list.ToArray());
-        
+
         /*
             var sb = new StringBuilder();
             foreach (var item in my_string)
@@ -24,28 +64,28 @@ class ProgramSolution
             string answer = sb.ToString();
             */
 
-            /*
-            string answer = string.Empty;
-            int len = my_string.Length;
-            char[] answerArray = new char[len];
+        /*
+        string answer = string.Empty;
+        int len = my_string.Length;
+        char[] answerArray = new char[len];
 
-            //for / foreach 사용
-            for (int i = 0; i < len; i++)
-            {
-                //위치를 주의해서 배열로 바꾼 answer에 넣자
-                answerArray[len - 1 - i] = my_string[i];
-            }
-            answer = new string(answerArray);
-            */
+        //for / foreach 사용
+        for (int i = 0; i < len; i++)
+        {
+            //위치를 주의해서 배열로 바꾼 answer에 넣자
+            answerArray[len - 1 - i] = my_string[i];
+        }
+        answer = new string(answerArray);
+        */
 
-            /*
-            var my_strings = my_string.Reverse();
-            foreach (var item in my_strings)
-            {
-                answer += item;
-            }
-            */
-            return answer;
+        /*
+        var my_strings = my_string.Reverse();
+        foreach (var item in my_strings)
+        {
+            answer += item;
+        }
+        */
+        return answer;
 
     }
 
@@ -54,7 +94,7 @@ class ProgramSolution
     /// </summary>
     /// <param name="message"></param>
     /// <returns></returns>
-    public int Solultion0716(string message)
+    public int Solution0716(string message)
     {
         int answer = 0;
         answer = 2 * message.Length;
@@ -67,7 +107,7 @@ class ProgramSolution
     /// <param name="my_string"></param>
     /// <param name="letter"></param>
     /// <returns></returns>
-    public string Solultion07152(string my_string, string letter)
+    public string Solution07152(string my_string, string letter)
     {
         string answer = string.Empty;
         answer = my_string.Replace(letter, string.Empty);
@@ -296,7 +336,7 @@ class ProgramSolution
     /// <param name="num1"></param>
     /// <param name="num2"></param>
     /// <returns></returns>
-    public int Solultion0710(int num1, int num2)
+    public int Solution0710(int num1, int num2)
     {
         int answer = num1 + num2;
         int answer2 = 0;
