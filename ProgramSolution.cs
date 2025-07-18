@@ -2,7 +2,28 @@ using System.Text;
 
 class ProgramSolution
 {
+    public string Solution07182(string my_string)
+    {
+        // 모음 배열을 만든다
+        // 모음이 my_string에 있는 것과 비교한다
+        string answer = "";
 
+        return answer;
+    }
+
+    /// <summary>
+    /// 최대값 만들기(1)
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int Solution0718(int[] numbers)
+    {
+        int answer = 0;
+        Array.Sort(numbers);
+        Array.Reverse(numbers);
+        answer = numbers[0] * numbers[1];
+        return answer;
+    }
 
     #region
     /// <summary>

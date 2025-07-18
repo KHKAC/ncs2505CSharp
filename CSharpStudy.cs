@@ -1,8 +1,75 @@
 using System.Collections;
+using System.Text;
 
 class CSharpStudy
 {
+    public void SBSample()
+    {
+        var sb = new StringBuilder();
+        for (int i = 1; i <= 26; i++)
+        {
+            sb.Append(i.ToString());
+            //sb.Append(System.Environment.NewLine);
+            sb.Append(' ');
+        }
+        string s = sb.ToString();
+        Console.WriteLine($"Result : {s}");
+        //Environment.NewLine으로 줄 바꿈한것도 StringBuilder에 포함
+        //StringBuilder를 사용할 때 .ToString(); 사용을 까먹지 말 것!!!
 
+        sb.Clear(); //sb 안에 있는 것들 초기화(=비워버림)
+        sb.Append((char)('A' + 3));
+        Console.WriteLine(sb.ToString());
+    }
+
+    public void ASCIISample()
+    {
+        string s = "C# Studies";
+        for (int i = 0; i < s.Length; i++)
+        {
+            // Console.WriteLine("{1} : {0}", i, s[i]);
+        }
+
+        string str = "Hello";
+        char[] charArray = str.ToCharArray();
+        for (int i = 0; i < charArray.Length; i++)
+        {
+            // Console.WriteLine("{0} : {1}", i, charArray[i]);
+        }
+
+        char[] charArray2 = { 'A', 'B', 'C', 'D' };
+        string s2 = new string(charArray2);
+        // Console.WriteLine(s2);
+
+        //문자 연산
+        char c1 = 'Z'; // 10진수로 표현 가능하다.
+        char c2 = (char)(c1 - 9);
+        Console.WriteLine(c2);
+    }
+
+    public void StringSample()
+    {
+        //string 변수
+        string s1 = "C#";
+        string s2 = "Programming";
+        int startIndex = 3;
+        int len = s2.Length - startIndex - 1;
+
+        string s3 = s2.Substring(3, len);
+        Console.WriteLine(s3);
+
+        //문자(chat) 변수
+        char c1 = 'A';
+        char c2 = 'B';
+        char c3 = '\0'; // = null
+
+        string s4 = s1 + " " + s2;
+        Console.WriteLine("String : {0}", s4);
+
+        string s4Sub = s4.Substring(1, 5);
+        Console.WriteLine("SubString : {0}", s4Sub);
+        //ASCII 코드 알아두면 좋은 정도 따로 외울 필요 없음.
+    }
 
     #region
     //var는 전역변수로는 쓸 수 없다. 오직 지역변수로만 가능
