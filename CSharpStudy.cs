@@ -2,6 +2,9 @@ using System.Collections;
 
 class CSharpStudy
 {
+
+
+    #region
     //var는 전역변수로는 쓸 수 없다. 오직 지역변수로만 가능
     public void ArrraySample()
     {
@@ -39,7 +42,6 @@ class CSharpStudy
         Console.WriteLine($"sum = {sum}");
     }
 
-    #region
     public void SortedDicSample()
     {
         var tMap = new SortedDictionary<int, string>();
