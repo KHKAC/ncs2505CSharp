@@ -19,9 +19,38 @@ class ProgramSolution
     public int Solution0718(int[] numbers)
     {
         int answer = 0;
+        var list = new List<int>(numbers);
+        list.Sort();
+        answer = list[list.Count - 1] * list[list.Count - 2];
+        /*
+        //정렬을 사용하는 방법은 정수가 양수만 있을 때 사용 가능
+        
         Array.Sort(numbers);
         Array.Reverse(numbers);
         answer = numbers[0] * numbers[1];
+        */
+
+        /*
+        var sortedNum = new int[numbers.Length];
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                
+                // if (i == j)
+                // {
+                //     continue;
+                // }
+                
+                // if (answer < numbers[i] * numbers[j]) // answer가 numbers[i] * numbers[j]보다 작을 때 실행
+                // {
+                //     answer = numbers[i] * numbers[j];
+                // }
+                
+                answer = Math.Max(answer, numbers[i] * numbers[j]);
+            }
+        }
+        */
         return answer;
     }
 
