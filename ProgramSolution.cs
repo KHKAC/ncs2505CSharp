@@ -2,13 +2,60 @@ using System.Text;
 
 class ProgramSolution
 {
-    public string Solution07182(string my_string)
-    {
-        // 모음 배열을 만든다
-        // 모음이 my_string에 있는 것과 비교한다
-        string answer = "";
 
+
+    #region
+    /// <summary>
+    /// 자릿수 더하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07212(int n)
+    {
+        int answer = 0;
+        // n을 string으로 변환
+        string sNum = n.ToString();
+        // string을 처음부터 반복
+        foreach (var item in sNum)
+        {
+            // answer에 각 char의 계산된 값을 더함
+            // answer += int.Parse(item.ToString());
+            answer += (item - '0');
+        }
         return answer;
+    }
+
+    /// <summary>
+    /// 모음 제거
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution0721(string my_string)
+    {
+        //my_string.Replace("a", "").Remove(4).Substring(0, 2); 좋지 않은 코딩
+        //my_string.Replace('a', '\0');
+        return my_string.Replace("a", "")
+            .Replace("e", "")
+            .Replace("i", "")
+            .Replace("o", "")
+            .Replace("u", "");
+        /*
+        // for, if 사용하는 방법
+        string answer = string.Empty;
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            if ((my_string[i] != 'a') &&
+                (my_string[i] != 'e') &&
+                (my_string[i] != 'i') &&
+                (my_string[i] != 'o') &&
+                (my_string[i] != 'u'))
+            {
+                // string의 연산이니 StringBuilder를 사용하자.
+                answer += my_string[i];
+            }
+        }
+        return answer;
+        */
     }
 
     /// <summary>
@@ -54,7 +101,6 @@ class ProgramSolution
         return answer;
     }
 
-    #region
     /// <summary>
     /// 세균 증식
     /// </summary>

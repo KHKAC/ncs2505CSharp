@@ -9,11 +9,11 @@
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
         var intArray = new int[] { 0, 31, 24, 10, 1, 9 };
-        var strings = "bread";
-        Console.WriteLine(sol.Solution0718(intArray));
+        var strings = "nice to meet you";
+        Console.WriteLine(sol.Solution07212(930211));
         //PrintIntArray(sol.Solution0715(intArray));
         //PrintString(sol.Solultion07162(strings));
-        //cSharpStudy.SBSample();
+        //cSharpStudy.EnumSample();
         //MakeLotto();
         // int[] scores = { 80, 78, 60, 90, 100 };
         // int sum = CalculateSum(scores); // 배열 전달 : 배열명 사용

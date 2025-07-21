@@ -3,6 +3,60 @@ using System.Text;
 
 class CSharpStudy
 {
+
+    #region
+    public enum GameState{ Ready, Run }
+    public enum Category
+    {
+        // 값을 지정할거면 전부 지정을 하거나 처음 값만 지정할 것.
+        // 값이 겹치면 절대 안 됨
+        Cake,
+        IceCream,
+        Bread
+    }
+    enum City
+    {
+        Seoul,
+        Deajun,
+        Busan = 5,
+        Jeju = 10
+    }
+
+    [Flags] //비트 연산을 하는 enum
+    enum Border
+    {
+        None = 0,
+        Top = 1,
+        Right = 2,
+        Bottom = 4,
+        Left = 8
+    }
+    public void EnumSample()
+    {
+        Category cafeCategory;
+        cafeCategory = Category.Bread;
+        //Console.WriteLine((int)cafeCategory);
+
+        City myCity = City.Seoul;
+        int cityValue = (int)myCity;
+        if (myCity == City.Seoul)
+        {
+            //Console.WriteLine("Welcome to Seoul");
+        }
+
+        // OR 연산자로 다중 플래스 할당
+        Border b = Border.Top | Border.Bottom | Border.Left;
+        // & 연산자로 플래그 체크
+        if ((b & Border.Top) != 0)
+        {
+            // HasFlag() 이용해서 플래그 체크
+            if (b.HasFlag(Border.Bottom))
+            {
+                Console.WriteLine((int)b);
+            }
+        }
+    }
+
     public void SBSample()
     {
         var sb = new StringBuilder();
@@ -71,7 +125,6 @@ class CSharpStudy
         //ASCII 코드 알아두면 좋은 정도 따로 외울 필요 없음.
     }
 
-    #region
     //var는 전역변수로는 쓸 수 없다. 오직 지역변수로만 가능
     public void ArrraySample()
     {
