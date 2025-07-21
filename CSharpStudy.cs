@@ -5,7 +5,42 @@ class CSharpStudy
 {
     public void CodingGuide()
     {
-        string s1 = "왜 오류가 나지";
+        bool isValid = false;
+        if (isValid == false) // 나쁜 표현
+        {
+            // 하지마라
+        }
+        else
+        {
+            // 해라
+        }
+
+        if (isValid) // 좋은 표현
+        {
+            // isValid면 해라
+        }
+        else
+        {
+            // isValid가 아니면 하지마라
+        }
+        //---------------------------
+        int a = 0, b = 0;
+        if ((a = b) == 10) // 나쁜 표현 : if문 안에서 할당 같은거 하지마라
+        {
+
+        }
+        a = b;
+        if (a == 10)
+        {
+
+        }
+        //--------------------------
+        string path1 = "C:\\temp\\Test.txt"; // 나쁜 표현
+        string path2 = @"C:\temp\Test.txt";  // 좋은 표헌
+        //--------------------------
+        string s1 = "1", s2 = "2", s3 = "3";
+        // var res = s1 + "+" + s2 + "=" + s3; 안 좋은 표현
+        var res = string.Format("{0} + {1} = {2}", s1, s2, s3);
     }
 
     #region
