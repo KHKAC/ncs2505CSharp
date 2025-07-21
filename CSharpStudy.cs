@@ -3,9 +3,13 @@ using System.Text;
 
 class CSharpStudy
 {
+    public void CodingGuide()
+    {
+        string s1 = "왜 오류가 나지";
+    }
 
     #region
-    public enum GameState{ Ready, Run }
+    public enum GameState { Ready, Run }
     public enum Category
     {
         // 값을 지정할거면 전부 지정을 하거나 처음 값만 지정할 것.
