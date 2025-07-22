@@ -2,13 +2,56 @@ using System.Text;
 
 class ProgramSolution
 {
-    public int Soultion0722(int[] array, int height)
+
+    #region
+    /// <summary>
+    /// 삼각형의 완성조건(1)
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
+    public int Soultion07222(int[] sides)
     {
+        var list2 = sides.ToList();
         int answer = 0;
+        // list
+        var list = new List<int>(sides);
+        list.Sort();
+        answer = (list[2] < list[0] + list[1]) ? 1 : 2;
+        // 배열
+        // Array.Sort(sides);
+        // answer = sides[2] < (sides[0] + sides[1]) ? 1 : 2;
+
         return answer;
     }
 
-    #region
+    /// <summary>
+    /// 머쓱이보타 키 큰 사람
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="height"></param>
+    /// <returns></returns>
+    public int Soultion0722(int[] array, int height)
+    {
+        int answer = 0;
+        /*
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (height < array[i])
+            {
+                answer++;
+            }
+        }
+        */
+        foreach (var item in array)
+        {
+            if (height < item)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+    
     /// <summary>
     /// 자릿수 더하기
     /// </summary>
