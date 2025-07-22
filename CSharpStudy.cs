@@ -3,6 +3,55 @@ using System.Text;
 
 class CSharpStudy
 {
+
+    #region
+    public void OperatorSample()
+    {
+        int i = 100, j = 0;
+        Console.WriteLine("before : {0}, {1}", i, j);
+        //j = i--;
+        j = --i;
+        Console.WriteLine("after : {0}, {1}", i, j);
+
+        for (int z = 0; z < 10; z++)
+        {
+
+        }
+
+        int a = 5, b = -2, c = 1;
+        bool d = true;
+        if ((a > 1 && b < 0) || c == 1 || !d)
+        {
+            Console.WriteLine("ok");
+        }
+
+        byte ba = 7;
+        byte bb = (byte)((ba & 3) | 4);
+        Console.WriteLine(bb);
+
+        i = 2;
+        i = i << 5;
+        Console.WriteLine(i);
+
+        //int val = (a > b) ? a : b;
+        int val;
+        if (a > b)
+        {
+            val = a;
+        }
+        else
+        {
+            val = b;
+        }
+
+        string str = null;
+        string s = str ?? "몰라 이 쉬키야";
+        Console.WriteLine(s);
+
+        int? ni = null;
+        i = ni ?? 30;
+    }
+
     public void CodingGuide()
     {
         bool isValid = false;
@@ -43,7 +92,6 @@ class CSharpStudy
         var res = string.Format("{0} + {1} = {2}", s1, s2, s3);
     }
 
-    #region
     public enum GameState { Ready, Run }
     public enum Category
     {

@@ -2,7 +2,11 @@ using System.Text;
 
 class ProgramSolution
 {
-
+    public int Soultion0722(int[] array, int height)
+    {
+        int answer = 0;
+        return answer;
+    }
 
     #region
     /// <summary>
