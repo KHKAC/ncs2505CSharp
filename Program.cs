@@ -8,16 +8,16 @@
     {
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
-        var intArray = new int[] { 199, 72, 222 };
+
+        var intArray = new int[] { 1, 2, 3, 4, 5 };
         var strings = "nice to meet you";
-        Console.WriteLine(sol.Soultion07222(intArray));
-        //PrintIntArray(sol.Solution0715(intArray));
+
+        Console.WriteLine(sol.Solution07232(7, 7));
+        //PrintIntArray(sol.Solution0723(intArray, 1, 3));
         //PrintString(sol.Solultion07162(strings));
-        //cSharpStudy.OperatorSample();
-        //MakeLotto();
-        // int[] scores = { 80, 78, 60, 90, 100 };
-        // int sum = CalculateSum(scores); // 배열 전달 : 배열명 사용
-        // Console.WriteLine(sum);
+
+        //cSharpStudy.ConditionSample();
+        // MakeLotto();
     }
 
     /// <summary>

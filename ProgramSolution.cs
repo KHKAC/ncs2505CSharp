@@ -3,7 +3,53 @@ using System.Text;
 class ProgramSolution
 {
 
+
     #region
+    /// <summary>
+    /// 피자 나눠먹기(3)
+    /// </summary>
+    /// <param name="slice"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07232(int slice, int n)
+    {
+        int answer = 0;
+        int remain = n % slice == 0 ? 0 : 1;
+        answer = (n / slice) + remain;
+        // for(int i = 1; i <= n; i += slice)
+        // {
+        //     answer++;
+        // }
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열 자르기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public int[] Solution0723(int[] numbers, int num1, int num2)
+    {
+        int[] answer = new int[] { };
+        int len = num2 - num1 + 1;
+        answer = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            answer[i] = numbers[num1 + i];
+        }
+        /*
+        var list = new List<int>();
+        for (int i = num1; i <= num2; i++)
+        {
+            list.Add(numbers[i]);
+        }
+        answer = list.ToArray();
+        */
+        return answer;
+    }
+
     /// <summary>
     /// 삼각형의 완성조건(1)
     /// </summary>
