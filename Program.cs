@@ -12,11 +12,11 @@
         var intArray = new int[] { 1, 2, 3, 4, 5 };
         var strings = "nice to meet you";
 
-        Console.WriteLine(sol.Solution07232(7, 7));
+        //Console.WriteLine(sol.Solution07232(7, 7));
         //PrintIntArray(sol.Solution0723(intArray, 1, 3));
         //PrintString(sol.Solultion07162(strings));
 
-        //cSharpStudy.ConditionSample();
+        cSharpStudy.LoopSample();
         // MakeLotto();
     }
 
