@@ -9,14 +9,17 @@
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
 
-        var intArray = new int[] { 1, 2, 3, 4, 5 };
+        var intArray = new int[] { 7, -9 };
         var strings = "nice to meet you";
 
-        //Console.WriteLine(sol.Solution07232(7, 7));
+        var strArr1 = new string[] { "a", "b", "c" };
+        var strArr2 = new string[] { "com", "b", "d", "p", "c" };
+
+        Console.WriteLine(sol.Soultion07242(strArr1, strArr2));
         //PrintIntArray(sol.Solution0723(intArray, 1, 3));
         //PrintString(sol.Solultion07162(strings));
 
-        cSharpStudy.LoopSample();
+        //cSharpStudy.LoopSample();
         // MakeLotto();
     }
 

@@ -6,6 +6,72 @@ class ProgramSolution
 
     #region
     /// <summary>
+    /// 배열의 유사도
+    /// </summary>
+    /// <param name="s1"></param>
+    /// <param name="s2"></param>
+    /// <returns></returns>
+    public int Soultion07242(string[] s1, string[] s2)
+    {
+        int answer = 0;
+        /*
+        for (int i = 0; i < s1.Length; i++)
+        {
+            for (int j = 0; j < s2.Length; j++)
+            {
+                if (s1[i] == s2[j]) answer++;
+            }
+        }
+        */
+        foreach (var item in s1)
+        {
+            foreach (var item2 in s2)
+            {
+                if(item.Equals(item2))
+                //if (item == item2)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 점의 위치 구하기
+    /// </summary>
+    /// <param name="dot"></param>
+    /// <returns></returns>
+    public int Solution0724(int[] dot)
+    {
+        int a = dot[0], b = dot[1];
+        int answer = (a > 0) ? (b > 0) ? 1 : 4 : (b > 0) ? 2 : 3;
+        return answer;
+        /*
+        if (a > 0 && b > 0)
+        {
+            answer = 1;
+        }
+        else if (a < 0 && b > 0)
+        {
+            answer = 2;
+        }
+        else if (a < 0 && b < 0)
+        {
+            answer = 3;
+        }
+        else if (a > 0 && b < 0)
+        {
+            answer = 4;
+        }
+        else
+        {
+            continue;
+        }
+        */
+    }
+
+    /// <summary>
     /// 피자 나눠먹기(3)
     /// </summary>
     /// <param name="slice"></param>
