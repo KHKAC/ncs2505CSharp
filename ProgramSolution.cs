@@ -6,6 +6,52 @@ class ProgramSolution
 
     #region
     /// <summary>
+    /// n의 배수 고르기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="numlist"></param>
+    /// <returns></returns>
+    public int[] Solution07252(int n, int[] numlist)
+    {
+        // 1. 리스트를 만들어서 정의
+        var nums = new List<int>();
+        // 2. 만든 리스트에 배수(값)을 넣기
+        foreach (var item in numlist)
+        {
+            if (item % n == 0)
+            {
+                nums.Add(item);
+            }
+        }
+        // 3. answer를 정의 - 길이 설정 필수(여기서 길이는 만든 리스트의 길이)
+        int[] answer = new int[nums.Count];
+        // 4. answer에 만든 리스트의 값을 넣기
+        for (int i = 0; i < nums.Count; i++)
+        {
+            answer[i] = nums[i];
+        }
+        return answer;
+    }
+    
+    /// <summary>
+    /// 순서쌍의 개수
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07025(int n)
+    {
+        int answer = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열의 유사도
     /// </summary>
     /// <param name="s1"></param>
@@ -27,7 +73,7 @@ class ProgramSolution
         {
             foreach (var item2 in s2)
             {
-                if(item.Equals(item2))
+                if (item.Equals(item2))
                 //if (item == item2)
                 {
                     answer++;

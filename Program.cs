@@ -9,18 +9,27 @@
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
 
-        var intArray = new int[] { 7, -9 };
+        var intArray = new int[] { 2, 100, 120, 600, 12, 12 };
         var strings = "nice to meet you";
 
         var strArr1 = new string[] { "a", "b", "c" };
         var strArr2 = new string[] { "com", "b", "d", "p", "c" };
 
-        Console.WriteLine(sol.Soultion07242(strArr1, strArr2));
-        //PrintIntArray(sol.Solution0723(intArray, 1, 3));
+        //Console.WriteLine(sol.Solution07025(100));
+        PrintIntArray(sol.Solution07252(12, intArray));
         //PrintString(sol.Solultion07162(strings));
 
         //cSharpStudy.LoopSample();
+        
         // MakeLotto();
+    }
+
+    // yield를 쓰는 경우 호출시 for나 foreach를 써야 호출됨.
+    static IEnumerable<int> GetNumber()
+    {
+        yield return 10;  // 첫번째 루프에서 리턴되는 값
+        yield return 20;  // 두번째 루프에서 리턴되는 값
+        yield return 30;  // 세번째 루프에서 리턴되는 값
     }
 
     /// <summary>

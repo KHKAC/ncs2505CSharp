@@ -4,6 +4,9 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    
+
+    #region
     public void LoopSample()
     {
         // for
@@ -62,7 +65,6 @@ class CSharpStudy
 
     }
 
-    #region
     public void ConditionSample()
     {
         string category = "참외";
