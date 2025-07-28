@@ -6,6 +6,37 @@ class ProgramSolution
 
     #region
     /// <summary>
+    /// 배열 원소의 길이
+    /// </summary>
+    /// <param name="strList"></param>
+    /// <returns></returns>
+    public int[] Solution07282(string[] strList)
+    {
+        int len = strList.Length;
+        int[] answer = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            answer[i] = strList[i].Length;
+        }
+        return answer; 
+    }
+
+    /// <summary>
+    /// 아이스 아메리카노
+    /// </summary>
+    /// <param name="money"></param>
+    /// <returns></returns>
+    public int[] Solution0728(int money)
+    {
+        /*
+        int[] answer = new int[2];
+        answer[0] = money / 5500;
+        answer[1] = money % 5500;
+        return answer;
+        */
+        return new int[] { money / 5500, money % 5500 };
+    }
+    /// <summary>
     /// n의 배수 고르기
     /// </summary>
     /// <param name="n"></param>

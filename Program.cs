@@ -12,14 +12,14 @@
         var intArray = new int[] { 2, 100, 120, 600, 12, 12 };
         var strings = "nice to meet you";
 
-        var strArr1 = new string[] { "a", "b", "c" };
-        var strArr2 = new string[] { "com", "b", "d", "p", "c" };
+        var strArr1 = new string[] { "We", "are", "the", "world!" };
+        var strArr2 = new string[] { "I", "Love", "Programmers." };
 
         //Console.WriteLine(sol.Solution07025(100));
-        PrintIntArray(sol.Solution07252(12, intArray));
+        PrintIntArray(sol.Solution07282(strArr2));
         //PrintString(sol.Solultion07162(strings));
 
-        //cSharpStudy.LoopSample();
+        //cSharpStudy.ExceptionSample();
         
         // MakeLotto();
     }

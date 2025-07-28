@@ -4,7 +4,26 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
-    
+    public void ExceptionSample()
+    {
+        int[] intArr = new int[3];
+        try
+        {
+            intArr[0] = 0;
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine("AE .....");
+        }
+        catch (IndexOutOfRangeException ex)
+        {
+            Console.WriteLine("IOR 오류 발생!" + ex);
+        }
+        finally
+        {
+            Console.WriteLine("에러 없음");
+        }
+    }
 
     #region
     public void LoopSample()
