@@ -1,5 +1,3 @@
-using System.Text;
-
 class ProgramSolution
 {
 
@@ -18,6 +16,7 @@ class ProgramSolution
         {
             answer[i] = strList[i].Length;
         }
+        
         return answer; 
     }
 
