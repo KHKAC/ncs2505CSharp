@@ -4,6 +4,42 @@ class ProgramSolution
 
     #region
     /// <summary>
+    /// 문자 반복 출력하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution07292(string my_string, int n)
+    {
+        string answer = "";
+        foreach (var c in my_string)
+        {
+            answer += new string(c, n);
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열 안에 문자열
+    /// </summary>
+    /// <param name="str1"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public int Solution0729(string str1, string str2)
+    {
+        int answer = 0;
+        if (str1.Contains(str2) == true)
+        {
+            answer = 1;
+        }
+        else
+        {
+            answer = 2;
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열 원소의 길이
     /// </summary>
     /// <param name="strList"></param>
@@ -16,8 +52,8 @@ class ProgramSolution
         {
             answer[i] = strList[i].Length;
         }
-        
-        return answer; 
+
+        return answer;
     }
 
     /// <summary>
