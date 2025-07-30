@@ -1,8 +1,52 @@
+using System.Text;
+
 class ProgramSolution
 {
 
 
     #region
+    /// <summary>
+    /// 제곱수 판별하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution07302(int n)
+    {
+        /*
+        int answer = 0, min = 1, max = 1000;
+        for (int i = min; i <= max; i++)
+        {
+            if (i * i == n)
+            {
+                answer = 1;
+                break;
+            }
+            answer = 2;
+        }
+        return answer;
+        */
+        double cal = Math.Sqrt(n);
+
+        return (cal % 1 == 0) ? 1 : 2;
+    }
+
+    /// <summary>
+    /// 문자 리스트를 문자열로 변환하기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public string Solution0730(string[] arr)
+    {
+        string answer = "";
+        var sb = new StringBuilder();
+        foreach (var item in arr)
+        {
+            sb.Append(item);
+        }
+        answer = sb.ToString();
+        return answer;
+    }
+
     /// <summary>
     /// 문자 반복 출력하기
     /// </summary>

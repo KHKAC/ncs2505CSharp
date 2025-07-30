@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ncs2505CSharp\\ncs2505CSharp.csproj": {}
+    "c:\\ncs2505CSharp\\ncs2505CSharp.csproj": {}
   },
   "projects": {
-    "C:\\ncs2505CSharp\\ncs2505CSharp.csproj": {
+    "c:\\ncs2505CSharp\\ncs2505CSharp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ncs2505CSharp\\ncs2505CSharp.csproj",
+        "projectUniqueName": "c:\\ncs2505CSharp\\ncs2505CSharp.csproj",
         "projectName": "ncs2505CSharp",
-        "projectPath": "C:\\ncs2505CSharp\\ncs2505CSharp.csproj",
+        "projectPath": "c:\\ncs2505CSharp\\ncs2505CSharp.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\ncs2505CSharp\\obj\\",
+        "outputPath": "c:\\ncs2505CSharp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
