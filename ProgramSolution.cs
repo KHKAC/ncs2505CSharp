@@ -2,9 +2,40 @@ using System.Text;
 
 class ProgramSolution
 {
+    public int Solution07312(int[] array, int n)
+    {
+        int answer = 0;
+        foreach (var item in array)
+        {
+            if (n == item)
+            {
+                answer++;
+            }
+        }
 
+        return answer;
+    }
 
     #region
+    /// <summary>
+    /// 문자열 붙여서 출력하기
+    /// </summary>
+    public void Solution0731()
+    {
+        String[] input;
+
+        Console.Clear();
+        input = Console.ReadLine().Split(' ');
+
+        String s1 = input[0];
+        String s2 = input[1];
+
+        var sb = new StringBuilder();
+        sb.Append(s1).Append(s2);
+
+        Console.WriteLine(sb);
+    }
+
     /// <summary>
     /// 제곱수 판별하기
     /// </summary>

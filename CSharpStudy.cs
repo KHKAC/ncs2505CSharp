@@ -4,6 +4,34 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    //구조체 정의
+    public struct MyPoint // <-정의 완료됨.
+    {
+        public int X;
+        public int Y;
+
+        public MyPoint(int x, int y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("({0}, {1})", X, Y);
+        }
+    }
+
+    public void StructTest()
+    {
+        //CSharpStudy.MyPoint pt = new CSharpStudy.MyPoint(10, 12);
+        var pt = new CSharpStudy.MyPoint(10, 12);
+        var pt2 = new CSharpStudy.MyPoint();
+        //Console.WriteLine(pt.ToString());
+        //Console.WriteLine(pt2.ToString());
+    }
+
+    #region
     public void ExceptionSample()
     {
         int[] intArr = new int[3];
@@ -25,7 +53,6 @@ class CSharpStudy
         }
     }
 
-    #region
     public void LoopSample()
     {
         // for

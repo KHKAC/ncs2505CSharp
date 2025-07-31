@@ -1,4 +1,5 @@
-﻿using Hagoon;
+﻿// Util을 사용하기 위해 필요한 namespace 사용 선언
+using Hagoon;
 internal class Program
 {
     /// <summary>
@@ -10,15 +11,16 @@ internal class Program
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
 
-        var intArray = new int[] { 2, 100, 120, 600, 12, 12 };
+        var intArray = new int[] { 0, 2, 3, 4 };
         var strings = "nice to meet you";
 
-        var strArr1 = new string[] { "a","bd","c" };
+        var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        Console.WriteLine(sol.Solution07302(169));
+        Console.WriteLine(sol.Solution07312(intArray, 1));
         //Util.PrintIntArray(sol.Solution07282(strArr1));
         //Util.PrintString(sol.Solution0730(strArr1));
+
 
         //cSharpStudy.ExceptionSample();
 
