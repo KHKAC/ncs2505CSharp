@@ -2,6 +2,47 @@ using System.Text;
 
 class ProgramSolution
 {
+
+
+    #region
+    /// <summary>
+    /// 중앙값 구하기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution08012(int[] array)
+    {
+        int answer = 0;
+        var list = new List<int>(array);
+        list.Sort();
+        int middle = list.Count / 2;
+        // Array.Sort(array);
+        // answer = array[middle];
+        answer = list[middle];
+        return answer;
+    }
+
+    /// <summary>
+    /// 배열 두배 만들기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int[] Solution0801(int[] numbers)
+    {
+        var answer = new int[numbers.Length];
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            answer[i] = numbers[i] * 2;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 중복된 숫자 개수
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int Solution07312(int[] array, int n)
     {
         int answer = 0;
@@ -16,7 +57,6 @@ class ProgramSolution
         return answer;
     }
 
-    #region
     /// <summary>
     /// 문자열 붙여서 출력하기
     /// </summary>

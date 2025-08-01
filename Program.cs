@@ -11,26 +11,20 @@ internal class Program
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy cSharpStudy = new CSharpStudy();
 
-        var intArray = new int[] { 0, 2, 3, 4 };
+        var intArray = new int[] { 9, -1, 0 };
         var strings = "nice to meet you";
 
         var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        //Console.WriteLine(sol.Solution07312(intArray, 1));
-        //Util.PrintIntArray(sol.Solution07282(strArr1));
+        Console.WriteLine(sol.Solution08012(intArray));
+        //Util.PrintIntArray(sol.Solution0801(intArray));
         //Util.PrintString(sol.Solution0730(strArr1));
 
 
         //cSharpStudy.ExceptionSample();
 
-        MyCustomer mc = new MyCustomer();
-        // name, age 값을 넣음(Set함)
-        mc.Name = "Kyoung";
-        mc.Age = 35;
-        //mc.SetAge(-3);
-        Console.WriteLine(mc.GetCustomerData());
-        Console.WriteLine(mc.CalAge(40));
+        
 
         // MakeLotto();
     }

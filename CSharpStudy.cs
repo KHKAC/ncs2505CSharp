@@ -4,7 +4,16 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
-
+    public void ClassSample()
+    {
+        MyCustomer mc = new MyCustomer();
+        // name, age 값을 넣음(Set함)
+        mc.Name = "Kyoung";
+        mc.Age = 35;
+        //mc.SetAge(-3);
+        Console.WriteLine(mc.GetCustomerData());
+        Console.WriteLine(mc.CalAge(40));
+    }
 
     #region
     //구조체 정의
