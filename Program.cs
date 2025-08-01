@@ -17,12 +17,20 @@ internal class Program
         var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        Console.WriteLine(sol.Solution07312(intArray, 1));
+        //Console.WriteLine(sol.Solution07312(intArray, 1));
         //Util.PrintIntArray(sol.Solution07282(strArr1));
         //Util.PrintString(sol.Solution0730(strArr1));
 
 
         //cSharpStudy.ExceptionSample();
+
+        MyCustomer mc = new MyCustomer();
+        // name, age 값을 넣음(Set함)
+        mc.Name = "Kyoung";
+        mc.Age = 35;
+        //mc.SetAge(-3);
+        Console.WriteLine(mc.GetCustomerData());
+        Console.WriteLine(mc.CalAge(40));
 
         // MakeLotto();
     }

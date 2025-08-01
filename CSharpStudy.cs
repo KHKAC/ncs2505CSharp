@@ -4,6 +4,9 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+
+
+    #region
     //구조체 정의
     public struct MyPoint // <-정의 완료됨.
     {
@@ -31,7 +34,6 @@ class CSharpStudy
         //Console.WriteLine(pt2.ToString());
     }
 
-    #region
     public void ExceptionSample()
     {
         int[] intArr = new int[3];
