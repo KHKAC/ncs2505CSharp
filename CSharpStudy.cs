@@ -4,6 +4,55 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+
+
+    #region
+    //nullable 수업
+    public void NullableTest()
+    {
+        int? a = null;
+        int? b = 0;
+        int result = Nullable.Compare<int>(a, b);
+        Console.WriteLine(result); // 0이면 같음, -1이면 다름
+
+        double? c = 0.01;
+        double? d = 0.0100;
+        bool result2 = Nullable.Equals<double>(c, d);
+        Console.WriteLine(result2);
+    }
+
+    double _Sum = 0;
+    DateTime _Time;
+    bool? _Selected;
+
+    public void CheckInput(int? i, double? d, DateTime? time, bool? selected)
+    {
+        if (i.HasValue && d.HasValue)
+        {
+            this._Sum = (double)i.Value + (double)d.Value;
+        }
+
+        if (!time.HasValue)
+        {
+            throw new ArgumentException();
+        }
+        else
+        {
+            this._Time = time.Value;
+        }
+        // 만약 selected가 null이면 false를 할당
+        // if (selected == null)
+        // {
+        //     this._Selected = false;
+        // }
+        // else
+        // {
+        //     this._Selected = selected;
+        // }
+        this._Selected = selected ?? false;
+    }
+    
+    // 클래스
     public void ClassSample()
     {
         MyCustomer mc = new MyCustomer();
@@ -14,8 +63,6 @@ class CSharpStudy
         Console.WriteLine(mc.GetCustomerData());
         Console.WriteLine(mc.CalAge(40));
     }
-
-    #region
     //구조체 정의
     public struct MyPoint // <-정의 완료됨.
     {

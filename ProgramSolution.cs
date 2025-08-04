@@ -6,6 +6,47 @@ class ProgramSolution
 
     #region
     /// <summary>
+    /// 옷가게 할인 받기
+    /// </summary>
+    /// <param name="price"></param>
+    /// <returns></returns>
+    public int Solution08042(float price)
+    {
+        if (price >= 100000 && price < 300000)
+        {
+            price = price * 0.95f;
+        }
+        else if (price >= 300000 && price < 500000)
+        {
+            price = price * 0.9f;
+        }
+        else if (price >= 500000)
+        {
+            price = price * 0.8f;
+        }
+        return (int)price;
+    }
+
+    /// <summary>
+    /// 짝수는 싫어요
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0804(int n)
+    {
+        var list = new List<int>();
+        for (int i = 0; i <= n; i++)
+        {
+            if (i % 2 != 0)
+            {
+                list.Add(i);
+            }
+        }
+        int[] answer = list.ToArray();
+        return answer;
+    }
+
+    /// <summary>
     /// 중앙값 구하기
     /// </summary>
     /// <param name="array"></param>
