@@ -1,13 +1,98 @@
 using System.Collections;
 using System.Text;
+using Hagoon;
 using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
 
-
     #region
-    //nullable 수업
+    // 파라미터 샘플
+    public void ParamSample()
+    {
+
+        Method1(33, 90, "Kyoung");
+        Method1(name: "Kyoung", age: 33, score: 90);
+        Method1(score: 100, name: "KHK", age: 35);
+        Method1(2, 99);
+        Method1(score: 7, age: 90);
+        Method2(3000, 1000, 44);
+        Method2(3000, 1000);
+        Method2(3000);
+        Method3(44, 80, true);
+        Method3();
+        Method3(live: true);
+        Method3(score: 1000, age: 3000);
+
+        int ret = Util.Calc(1, 2);
+        ret = Util.Calc(100, 20, "-");
+        ret = Util.Calc(b: 4, a: 3, calcType: "*");
+        ret = Util.Calc(b: 4, a: 3);
+
+        int s = Calc2(1, 2, 3, 4, 5);
+        //int s2 =  Calc3(1, 2, 3, 4, 5);
+        int s2 = Calc2(6, 7, 8, 9, 10, 11, 12);
+
+        // ref 사용. 초기화 필요.
+        int x = 1;
+        double y = 1.0;
+        double ret2 = GetData(ref x, ref y);
+        Console.WriteLine($"x = {x}, y = {y}, ret2 = {ret2}");
+        Console.WriteLine("x = {0}, y = {1}, ret2 = {2}", x, y, ret2);
+
+        // out 사용. 초기화 불필요.
+        int c, d;
+        bool bret = GetData(10, 20, out c, out d);
+        Console.WriteLine($"c = {c}, d = {d}, bret = {bret}");
+        Console.WriteLine("c = {0}, d = {1}, bret = {2}", c, d, bret);
+    }
+    // params 수업
+    public int Calc3(int[] values)
+    {
+        return 0;
+    }
+    public int Calc2(params int[] values)
+    {
+        return 0;
+    }
+
+    // named 파라미터 수업
+    public void Method3(int age = 10, int score = 0, bool live = true)
+    {
+
+    }
+    public void Method2(int age, int score = 100, int city = 82)
+    {
+
+    }
+    public void Method1(int age, int score, string name = "NameEmpty")
+    {
+
+    }
+
+    // pass by reference 수업
+    public double GetData(ref int a, ref double b)
+    {
+        return ++a * ++b;
+    }
+
+    public bool GetData(int a, int b, out int c, out int d)
+    {
+        c = a + b;
+        d = a - b;
+        return true;
+    }
+
+    // pass by value 수업
+    public int Calculate(int a)
+    {
+        Console.WriteLine("a = " + a);
+        a *= 2;
+        Console.WriteLine("a = " + a);
+        return a;
+    }
+
+    // nullable 수업
     public void NullableTest()
     {
         int? a = null;
@@ -63,7 +148,7 @@ class CSharpStudy
         Console.WriteLine(mc.GetCustomerData());
         Console.WriteLine(mc.CalAge(40));
     }
-    //구조체 정의
+    // 구조체 정의
     public struct MyPoint // <-정의 완료됨.
     {
         public int X;
@@ -83,9 +168,9 @@ class CSharpStudy
 
     public void StructTest()
     {
-        //CSharpStudy.MyPoint pt = new CSharpStudy.MyPoint(10, 12);
-        var pt = new CSharpStudy.MyPoint(10, 12);
-        var pt2 = new CSharpStudy.MyPoint();
+        // MyPoint pt = new  MyPoint(10, 12);
+        var pt = new  MyPoint(10, 12);
+        var pt2 = new  MyPoint();
         //Console.WriteLine(pt.ToString());
         //Console.WriteLine(pt2.ToString());
     }

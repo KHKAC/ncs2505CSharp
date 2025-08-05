@@ -3,6 +3,27 @@ namespace Hagoon
     class Util
     {
         /// <summary>
+        /// 사칙연산 계산기
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="calcType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArithmeticException"></exception>
+        public static int Calc(int a, int b, string calcType = "+")
+        {
+            switch (calcType)
+            {
+                case "+": return a + b;
+                case "-": return a - b;
+                case "*": return a * b;
+                case "/": return a / b;
+                default:
+                    throw new ArithmeticException();
+            }
+        }
+
+        /// <summary>
         /// 정수 배열의 합을 구하는 함수
         /// </summary>
         /// <param name="scoreArray"></param>
