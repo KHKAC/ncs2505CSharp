@@ -5,8 +5,27 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    public void StringTest()
+    {
+        string s21 = "string";
+        Console.WriteLine(s21.IndexOf('r'));
+
+        string s2 = "Unity C#";
+        
+    }
 
     #region
+    public void StandardNumericFormatString()
+    {
+        Console.WriteLine("C Example {0:C}", 123.456f);
+        Console.WriteLine("D6 Sample {0:D6}", -1234);
+        Console.WriteLine("{0:E2}", -1052.0329112756f);
+        Console.WriteLine("{0:F4}", -1234.56f);
+        Console.WriteLine("{0:N3}", -1234.56f);
+        Console.WriteLine("{0:P1}", -0.39678f);
+        Console.WriteLine("{0:x4}, {1:X4}", 255, -1);
+    }
+
     // 파라미터 샘플
     public void ParamSample()
     {
@@ -37,14 +56,14 @@ class CSharpStudy
         int x = 1;
         double y = 1.0;
         double ret2 = GetData(ref x, ref y);
-        Console.WriteLine($"x = {x}, y = {y}, ret2 = {ret2}");
-        Console.WriteLine("x = {0}, y = {1}, ret2 = {2}", x, y, ret2);
+        Console.WriteLine($"x = {x}, y = {y:0.0}, ret2 = {ret2:0.0}");
+        Console.WriteLine("x = {0}, y = {1:0.0}, ret2 = {2:0.0}", x, y, ret2);
 
         // out 사용. 초기화 불필요.
         int c, d;
-        bool bret = GetData(10, 20, out c, out d);
-        Console.WriteLine($"c = {c}, d = {d}, bret = {bret}");
-        Console.WriteLine("c = {0}, d = {1}, bret = {2}", c, d, bret);
+        bool bret = GetData(10000, 2000, out c, out d);
+        Console.WriteLine($"c = {c:#,#} / d = {d:#,#} / bret = {bret}");
+        Console.WriteLine("c = {0:#,#} / d = {1:#,#} / bret = {2}", c, d, bret);
     }
     // params 수업
     public int Calc3(int[] values)
