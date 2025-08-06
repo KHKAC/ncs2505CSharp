@@ -5,13 +5,52 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    // Event 수업
+    class MyLesson
+    {
+        public event EventHandler Run;
+        public void RunEvent()
+        {
+            if (Run != null)
+            {
+                Run(this, EventArgs.Empty);
+            }
+        }
+    }
+
+    public void EventTest()
+    {
+        MyLesson lesson = new MyLesson();
+        lesson.Run += new EventHandler(Lesson1);
+        lesson.Run += new EventHandler(Lesson2);
+        lesson.RunEvent();
+        lesson.Run -= new EventHandler(Lesson2);
+        lesson.RunEvent();
+        
+    }
+
+    public void Lesson1(object sender, EventArgs e)
+    {
+        Console.WriteLine("이건 첫 번째 레슨");
+    }
+
+    public void Lesson2(object sender, EventArgs e)
+    {
+        Console.WriteLine("이건 두 번째 레슨");
+    }
+
+    public void Lesson3()
+    {
+        // 이건 이벤트로 구독 못함 (object sender, EventArgs e)가 없음
+    }
+
     public void StringTest()
     {
         string s21 = "string";
         Console.WriteLine(s21.IndexOf('r'));
 
         string s2 = "Unity C#";
-        
+
     }
 
     #region

@@ -2,9 +2,49 @@ using System.Text;
 
 class ProgramSolution
 {
+    public int Solution08062(int hp)
+    {
+        int answer = 0;
+        int antGeneralAtt = 5; // 장군 개미 공격력
+        int antSoldierAtt = 3; // 병정 개미 공격력
+        //int antNormalAtt = 1; // 일개미 공격력
 
+        int firstAttack = hp / antGeneralAtt;
+        hp %= antGeneralAtt;
+        int secondAttack = hp / antSoldierAtt;
+        hp %= antSoldierAtt;
+        // int lastAttack = hp / antNormalAtt;
+        // hp %= antNormalAtt;
+
+        answer = firstAttack + secondAttack + hp;
+
+        return answer;
+    }
 
     #region
+    /// <summary>
+    /// 직각 삼각형 출력하기
+    /// </summary>
+    public void Solution0806()
+    {
+        string[] s;
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+        int n = Int32.Parse(s[0]); // 잘못 입력했을 경우를 방지
+        int n2 = Convert.ToInt32(s[0]);
+        int n3 = int.Parse(s[0]);
+        char star = '*';
+
+        for (int i = 1; i <= n; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+        }
+    }
+
     /// <summary>
     /// 문자열의 앞의 n글자
     /// </summary>

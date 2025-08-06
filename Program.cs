@@ -17,11 +17,11 @@ internal class Program
         var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        Console.WriteLine(sol.Solution08052(strings, 5));
+        Console.WriteLine(sol.Solution08062(999));
         //Util.PrintIntArray(sol.Solution0804(15));
         //Util.PrintString(sol.Solution0730(strArr1));
 
-        //study.StringTest();
+        //study.EventTest();
         
         // MakeLotto();
     }
