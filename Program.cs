@@ -12,16 +12,16 @@ internal class Program
         CSharpStudy study = new CSharpStudy();
 
         var intArray = new int[] { 9, -1, 0 };
-        var strings = "He110W0r1d";
+        var strings = "205";
 
         var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        Console.WriteLine(sol.Solution08062(999));
+        //Console.WriteLine(sol.Solution0807(55, 10, 5));
         //Util.PrintIntArray(sol.Solution0804(15));
-        //Util.PrintString(sol.Solution0730(strArr1));
+        Util.PrintString(sol.Solution08072(strings));
 
-        //study.EventTest();
+        //study.PreProTest();
         
         // MakeLotto();
     }

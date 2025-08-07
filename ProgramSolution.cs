@@ -2,6 +2,61 @@ using System.Text;
 
 class ProgramSolution
 {
+    #region 8월 문제풀이
+    /// <summary>
+    /// 가위 바위 보
+    /// </summary>
+    /// <param name="rsp"></param>
+    /// <returns></returns>
+    public string Solution08072(string rsp)
+    {
+        const char rsp_Rock = '0';
+        const char rsp_Scissors = '2';
+        const char rsp_Paper = '5';
+        var sb = new StringBuilder();
+        string answer = "";
+        // for (int i = 0; i < rsp.Length; i++)
+        // {
+        //     if (rsp[i] == '2')
+        //     {
+        //         sb.Append("0");
+        //     }
+        //     else if (rsp[i] == '0')
+        //     {
+        //         sb.Append("5");
+        //     }
+        //     else
+        //     {
+        //         sb.Append("2");
+        //     }
+        // }
+        foreach (var item in rsp)
+        {
+            if (item == rsp_Rock)               sb.Append(rsp_Paper);
+            else if (item == rsp_Scissors)      sb.Append(rsp_Rock);
+            else                                sb.Append(rsp_Scissors);
+        }
+        answer = sb.ToString();
+        return answer;
+    }
+
+    /// <summary>
+    /// 공배수
+    /// </summary>
+    /// <param name="number"></param>
+    /// <param name="n"></param>
+    /// <param name="m"></param>
+    /// <returns></returns>
+    public int Solution0807(int number, int n, int m)
+    {
+        int answer = 0;
+        if (number % n == 0 && number % m == 0)
+        {
+            answer = 1;
+        }
+        return answer;
+    }
+
     public int Solution08062(int hp)
     {
         int answer = 0;
@@ -21,7 +76,6 @@ class ProgramSolution
         return answer;
     }
 
-    #region
     /// <summary>
     /// 직각 삼각형 출력하기
     /// </summary>
@@ -145,7 +199,9 @@ class ProgramSolution
         answer = list[middle];
         return answer;
     }
+    #endregion
 
+    #region 7월 문제풀이
     /// <summary>
     /// 배열 두배 만들기
     /// </summary>

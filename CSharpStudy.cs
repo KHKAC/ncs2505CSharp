@@ -1,3 +1,5 @@
+#define TEST_ENV
+//#define PROD_ENV
 using System.Collections;
 using System.Text;
 using Hagoon;
@@ -5,6 +7,39 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    // 전처리기 수업(#define, #if, #elif, #else, #region, #endregion)
+    class ClassSample
+    {
+        #region Public methods
+        public void Run() { }
+        public void Create() { }
+        #endregion
+
+        #region Property
+        public int Id { get; set; }
+        #endregion
+
+        #region Private
+        void Execute() { }
+        #endregion
+    }
+    public void PreProTest()
+    {
+        bool verbose = false;
+#if (TEST_ENV)
+        Console.WriteLine("Now Test Environment");
+        verbose = true;
+#elif (PROD_ENV)
+        Console.WriteLine("Now Prod Environment");
+#else
+        Console.WriteLine("???");
+#endif
+        if (verbose)
+        {
+            Console.WriteLine("Verbose...");
+        }
+    }
+
     // Event 수업
     class MyLesson
     {
@@ -26,7 +61,7 @@ class CSharpStudy
         lesson.RunEvent();
         lesson.Run -= new EventHandler(Lesson2);
         lesson.RunEvent();
-        
+
     }
 
     public void Lesson1(object sender, EventArgs e)
@@ -149,7 +184,7 @@ class CSharpStudy
         Console.WriteLine("a = " + a);
         return a;
     }
-
+#region Nullable
     // nullable 수업
     public void NullableTest()
     {
@@ -163,6 +198,7 @@ class CSharpStudy
         bool result2 = Nullable.Equals<double>(c, d);
         Console.WriteLine(result2);
     }
+#endregion
 
     double _Sum = 0;
     DateTime _Time;
@@ -194,9 +230,9 @@ class CSharpStudy
         // }
         this._Selected = selected ?? false;
     }
-    
+
     // 클래스
-    public void ClassSample()
+    public void ClassSample2()
     {
         MyCustomer mc = new MyCustomer();
         // name, age 값을 넣음(Set함)
@@ -227,8 +263,8 @@ class CSharpStudy
     public void StructTest()
     {
         // MyPoint pt = new  MyPoint(10, 12);
-        var pt = new  MyPoint(10, 12);
-        var pt2 = new  MyPoint();
+        var pt = new MyPoint(10, 12);
+        var pt2 = new MyPoint();
         //Console.WriteLine(pt.ToString());
         //Console.WriteLine(pt2.ToString());
     }
@@ -793,5 +829,5 @@ class CSharpStudy
         }
 
     }
-#endregion
+    #endregion
 }
