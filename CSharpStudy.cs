@@ -7,6 +7,56 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    // Indexer 수업
+    public class MyClass
+    {
+        private const int MAX = 10;
+        private string name;
+        private int[] data = new int[MAX];
+        //indexer
+        public int this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= MAX)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                else
+                {
+                    return data[index];
+                }
+            }
+            set
+            {
+                //if (!(index < 0 && index >= MAX))
+                if (index >= 0 && index < MAX)
+                {
+                    data[index] = value;
+                }
+            }
+        }
+
+        public void SetData(int index, int value)
+        {
+            if (index >= 0 && index < MAX)
+            {
+                data[index] = value;
+            }
+        }
+        public int GetData(int index)
+        {
+            if (index >= 0 && index < MAX)
+            {
+                return data[index];
+            }
+            else
+            {
+                throw new IndexOutOfRangeException();
+            }
+        }
+    }
+
     // 전처리기 수업(#define, #if, #elif, #else, #region, #endregion)
     class ClassSample
     {

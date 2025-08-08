@@ -4,6 +4,40 @@ class ProgramSolution
 {
     #region 8월 문제풀이
     /// <summary>
+    /// 문자열 정렬하기(1)
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int[] Solution08082(string my_string)
+    {
+        var list = new List<int>();
+        foreach (var item in my_string)
+        {
+            if (int.TryParse(item.ToString(), out int value))
+            {
+                list.Add(value);
+            }
+        }
+        list.Sort();
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 주사위의 개수
+    /// </summary>
+    /// <param name="box"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution0808(int[] box, int n)
+    {
+        // int diceVal = n * n * n;
+        // int boxVal = box[0] * box[1] * box[2];
+        // int answer = boxVal / diceVal;
+        int answer = (box[0] / n) * (box[1] / n) * (box[2] / n);
+        return answer;
+    }
+
+    /// <summary>
     /// 가위 바위 보
     /// </summary>
     /// <param name="rsp"></param>
@@ -32,9 +66,9 @@ class ProgramSolution
         // }
         foreach (var item in rsp)
         {
-            if (item == rsp_Rock)               sb.Append(rsp_Paper);
-            else if (item == rsp_Scissors)      sb.Append(rsp_Rock);
-            else                                sb.Append(rsp_Scissors);
+            if (item == rsp_Rock) sb.Append(rsp_Paper);
+            else if (item == rsp_Scissors) sb.Append(rsp_Rock);
+            else sb.Append(rsp_Scissors);
         }
         answer = sb.ToString();
         return answer;
