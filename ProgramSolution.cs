@@ -4,6 +4,52 @@ class ProgramSolution
 {
     #region 8월 문제풀이
     /// <summary>
+    /// 최댓값 만들기 (2)
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
+    public int Solution08112(int[] numbers)
+    {
+        //int answer = -10000 * 10000;
+        int answer = int.MinValue;
+        for (int i = 0; i < numbers.Length -1 ; i++)
+        {
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                int max = numbers[i] * numbers[j];
+                // if (answer < max)
+                // {
+                //     answer = max;
+                // }
+                answer = Math.Max(answer, max);
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 숨어있는 숫자 더하기(1)
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution0811(string my_string)
+    {
+        int answer = 0;
+        foreach (var item in my_string)
+        {
+            // if ((item >= '1') && (item <= 9))
+            // {
+            //     answer += (item - '0');
+            // }
+            if (int.TryParse(item.ToString(), out int value))
+            {
+                answer += value;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 문자열 정렬하기(1)
     /// </summary>
     /// <param name="my_string"></param>

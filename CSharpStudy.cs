@@ -55,6 +55,11 @@ class CSharpStudy
                 throw new IndexOutOfRangeException();
             }
         }
+
+        int id = 0;
+        public string Name { get; set; }
+        public void Run(int id) { }
+        protected void Execute() { }
     }
 
     // 전처리기 수업(#define, #if, #elif, #else, #region, #endregion)
