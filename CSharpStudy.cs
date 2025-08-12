@@ -7,6 +7,36 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    public void ClassTest()
+    {
+        Console.WriteLine("***** Class Test *****");
+        Animal anyone = new Animal();
+        anyone.Name = "Cat";
+        anyone.Age = 5;
+        anyone.SetGold(1000);
+        Console.WriteLine($"Gold : {anyone.GetGold()}");
+
+        Dog myDog = new Dog();
+        myDog.Name = "puppy";
+        myDog.Age = 8;
+        myDog.SetWeight(15);
+        myDog.HowOld();
+        myDog.SetGold(2000);
+        Console.WriteLine($"Gold : {myDog.GetGold()}");
+
+        Bird myBird = new Bird();
+        myBird.Name = "Pipi";
+        myBird.Age = 3;
+        myBird.Fly();
+        
+        /*
+        // PureBase pb = new PureBase(); <- 이건 불가능하다. abstract이기 때문
+        DerivedA da = new DerivedA();
+        Console.WriteLine(da.GetFirst());
+        Console.WriteLine(da.GetNext());
+        Console.WriteLine(da.GetEnd());
+        */
+    }
     // Indexer 수업
     public class MyClass
     {
@@ -54,6 +84,16 @@ class CSharpStudy
             {
                 throw new IndexOutOfRangeException();
             }
+        }
+        public void IndexerTest()
+        {
+            CSharpStudy.MyClass cls = new CSharpStudy.MyClass();
+            cls[1] = 1024;
+            int i = cls[1];
+            Console.WriteLine(i);
+            cls.SetData(3, 100);
+            int i2 = cls.GetData(3);
+            Console.WriteLine(i2);
         }
 
         int id = 0;

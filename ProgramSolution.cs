@@ -4,6 +4,49 @@ class ProgramSolution
 {
     #region 8월 문제풀이
     /// <summary>
+    /// 홀짝 구분하기
+    /// </summary>
+    public void Solution08122()
+    {
+        string[] s;
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+        int a = Int32.Parse(s[0]);
+        const string str = "{0} is {1}";
+        const string strEven = "even";
+        const string strOdd = "odd";
+        string strVal = (a % 2 == 0) ? strEven : strOdd;
+        Console.WriteLine(str, a, strVal);
+        // if (a % 2 == 0)
+        // {
+        //     Console.WriteLine($"{a} is even");
+        // }
+        // else
+        // {
+        //     Console.WriteLine($"{a} is odd");
+        // }
+
+    }
+
+    /// <summary>
+    /// 문자열 곱하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public string Solution0812(string my_string, int k)
+    {
+        var sb = new StringBuilder();
+        string answer = "";
+        for (int i = 0; i < k; i++)
+        {
+            sb.Append(my_string);
+        }
+        answer = sb.ToString();
+        return answer;
+    }
+    
+    /// <summary>
     /// 최댓값 만들기 (2)
     /// </summary>
     /// <param name="numbers"></param>
@@ -12,7 +55,7 @@ class ProgramSolution
     {
         //int answer = -10000 * 10000;
         int answer = int.MinValue;
-        for (int i = 0; i < numbers.Length -1 ; i++)
+        for (int i = 0; i < numbers.Length - 1; i++)
         {
             for (int j = i + 1; j < numbers.Length; j++)
             {
