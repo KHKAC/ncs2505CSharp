@@ -12,7 +12,7 @@ class ProgramSolution
             sb.Append(cipher[i]);
         }
         answer = sb.ToString();
-        //int index = 0;
+        // int index = 0;
         // foreach (var item in cipher)
         // {
         //     if (index % code == code - 1)
