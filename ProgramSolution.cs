@@ -3,6 +3,49 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    public string Solution08132(string cipher, int code)
+    {
+        var sb = new StringBuilder();
+        string answer = "";
+        for (int i = code - 1; i < cipher.Length; i += code)
+        {
+            sb.Append(cipher[i]);
+        }
+        answer = sb.ToString();
+        //int index = 0;
+        // foreach (var item in cipher)
+        // {
+        //     if (index % code == code - 1)
+        //     {
+        //         answer += item.ToString();
+        //     }
+        //     index++;
+        // }
+        return answer;
+    }
+
+    /// <summary>
+    /// n번째 원소부터
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution0813(int[] num_list, int n)
+    {
+        int len = num_list.Length - n + 1;
+        int[] answer = new int[len];
+        // for (int i = 0; i < len; i++)
+        // {
+        //     answer[i] = num_list[n - 1 + i];
+        // }
+        // num_list의 크기만큼 반복
+        for (int i = n - 1, j = 0; i < num_list.Length; i++, j++)
+        {
+            answer[j] = num_list[i];
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 홀짝 구분하기
     /// </summary>
