@@ -3,6 +3,59 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    public string Solution08142(string my_string)
+    {
+        var sb = new StringBuilder();
+        string answer = string.Empty;
+        foreach (var item in my_string)
+        {
+            // if (item >= 'a' && item <= 'z')
+            // {
+            //     sb.Append(item.ToString().ToUpper());
+            // }
+            // else
+            // {
+            //     sb.Append(item.ToString().ToLower());
+            // }
+            if (Char.IsLower(item) == true)
+            {
+                sb.Append(Char.ToUpper(item));
+            }
+            else
+            {
+                sb.Append(Char.ToLower(item));
+            }
+        }
+        answer = sb.ToString();
+        return answer;
+    }
+
+    /// <summary>
+    /// flag에 따라 다른 값 반환하기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="flag"></param>
+    /// <returns></returns>
+    public int Solution0814(int a, int b, bool flag)
+    {
+        // if (flag == true) // true와 비교일 경우 생략
+        // {
+        //     return a + b;
+        // }
+        // else
+        // {
+        //     return a - b;
+        // }
+        return flag ? (a + b) : (a - b);
+    }
+
+    /// <summary>
+    /// 암호 해독
+    /// </summary>
+    /// <param name="cipher"></param>
+    /// <param name="code"></param>
+    /// <returns></returns>
     public string Solution08132(string cipher, int code)
     {
         var sb = new StringBuilder();
