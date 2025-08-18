@@ -3,6 +3,62 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    /// <summary>
+    /// 약수 구하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution080182(int n)
+    {
+        int[] answer = new int[] { };
+        var list = new List<int>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                list.Add(i);
+            }
+        }
+        answer = list.ToArray();
+        return answer;
+    }
+
+    /// <summary>
+    /// 인덱스 바꾸기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="num1"></param>
+    /// <param name="num2"></param>
+    /// <returns></returns>
+    public string Solution0818(string my_string, int num1, int num2)
+    {
+        /*
+        string answer = string.Empty;
+        char cs1 = my_string[num1];
+        char cs2 = my_string[num2];
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            if (i == num1)
+            {
+                answer += cs2;
+            }
+            else if (i == num2)
+            {
+                answer += cs1;
+            }
+            else
+            {
+                answer += my_string[i];
+            }
+        }
+        return answer;
+        */
+        var sb = new StringBuilder(my_string); // my_string을 가지고 있는 StringBuilder
+        sb[num1] = my_string[num2];
+        sb[num2] = my_string[num1];
+        return sb.ToString();
+    }
+
     public string Solution08142(string my_string)
     {
         var sb = new StringBuilder();

@@ -120,6 +120,15 @@ public static class MyUtility
 
 public class Myclass
 {
+    public void InterfaceTest()
+    {
+        //ILogger logger = new ConsoleLogger();
+        ILogger logger = new FileLogger("MyText.text");
+        // logger.WriteLog("Hello, World!");
+        ClimateMotitor motitor = new ClimateMotitor(logger);
+        motitor.Start();
+    }
+
     public Myclass()
     {
         val = 100;

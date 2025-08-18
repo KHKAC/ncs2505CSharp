@@ -12,19 +12,13 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         CSharpStudy study = new CSharpStudy();
 
         var intArray = new int[] { 5, 2, 1, 7, 5 };
-        var strings = "abCdEfghIJ";
+        var strings = "I love you";
         var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        Console.WriteLine(sol.Solution08142(strings));
-        //Util.PrintArray(sol.Solution0813(intArray, 2));
+        //Console.WriteLine(sol.Solution0818(strings, 3, 6));
+        Util.PrintArray(sol.Solution080182(29));
         //sol.Solution08122();
-
-        //ILogger logger = new ConsoleLogger();
-        ILogger logger = new FileLogger("MyText.text");
-        // logger.WriteLog("Hello, World!");
-        ClimateMotitor motitor = new ClimateMotitor(logger);
-        motitor.Start();
-        // MakeLotto();
+        //study.ArrayExample();
     }
 }
