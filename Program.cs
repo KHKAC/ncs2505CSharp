@@ -20,14 +20,11 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         //Util.PrintArray(sol.Solution0813(intArray, 2));
         //sol.Solution08122();
 
-        Client client = new Client();
-        //study.ClassTest();
-        //study.GenericSample();
-
-        string str = MyUtility.Convert(123);
-        int i = MyUtility.ConvertBack(str);
-        //Console.WriteLine($"str : {str}, i : {i}");
-        
+        //ILogger logger = new ConsoleLogger();
+        ILogger logger = new FileLogger("MyText.text");
+        // logger.WriteLog("Hello, World!");
+        ClimateMotitor motitor = new ClimateMotitor(logger);
+        motitor.Start();
         // MakeLotto();
     }
 }

@@ -1,5 +1,103 @@
+#region 인터페이스 강의 2
+public class ClimateMotitor
+{
+    ILogger logger;
+    public ClimateMotitor(ILogger inLogger)
+    {
+        logger = inLogger;
+    }
+
+    public void Start()
+    {
+        while (true)
+        {
+            Console.WriteLine("온도를 입력해주세요 : ");
+            string temp = Console.ReadLine();
+            if (temp == "")
+            {
+                break;
+            }
+            logger.WriteLog($"현재 온도 : {temp}");
+        }
+    }
+}
+
+public interface ILogger
+{
+    void WriteLog(string message);
+}
+
+public class FileLogger : ILogger
+{
+    StreamWriter writer;
+    public FileLogger(string path)
+    {
+        writer = File.CreateText(path);
+        writer.AutoFlush = true;
+    }
+    public void WriteLog(string message)
+    {
+        writer.WriteLine($"{DateTime.Now.ToShortTimeString()}, {message}");
+    }
+}
+
+public class ConsoleLogger : ILogger
+{
+    public void WriteLog(string message)
+    {
+        Console.WriteLine($"{DateTime.Now.ToLocalTime()}, {message}");
+    }
+}
+#endregion
+
+#region 인터페이스 강의 1
+public interface IComparable
+{
+    // 인터페이스에서는 구현부 'method() {}' 사용하면 안 됨.
+    // 인터페이스 내부는 전부 public 그래서 생략 가능
+    int CompareTo(object obj);
+    void Open();
+    void Close();
+}
+
+public class MyClass2 : IComparable
+{
+    // 인터페이스 클래스에서 만들지 않은 구현부는 상속받은 클래스에서 만든다.
+    public int CompareTo(object obj)
+    {
+        return 0;
+    }
+
+    public void Open()
+    {
+
+    }
+    public void Close()
+    {
+
+    }
+}
+
+public class InterfaceSample
+{
+    public void Sample()
+    {
+        // IComparable ic = new IComparable(); <- 에러 발생 인터페이스 구현부 없음.
+        IComparable ic = new MyClass2();
+        ic.Open();
+        ic.Close();
+
+        MyClass2 mc2 = new MyClass2();
+        mc2.Open();
+        mc2.Close();
+    }
+}
+#endregion
+
 public static class MyUtility
 {
+
+
     private static int ver;
 
     // static 생성자
@@ -13,7 +111,8 @@ public static class MyUtility
         return i.ToString();
     }
 
-    public static int ConvertBack(string s) //public int ConvertBack(string s) <- static이 아니라서 불가능
+    //public int ConvertBack(string s) <- static이 아니라서 불가능
+    public static int ConvertBack(string s)
     {
         return int.Parse(s);
     }
