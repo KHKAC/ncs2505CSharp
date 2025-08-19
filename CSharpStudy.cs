@@ -7,6 +7,30 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    #region 델리게이트 강의
+    delegate int MyDelegate(string s);
+    public void DeleTest()
+    {
+        // delegate 객체 생성
+        MyDelegate m = new MyDelegate(StringToInt);
+        // delegate 객체를 메서드로 전달
+        DeleRun(m);
+    }
+    // delegate 대상이 되는 메서드
+    int StringToInt(string s)
+    {
+        return int.Parse(s);
+    }
+    // delegate를 전달받는 메서드
+    void DeleRun(MyDelegate m)
+    {
+        // delegate로부터 메서드 실행
+        int i = m("123"); // m.Invoke("123");
+        Console.WriteLine(i);
+    }
+    #endregion
+
+    #region 제네릭 강의
     class MyStack<T>
     {
         T[] _elements;
@@ -43,6 +67,9 @@ class CSharpStudy
         nameStack.Push("Thursday");
         Console.WriteLine(nameStack.Pop());
     }
+    #endregion
+
+    #region 상속 클래스 테스트
     public void ClassTest()
     {
         Console.WriteLine("***** Class Test *****");
@@ -73,7 +100,9 @@ class CSharpStudy
         Console.WriteLine(da.GetEnd());
         */
     }
-    // Indexer 수업
+    #endregion
+
+    #region  Indexer 수업
     public class MyClass
     {
         private const int MAX = 10;
@@ -137,8 +166,9 @@ class CSharpStudy
         public void Run(int id) { }
         protected void Execute() { }
     }
+    #endregion
 
-    // 전처리기 수업(#define, #if, #elif, #else, #region, #endregion)
+    #region  전처리기 수업(#define, #if, #elif, #else, #region, #endregion)
     class ClassSample
     {
         #region Public methods
@@ -170,8 +200,9 @@ class CSharpStudy
             Console.WriteLine("Verbose...");
         }
     }
+    #endregion
 
-    // Event 수업
+    #region  Event 수업
     class MyLesson
     {
         public event EventHandler Run;
@@ -218,8 +249,9 @@ class CSharpStudy
         string s2 = "Unity C#";
 
     }
+    #endregion
 
-    #region
+
     public void StandardNumericFormatString()
     {
         Console.WriteLine("C Example {0:C}", 123.456f);
@@ -231,7 +263,7 @@ class CSharpStudy
         Console.WriteLine("{0:x4}, {1:X4}", 255, -1);
     }
 
-    // 파라미터 샘플
+    #region  파라미터 샘플
     public void ParamSample()
     {
 
@@ -270,6 +302,7 @@ class CSharpStudy
         Console.WriteLine($"c = {c:#,#} / d = {d:#,#} / bret = {bret}");
         Console.WriteLine("c = {0:#,#} / d = {1:#,#} / bret = {2}", c, d, bret);
     }
+
     // params 수업
     public int Calc3(int[] values)
     {
@@ -293,7 +326,9 @@ class CSharpStudy
     {
 
     }
+    #endregion
 
+    #region 참조 / 값 레퍼런스 강의
     // pass by reference 수업
     public double GetData(ref int a, ref double b)
     {
@@ -315,8 +350,9 @@ class CSharpStudy
         Console.WriteLine("a = " + a);
         return a;
     }
-#region Nullable
-    // nullable 수업
+    #endregion
+
+    #region Nullable 강의
     public void NullableTest()
     {
         int? a = null;
@@ -329,7 +365,7 @@ class CSharpStudy
         bool result2 = Nullable.Equals<double>(c, d);
         Console.WriteLine(result2);
     }
-#endregion
+    #endregion
 
     double _Sum = 0;
     DateTime _Time;
@@ -390,7 +426,7 @@ class CSharpStudy
             return string.Format("({0}, {1})", X, Y);
         }
     }
-
+    #region 기초 강의
     public void StructTest()
     {
         // MyPoint pt = new  MyPoint(10, 12);

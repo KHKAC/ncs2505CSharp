@@ -96,8 +96,6 @@ public class InterfaceSample
 
 public static class MyUtility
 {
-
-
     private static int ver;
 
     // static 생성자
@@ -165,7 +163,7 @@ public class Client
         Console.WriteLine($"j : {j}");
     }
 }
-
+#region 상속 강의
 // base class
 public class Animal
 {
@@ -232,3 +230,4 @@ public class DerivedA : PureBase
         return ++num;
     }
 }
+#endregion

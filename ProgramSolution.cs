@@ -1,8 +1,57 @@
+using System.Runtime.CompilerServices;
 using System.Text;
 
 class ProgramSolution
 {
     #region 8월 문제풀이
+
+    /// <summary>
+    /// 문자열 정렬하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution08192(string my_string)
+    {
+        char[] chrArray = my_string.ToLower().ToCharArray();
+        Array.Sort(chrArray);
+        var sb = new StringBuilder();
+        foreach (var item in chrArray)
+        {
+            sb.Append(item);
+        }
+        return sb.ToString();
+    }
+    /// <summary>
+    /// 가장 큰 수 찾기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int[] Solution0819(int[] array)
+    {
+        int[] answer = new int[2];
+        /*
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] > answer[0])
+            {
+                answer[0] = array[i];
+                answer[1] = i;
+            }
+        }
+        */
+        //Dictionary 이용해서 풀이
+        var newDic = new Dictionary<int, int>();
+        // newDic에 array 값 넣기
+        for (int i = 0; i < array.Length; i++)
+        {
+            newDic.Add(array[i], i);
+        }
+        var list = new List<int>(array);
+        list.Sort();
+        answer[0] = list[list.Count - 1];
+        answer[1] = newDic[answer[0]];
+        return answer;
+    }
     /// <summary>
     /// 약수 구하기
     /// </summary>
