@@ -11,14 +11,19 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy study = new CSharpStudy();
 
-        var intArray = new int[] { 9, 10, 11, 8 };
-        var strings = "Python";
+        var intArray = new int[] { 58, 44, 27, 10, 100 };
+        var strings = "ProgrammerS123";
         var strArr1 = new string[] { "a", "bd", "c" };
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
-        Console.WriteLine(sol.Solution08192(strings));
+        Console.WriteLine(sol.Solution08202(intArray, 139));
         //Util.PrintArray(sol.Solution0819(intArray));
         //sol.Solution08122();
         //study.DeleTest();
+
+        //Util.CompareDelegate cmp = Util.AscendingCompare;
+        // Util.Sort(intArray, Util.DecendingCompare);
+        // Util.PrintArray(intArray);
+        //study.ComPareRun();
     }
 }

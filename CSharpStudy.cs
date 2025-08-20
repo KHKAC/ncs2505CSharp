@@ -7,7 +7,41 @@ using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
-    #region 델리게이트 강의
+    #region 델리게이트 강의 2
+    public void ComPareRun()
+    {
+        int[] a = { 5, 53, 3, 7, 1 };
+        // 오름차순 정렬
+        Util.CompareDelegate compDele = Util.AscendingCompare;
+        Util.Sort(a, compDele);
+        // 내림차순 정렬
+        compDele = Util.DecendingCompare;
+        Util.Sort(a, compDele);
+    }
+    // 1. delegate 선언
+    delegate void RunDelegate(int i);
+    void RunThis(int val)
+    {
+        Console.WriteLine($"{val}");
+    }
+    void RunThat(int value)
+    {
+        Console.WriteLine($"0x{value:X}");
+    }
+    public void DelePerform()
+    {
+        // 2. delegate 인스턴스 생성
+        //RunDelegate run = new RunDelegate(RunThis); <- 아래와 같음
+        RunDelegate run = RunThis;
+        // 3. delegate 실행
+        run(1024);
+        //run = new RunDelegate(RunThat); <- 아래와 같음
+        run = RunThat;
+        run(1024);
+
+    }
+    #endregion
+    #region 델리게이트 강의 1
     delegate int MyDelegate(string s);
     public void DeleTest()
     {

@@ -2,6 +2,46 @@ namespace Hagoon
 {
     class Util
     {
+        public delegate int CompareDelegate(int i1, int i2);
+        // Util에 있는 CompareDelegate와 동일한 Prototype
+        public static int AscendingCompare(int i1, int i2)
+        {
+            if (i1 == i2) return 0;
+            return (i2 - i1) > 0 ? 1 : -1;
+        }
+        // Util에 있는 CompareDelegate와 동일한 Prototype
+        public static int DecendingCompare(int i1, int i2)
+        {
+            if (i1 == i2) return 0;
+            return (i1 - i2) > 0 ? 1 : -1;
+        }
+
+        /// <summary>
+        /// 오름차순 / 내림차순
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="comp"></param>
+        public static void Sort(int[] arr, CompareDelegate comp)
+        {
+            if (arr.Length < 2) return;
+            // Console.WriteLine("함수 Prototype" + comp.Method);
+
+            int ret;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    ret = comp(arr[i], arr[j]);
+                    if (ret == -1)
+                    {
+                        int tmp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = tmp;
+                    }
+                }
+            }
+            // PrintArray(arr);
+        }
         /// <summary>
         /// 사칙연산 계산기
         /// </summary>

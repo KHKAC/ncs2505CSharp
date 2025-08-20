@@ -4,6 +4,45 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    public int Solution08202(int[] numbers, int n)
+    {
+        int answer = 0;
+        foreach (var item in numbers)
+        {
+            answer += item;
+            if (answer > n)
+            {
+                break;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 문자열의 뒤의 n글자
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution0820(string my_string, int n)
+    {
+        // return my_string.Substring(my_string.Length - n, n);
+        // return my_string.Remove(0, my_string.Length - n);
+        var sb = new StringBuilder();
+        int num = my_string.Length - n;
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            if (i < num)
+            {
+                continue;
+            }
+            else
+            {
+                sb.Append(my_string[i]);
+            }
+        }
+        return sb.ToString();
+    }
 
     /// <summary>
     /// 문자열 정렬하기
