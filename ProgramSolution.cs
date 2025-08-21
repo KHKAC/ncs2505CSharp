@@ -4,6 +4,44 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    public int[] Solution08212(int[] num_list, int n)
+    {
+        int[] answer = new int[num_list.Length];
+        int idx = 0;
+        for (int i = n; i < num_list.Length; i++)
+        {
+            answer[idx++] = num_list[i];
+        }
+        for (int i = 0; i < n; i++)
+        {
+            answer[idx++] = num_list[i];
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 첫 번째로 나오는 음수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution0821(int[] num_list)
+    {
+        for (int i = 0; i < num_list.Length; i++)
+        {
+            if (num_list[i] < 0)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    /// <summary>
+    /// n보다 커질 때까지 더하기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int Solution08202(int[] numbers, int n)
     {
         int answer = 0;
