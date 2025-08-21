@@ -4,9 +4,51 @@ using System.Collections;
 using System.Text;
 using Hagoon;
 using Microsoft.VisualBasic;
+// Forms를 사용하려면 csproj에 <ItemGroup> 추가해야함
+using System.Windows.Forms;
 
 class CSharpStudy
 {
+    #region 델리게이트 강의 3
+    class MyArea : Form // Form 클래스는 using System.Windows.Forms; 가 필요
+    {
+        public MyArea()
+        {
+            this.MouseClick += delegate { MyAreaClicked(); };
+        }
+
+        public delegate void ClickDelegate(object sender);
+        // delegate field
+        public ClickDelegate MyClick;
+        void MyAreaClicked()
+        {
+            if (MyClick != null)
+            {
+                MyClick(this);
+            }
+        }
+    }
+
+    MyArea area;
+    public void TestMyArea()
+    {
+        area = new MyArea();
+        area.MyClick += Area_Click;
+        area.MyClick += After_Click;
+        area.MyClick += Area_Click;
+        area.MyClick += Area_Click;
+        area.MyClick += After_Click;
+        area.ShowDialog();
+    }
+    void Area_Click(object sender)
+    {
+        area.Text += " MyArea 클릭!";
+    }
+    void After_Click(object sender)
+    {
+        area.Text += " AfterClick 클릭!";
+    }
+    #endregion
     #region 델리게이트 강의 2
     public void ComPareRun()
     {
