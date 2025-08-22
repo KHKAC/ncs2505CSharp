@@ -17,13 +17,13 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strArr2 = new string[] { "I", "Love", "Programmers." };
 
         // Console.WriteLine(sol.Solution0821(intArray));
-        Util.PrintArray(sol.Solution08212(intArray, 3));
+        Util.PrintArray(sol.Solution08222(15, 5));
         // sol.Solution08122();
         // study.DeleTest();
 
         // Util.CompareDelegate cmp = Util.AscendingCompare;
         // Util.Sort(intArray, Util.DecendingCompare);
         // Util.PrintArray(intArray);
-        //study.TestMyArea();
+        // study.TestMyArea();
     }
 }

@@ -4,6 +4,39 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    public int[] Solution08222(int n, int k)
+    {
+        var list = new List<int>();
+        for (int i = 1, j = i * k; j <= n; i++, j = i * k)
+        {
+            list.Add(j);
+        }
+        return list.ToArray();
+    }
+    /// <summary>
+    /// 카운트 다운
+    /// </summary>
+    /// <param name="start_num"></param>
+    /// <param name="end_num"></param>
+    /// <returns></returns>
+    public int[] Solution0822(int start_num, int end_num)
+    {
+        /*
+        int len = start_num - end_num + 1;
+        int[] answer = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            answer[i] = start_num--;
+        }
+        return answer;
+        */
+        var list = new List<int>();
+        for (int i = start_num; i >= end_num; i--)
+        {
+            list.Add(i);
+        }
+        return list.ToArray();
+    }
     public int[] Solution08212(int[] num_list, int n)
     {
         int[] answer = new int[num_list.Length];
