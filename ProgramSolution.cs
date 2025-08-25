@@ -4,6 +4,46 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    /// <summary>
+    /// 접두사인지 확인하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="is_prefix"></param>
+    /// <returns></returns>
+    public int Solution08252(string my_string, string is_prefix)
+    {
+        /*
+        int answer = 1;
+        if (is_prefix.Length > my_string.Length)
+        {
+            return 0;
+        }
+        for (int i = 0; i < is_prefix.Length; i++)
+        {
+            if (my_string[i] != is_prefix[i])
+            {
+                return 0;
+            }
+        }
+        return answer;
+        */
+        return my_string.IndexOf(is_prefix) == 0 ? 1 : 0;
+    }
+    /// <summary>
+    /// 더 크게 합치기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public int Solution0825(int a, int b)
+    {
+        string ab = $"{a}{b}";
+        string ba = $"{b}{a}";
+        int iab = int.Parse(ab);
+        int iba = Convert.ToInt32(ba);
+        int answer = Math.Max(iab, iba);
+        return answer;
+    }
     public int[] Solution08222(int n, int k)
     {
         var list = new List<int>();
