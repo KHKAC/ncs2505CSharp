@@ -5,6 +5,41 @@ class ProgramSolution
 {
     #region 8월 문제풀이
     /// <summary>
+    /// 부분 문자열 이어 붙여 문자열 만들기
+    /// </summary>
+    /// <param name="my_strings"></param>
+    /// <param name="parts"></param>
+    /// <returns></returns>
+    public string Solution08262(string[] my_strings, int[,] parts)
+    {
+        var sb = new StringBuilder();
+        int cnt = parts.GetLength(0);
+        for (int i = 0; i < cnt; i++)
+        {
+            int len = parts[i, 1] - parts[i, 0] + 1;
+            sb.Append(my_strings[i].Substring(parts[i, 0], len));
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 접미사 배열
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string[] Solution0826(string my_string)
+    {
+        int num = my_string.Length - 1;
+        var list = new List<string>();
+        for (int i = 0; i <= num; i++)
+        {
+            list.Add(my_string.Substring(num - i));
+        }
+        list.Sort();
+        return list.ToArray();
+    }
+
+    /// <summary>
     /// 접두사인지 확인하기
     /// </summary>
     /// <param name="my_string"></param>
@@ -29,6 +64,7 @@ class ProgramSolution
         */
         return my_string.IndexOf(is_prefix) == 0 ? 1 : 0;
     }
+
     /// <summary>
     /// 더 크게 합치기
     /// </summary>
@@ -44,6 +80,7 @@ class ProgramSolution
         int answer = Math.Max(iab, iba);
         return answer;
     }
+
     public int[] Solution08222(int n, int k)
     {
         var list = new List<int>();
@@ -53,6 +90,7 @@ class ProgramSolution
         }
         return list.ToArray();
     }
+
     /// <summary>
     /// 카운트 다운
     /// </summary>
@@ -77,6 +115,7 @@ class ProgramSolution
         }
         return list.ToArray();
     }
+
     public int[] Solution08212(int[] num_list, int n)
     {
         int[] answer = new int[num_list.Length];
@@ -91,6 +130,7 @@ class ProgramSolution
         }
         return answer;
     }
+    
     /// <summary>
     /// 첫 번째로 나오는 음수
     /// </summary>
