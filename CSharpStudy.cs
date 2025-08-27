@@ -9,9 +9,27 @@ using System.Windows.Forms;
 
 class CSharpStudy
 {
-    #region 델리게이트 강의 3
+    #region 델리게이트 강의 3 + 무명 메서드 강의
     class MyArea : Form // Form 클래스는 using System.Windows.Forms; 가 필요
     {
+        // 무명 메서드
+        delegate void MyDelegate(int a);
+        public void AnoTest()
+        {
+            // var de = delegate (int p1) { Console.Write(p1); };
+            // delegate 원래 사용법
+            MyDelegate dd = new MyDelegate(AnoMethod);
+            void AnoMethod(int p1)
+            {
+                Console.Write(p1);
+            }
+            // 무명 메서드로 간략화
+            MyDelegate d = delegate (int p1)
+            {
+                Console.Write(p1);
+            };
+            d(100);
+        }
         public MyArea()
         {
             this.MouseClick += delegate { MyAreaClicked(); };
@@ -41,6 +59,12 @@ class CSharpStudy
         // area.MyClick = Area_Click;
         // area.MyClick = null;
         area.ShowDialog();
+
+        // 무명 메서드
+        area.Click += new EventHandler(delegate (object s, EventArgs a) { MessageBox.Show("OK"); });
+        area.Click += (EventHandler)delegate (object s, EventArgs a) { MessageBox.Show("OK"); };
+        area.Click += delegate (object s, EventArgs a) { MessageBox.Show("OK"); };
+        area.Click += delegate { MessageBox.Show("OK"); };
     }
     void Area_Click(object sender)
     {

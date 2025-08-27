@@ -5,6 +5,46 @@ class ProgramSolution
 {
     #region 8월 문제풀이
     /// <summary>
+    /// 콜라츠 수열 만들기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution08272(int n)
+    {
+        var list = new List<int>();
+        while (n > 0)
+        {
+            list.Add(n);
+            if (n % 2 == 0)
+            {
+                n /= 2;
+            }
+            else
+            {
+                n = n * 3 + 1;
+            }
+            list.Add(n);
+            if (n == 1) break;
+        }
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 글자 이어 붙여 문자열 만들기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="index_list"></param>
+    /// <returns></returns>
+    public string Solution0827(string my_string, int[] index_list)
+    {
+        var sb = new StringBuilder();
+        foreach (var item in index_list)
+        {
+            sb.Append(my_string[item]);
+        }
+        return sb.ToString();
+    }
+    /// <summary>
     /// 부분 문자열 이어 붙여 문자열 만들기
     /// </summary>
     /// <param name="my_strings"></param>

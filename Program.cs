@@ -11,13 +11,13 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy study = new CSharpStudy();
 
-        var intArray = new int[] { 5, 2, 1, 7, 5 };
+        var intArray = new int[] { 1, 2, 0, 0, 3 };
         var intArrs = new int[,] { {0, 4}, {1, 2}, {3, 5}, {7, 7} };
-        var strings = "programmers";
+        var strings = "zpiaz";
         var strArr = new string[] { "progressive", "hamburger", "hammer", "ahocorasick" };
 
-        Console.WriteLine(sol.Solution08262(strArr, intArrs));
-        // Util.PrintArray(sol.Solution0826(strings));
+        // Console.WriteLine(sol.Solution08272(10));
+        Util.PrintArray(sol.Solution08272(25));
         // sol.Solution08122();
         // study.DeleTest();
 
