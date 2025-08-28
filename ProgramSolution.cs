@@ -4,6 +4,11 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    /// <summary>
+    /// 수 조작하기 2
+    /// </summary>
+    /// <param name="numLog"></param>
+    /// <returns></returns>
     public string Solution08282(int[] numLog)
     {
         var sb = new StringBuilder();
