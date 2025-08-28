@@ -4,6 +4,72 @@ using System.Text;
 class ProgramSolution
 {
     #region 8월 문제풀이
+    public string Solution08282(int[] numLog)
+    {
+        var sb = new StringBuilder();
+        for (int i = 0; i < numLog.Length - 1; i++)
+        {
+            int num = numLog[i + 1] - numLog[i];
+            /*
+            if (num == 1)
+            {
+                sb.Append('w');
+            }
+            else if (num == -1)
+            {
+                sb.Append('s');
+            }
+            else if (num == 10)
+            {
+                sb.Append('d');
+            }
+            else
+            {
+                sb.Append('a');
+            }
+            */
+            switch (num)
+            {
+                case 1:
+                    sb.Append('w');
+                    break;
+                case -1:
+                    sb.Append('s');
+                    break;
+                case 10:
+                    sb.Append('d');
+                    break;
+                case -10:
+                    sb.Append('a');
+                    break;
+            }
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 수 조작하기 1
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="control"></param>
+    /// <returns></returns>
+    public int Solution0828(int n, string control)
+    {
+        foreach (var item in control)
+        {
+            switch (item)
+            {
+                case 'w': n++; break;
+                case 's': n--; break;
+                case 'd': n += 10; break;
+                case 'a': n -= 10; break;
+                default:
+                    Console.WriteLine("error");
+                    break;
+            }
+        }
+        return n;
+    }
     /// <summary>
     /// 콜라츠 수열 만들기
     /// </summary>
