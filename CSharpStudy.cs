@@ -3,16 +3,31 @@
 using System.Collections;
 using System.Text;
 using Hagoon;
-using Microsoft.VisualBasic;
 // Forms를 사용하려면 csproj에 <ItemGroup> 추가해야함
 using System.Windows.Forms;
 
 class CSharpStudy
 {
+    #region 익명 타입 강의
+    public void AnoTypeTest()
+    {
+        var v = new[] {
+            new { Name = "Lee", Age = 33, Phone = "02-111-1111" },
+            new { Name = "Kim", Age = 25, Phone = "02-222-2222" },
+            new { Name = "Park", Age = 37, Phone = "02-333-3333" }
+        };
+        // LINQ Select를 이용해 name과 age만 갖는 새 익명 타입 객체들을 리턴
+        var list = v.Where(x => x.Age >= 30).Select(x => new { x.Name, x.Age });
+        foreach (var item in list)
+        {
+            Console.WriteLine($"{item.Name} : {item.Age}");
+        }
+    }
+    #endregion
+
     #region 델리게이트 강의 3 + 무명 메서드 강의 + 람다식 강의
     class MyArea : Form // Form 클래스는 using System.Windows.Forms; 가 필요
     {
-        //
         // 무명 메서드
         delegate void MyDelegate(int a);
         public void AnoTest()
@@ -81,6 +96,7 @@ class CSharpStudy
         area.Text += " AfterClick 클릭!";
     }
     #endregion
+
     #region 델리게이트 강의 2
     public void ComPareRun()
     {
@@ -115,6 +131,7 @@ class CSharpStudy
 
     }
     #endregion
+    
     #region 델리게이트 강의 1
     delegate int MyDelegate(string s);
     public void DeleTest()

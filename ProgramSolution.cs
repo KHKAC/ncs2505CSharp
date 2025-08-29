@@ -1,9 +1,96 @@
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Media.Animation;
 
 class ProgramSolution
 {
     #region 8월 문제풀이
+    /// <summary>
+    /// 주사위 게임 2
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="c"></param>
+    /// <returns></returns>
+    public int Solution08292(int a, int b, int c)
+    {
+        int answer = 0;
+        // 정답
+        if (a == b && b == c)
+        {
+            answer = (a + b + c) *
+                (a * a + b * b + c * c) *
+                (a * a * a + b * b * b + c * c * c);
+        }
+        else if (a == b || b == c || a == c)
+        {
+            answer = (a + b + c) * (a * a + b * b + c * c);
+        }
+        else
+        {
+            answer = a + b + c;
+        }
+
+        //정답 아님
+        /*
+        if (a == b || b == c || a == c)
+        {
+            answer = (a + b + c) * (a * a + b * b + c * c);
+        }
+        else if (a == b && b == c)
+        {
+            answer = (a + b + c) *
+                (a * a + b * b + c * c) *
+                (a * a * a + b * b * b + c * c * c);
+        }
+        else
+        {
+            answer = a + b + c;
+        }
+        */
+        return answer;
+    }
+    /// <summary>
+    /// 마지막 두 원소
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution0829(int[] num_list)
+    {
+        var list = new List<int>(num_list);
+        int len = num_list.Length - 1;
+        int a = num_list[len] - num_list[len - 1];
+        int b = num_list[len] * 2;
+        if (num_list[len] > num_list[len - 1])
+        {
+            list.Add(a);
+        }
+        else
+        {
+            list.Add(b);
+        }
+
+        return list.ToArray();
+        /*
+        int len = num_list.Length + 1;
+        int[] answer = new int[len];
+        for (int i = 0; i < len - 1; i++)
+        {
+            answer[i] = num_list[i];
+        }
+        int last1 = num_list[len - 2];
+        int last2 = num_list[len - 3];
+        if (last1 > last2)
+        {
+            answer[len - 1] = last1 - last2;
+        }
+        else
+        {
+            answer[len - 1] = last1 * 2;
+        }
+        return answer;
+        */
+    }
     /// <summary>
     /// 수 조작하기 2
     /// </summary>
