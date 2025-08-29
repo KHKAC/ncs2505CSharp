@@ -16,19 +16,19 @@ class ProgramSolution
     {
         int answer = 0;
         // 정답
-        if (a == b && b == c)
+        if (a != b && b != c && a != c)
+        {
+            answer = a + b + c;
+        }
+        else if (a == b && b == c)
         {
             answer = (a + b + c) *
                 (a * a + b * b + c * c) *
                 (a * a * a + b * b * b + c * c * c);
         }
-        else if (a == b || b == c || a == c)
-        {
-            answer = (a + b + c) * (a * a + b * b + c * c);
-        }
         else
         {
-            answer = a + b + c;
+            answer = (a + b + c) * (a * a + b * b + c * c);
         }
 
         //정답 아님
