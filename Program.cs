@@ -19,7 +19,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
 
         //Console.WriteLine(sol.Solution08292(4, 4, 4));
         //Util.PrintArray(sol.Solution0829(intArray));
-        //sol.Solution08122();
+        sol.Solution09012();
         //study.ExtensionTest();
 
         //Util.CompareDelegate cmp = Util.AscendingCompare;

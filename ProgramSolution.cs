@@ -4,6 +4,33 @@ using System.Windows.Media.Animation;
 
 class ProgramSolution
 {
+    #region 9월 문제풀이
+    public void Solution09012()
+    {
+        String[] s;
+
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+
+        int a = Int32.Parse(s[0]);
+        int b = Convert.ToInt32(s[1]);
+
+        // Console.WriteLine("{0} + {1} = {2}", a, b, a + b);
+        Console.WriteLine($"{a} + {b} = {a + b}");
+    }
+
+    public void Solution0901()
+    {
+        string s;
+        Console.Clear();
+        s = Console.ReadLine();
+        foreach (var item in s)
+        {
+            Console.WriteLine(item);
+        }
+    }
+    #endregion
+
     #region 8월 문제풀이
     /// <summary>
     /// 주사위 게임 2
