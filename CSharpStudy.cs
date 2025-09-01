@@ -3,11 +3,21 @@
 using System.Collections;
 using System.Text;
 using Hagoon;
+using MyExtension;
 // Forms를 사용하려면 csproj에 <ItemGroup> 추가해야함
 using System.Windows.Forms;
 
 class CSharpStudy
 {
+    // 확장 메서드 강의 1
+    public void ExtensionTest()
+    {
+        string s = "This is a Test";
+        string s2 = s.ToChangeCase();
+        bool found = s.Found('z');
+        Console.WriteLine($"{s2}, found: {found}");
+    }
+
     #region 익명 타입 강의
     public void AnoTypeTest()
     {

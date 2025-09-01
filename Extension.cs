@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace MySystem
+namespace MyExtension
 {
     public static class Exclass
     {

@@ -163,6 +163,7 @@ public class Client
         Console.WriteLine($"j : {j}");
     }
 }
+
 #region 상속 강의
 // base class
 public class Animal
