@@ -1,10 +1,60 @@
 using System.Runtime.CompilerServices;
 using System.Text;
-using System.Windows.Media.Animation;
+using MyExtension;
 
 class ProgramSolution
 {
     #region 9월 문제풀이
+    /// <summary>
+    /// 이어 붙인 수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution09022(int[] num_list)
+    {
+        int answer = 0;
+        string odd = "", even = "";
+        foreach (var item in num_list)
+        {
+            if (item % 2 == 0)
+            {
+                // even += item.ToString();
+                even += item;
+            }
+            else
+            {
+                odd += item;
+            }
+        }
+        answer = Int32.Parse(even) + Convert.ToInt32(odd);
+        return answer;
+    }
+    /// <summary>
+    /// 특정한 문자를 대문자로 바꾸기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="alp"></param>
+    /// <returns></returns>
+    public string Solution0902(string my_string, string alp)
+    {
+        // return my_string.Replace(alp, alp.ToUpper());
+        var sb = new StringBuilder();
+        foreach (var item in my_string)
+        {
+            if (item.ToString().Equals(alp))
+            {
+                // sb.Append(alp.ToUpper());
+                sb.Append(alp.ToChangeCase());
+            }
+            else
+            {
+                sb.Append(item);
+            }
+        }
+        return sb.ToString();
+
+    }
+
     public void Solution09012()
     {
         String[] s;

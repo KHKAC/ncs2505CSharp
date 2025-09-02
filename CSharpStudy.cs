@@ -6,9 +6,20 @@ using Hagoon;
 using MyExtension;
 // Forms를 사용하려면 csproj에 <ItemGroup> 추가해야함
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 class CSharpStudy
 {
+    #region 확장 메서드 강의 2
+    public void ExTest2()
+    {
+        var nums = new List<int> { 55, 44, 33, 66, 11 };
+        var v = nums.Where(p => p % 3 == 0);
+        List<int> arr = v.ToList<int>();
+        arr.ForEach(n => Console.WriteLine(n));
+    }
+    #endregion
+
     // 확장 메서드 강의 1
     public void ExtensionTest()
     {
