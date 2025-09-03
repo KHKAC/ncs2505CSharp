@@ -17,10 +17,10 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strings = "lowercase";
         var strArr = new string[] { "progressive", "hamburger", "hammer", "ahocorasick" };
 
-        Console.WriteLine(sol.Solution09022(intArray));
+        //Console.WriteLine(sol.Solution09022(intArray));
         //Util.PrintArray(sol.Solution0829(intArray));
         //sol.Solution09012();
-        //study.ExTest2();
+        study.RegexSample2();
 
         //Util.CompareDelegate cmp = Util.AscendingCompare;
         //Util.Sort(intArray, Util.DecendingCompare);

@@ -7,9 +7,70 @@ using MyExtension;
 // Forms를 사용하려면 csproj에 <ItemGroup> 추가해야함
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.Text.RegularExpressions;
 
 class CSharpStudy
 {
+    #region Regex 클래스 강의
+    public void RegexSample2()
+    {
+        string pn = "010-1234-5555";
+        Regex regex1 = new Regex(@"^01[01678]-[0-9]{4}-[0-9]{4}$");
+        if (regex1.IsMatch(pn))
+        {
+            Console.WriteLine("Match");
+        }
+        else
+        {
+            Console.WriteLine("Mismatch");
+        }
+
+        string name = "김공돌";
+        regex1 = new Regex(@"^[가-힣]{3}$");
+        if (regex1.IsMatch(name))
+        {
+            Console.WriteLine("Match");
+        }
+        else
+        {
+            Console.WriteLine("Mismatch");
+        }
+    }
+    public void RegexSample()
+    {
+        string str = "서울시 강남구 역삼동 강남아파트";
+        Regex regex = new Regex("강남");
+        // Match m = regex.Match(str);
+        MatchCollection mc = regex.Matches(str);
+        // if (m.Success)
+        // {
+        //     Console.WriteLine($"{m.Index}: {m.Value}");
+        // }
+        // while (m.Success)
+        // {
+        //     Console.WriteLine($"{m.Index}: {m.Value}");
+        //     m = m.NextMatch();
+        // }
+        foreach (Match m in mc)
+        {
+            Console.WriteLine($"{m.Index}: {m.Value}");
+        }
+    }
+    #endregion
+
+    #region Partial 클래스 강의
+    public void PartialTest()
+    {
+        Class1 c1 = new Class1();
+        c1.Get();
+        c1.Put();
+        c1.Run();
+
+        Struct1 s1 = new Struct1(1912, "Kyoung");
+        Console.WriteLine($"{s1.ID} : {s1.Name}");
+    }
+    #endregion
+
     #region 확장 메서드 강의 2
     public void ExTest2()
     {
@@ -20,7 +81,7 @@ class CSharpStudy
     }
     #endregion
 
-    // 확장 메서드 강의 1
+    #region  확장 메서드 강의 1
     public void ExtensionTest()
     {
         string s = "This is a Test";
@@ -28,6 +89,7 @@ class CSharpStudy
         bool found = s.Found('z');
         Console.WriteLine($"{s2}, found: {found}");
     }
+    #endregion
 
     #region 익명 타입 강의
     public void AnoTypeTest()

@@ -1,3 +1,54 @@
+#region Partial 클래스 강의
+partial class Class1
+{
+    public void Run() { }
+}
+
+partial class Class1
+{
+    public void Get() { }
+}
+
+partial class Class1
+{
+    public void Put() { }
+}
+
+partial struct Struct1
+{
+    public int ID;
+}
+
+partial struct Struct1
+{
+    public string Name;
+    public Struct1(int id, string name)
+    {
+        this.ID = id;
+        this.Name = name;
+    }
+}
+
+partial interface IDoable
+{
+    string Name { get; set; }
+}
+
+partial interface IDoable
+{
+    void Do();
+}
+
+public class DoClass : IDoable
+{
+    public string Name { get; set; }
+    public void Do()
+    {
+        //
+    }
+}
+#endregion
+
 #region 인터페이스 강의 2
 public class ClimateMotitor
 {
