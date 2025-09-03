@@ -1,10 +1,49 @@
 using System.Runtime.CompilerServices;
 using System.Text;
 using MyExtension;
+using System.Text.RegularExpressions;
 
 class ProgramSolution
 {
     #region 9월 문제풀이
+    /// <summary>
+    /// 조건에 맞게 수열 변환하기 3
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int[] Solution09032(int[] arr, int k)
+    {
+        int[] answer = new int[arr.Length];
+        bool isEven = k % 2 == 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            answer[i] = isEven ? arr[i] + k : arr[i] * k;
+        }
+        return answer;
+    }
+    /// <summary>
+    /// l로 만들기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public string Solution0903(string myString)
+    {
+        // var sb = new StringBuilder();
+        // foreach (var item in myString)
+        // {
+        //     if (item < 'l' && item >= 'a')
+        //     {
+        //         sb.Append('l');
+        //     }
+        //     else
+        //     {
+        //         sb.Append(item);
+        //     }
+        // }
+        // return sb.ToString();
+        return Regex.Replace(myString, "[a-k]", "l");
+    }
     /// <summary>
     /// 이어 붙인 수
     /// </summary>
