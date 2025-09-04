@@ -7,6 +7,41 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 숫자 찾기
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution09042(int num, int k)
+    {
+        // int answer = num.ToString().IndexOf(k.ToString());
+        // return (answer == -1) ? answer : answer + 1;
+        string str = num.ToString();
+        // char kChar = (char)('0' + k);
+        char kChar = Convert.ToChar(k.ToString()); // ToChar에 int 값을 넣는 것은 아스키 코드의 인덱스 번호를 넣는 것
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (str[i].Equals(kChar))
+            {
+                return i + 1;
+            }
+        }
+        return -1;
+    }
+
+    /// <summary>
+    /// 정수 부분
+    /// </summary>
+    /// <param name="flo"></param>
+    /// <returns></returns>
+    public int Solution0904(double flo)
+    {
+        //answer = (int)flo;
+        string[] strArr = flo.ToString().Split('.');
+        string str = strArr[0];
+        return int.Parse(str);
+    }
+    /// <summary>
     /// 조건에 맞게 수열 변환하기 3
     /// </summary>
     /// <param name="arr"></param>

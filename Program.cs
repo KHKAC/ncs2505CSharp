@@ -17,8 +17,8 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strings = "abcdevwxyz";
         var strArr = new string[] { "progressive", "hamburger", "hammer", "ahocorasick" };
 
-        //Console.WriteLine(sol.Solution0903(strings));
-        Util.PrintArray(sol.Solution09032(intArray, 2));
+        Console.WriteLine(sol.Solution09042(123456, 3));
+        //Util.PrintArray(sol.Solution09032(intArray, 2));
         //sol.Solution09012();
         //study.RegexSample2();
 
