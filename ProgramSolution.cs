@@ -6,6 +6,37 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    public int Solution09052(int[] num_list, int n)
+    {
+        int answer = 0;
+        foreach (var item in num_list)
+        {
+            if (item == n)
+            {
+                answer = 1;
+            }
+        }
+        return answer;
+
+        return num_list.Contains(n) ? 1 : 0;
+    }
+
+    /// <summary>
+    /// 문자열 바꿔서 찾기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public int Solution0905(string myString, string pat)
+    {
+        string str = string.Empty;
+        // foreach (var item in myString)
+        // {
+        //     str += item.Equals('A') ? "B" : "A";
+        // }
+        str = myString.Replace('A', 'b').Replace('B', 'a').ToUpper();
+        return str.Contains(pat) ? 1 : 0;
+    }
     /// <summary>
     /// 숫자 찾기
     /// </summary>
