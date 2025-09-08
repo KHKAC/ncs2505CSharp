@@ -11,6 +11,37 @@ using System.Text.RegularExpressions;
 
 class CSharpStudy
 {
+    #region
+    public EventHandler Clicked;
+    public void Click1()
+    {
+        var tempClicked = Clicked;
+        if (tempClicked != null)
+            tempClicked(this, null);
+
+    }
+    public void Click2()
+    {
+        Clicked?.Invoke(this, null);
+    }
+    
+    public void NullSample()
+    {
+        var rows = new List<int>();
+        int? cnt = rows?.Count;
+        // int cnt2;
+        // if (rows == null)
+        // {
+        //     cnt = 0;
+        // }
+        // else
+        // {
+        //     cnt2 = rows.Count;
+        // }
+        int cnt2 = rows?.Count ?? 0; //위의 주석의 식을 줄여서 쓰면 나오는 식
+        int? cnt3 = rows?.Count ?? null;
+    }
+    #endregion
     #region Regex 클래스 강의
     public void RegexSample2()
     {
