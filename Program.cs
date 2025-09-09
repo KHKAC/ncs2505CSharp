@@ -15,14 +15,14 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var intArr = new int[] { 110, 66, 439, 785, 1 };
         var intArr2 = new int[] { 377, 823, 119, 43 };
         var int2Arrs = new int[,] { { 0, 4 }, { 1, 2 }, { 3, 5 }, { 7, 7 } };
-        var strings = "c";
-        var string2 = "AABB";
+        var strings = "854020";
+        var string2 = "tbbttb";
         var strArr = new string[] { "abc", "bbc", "cbc" };
 
-        Console.WriteLine(sol.Solution09082(strArr, strings));
+        Console.WriteLine(sol.Solution09092(strings));
         //Util.PrintArray(sol.Solution0908(intArr, intArr2));
         //sol.Solution09012();
-        //study.RegexSample2();
+        //study.DicInit();
 
         //Util.CompareDelegate cmp = Util.AscendingCompare;
         //Util.Sort(intArray, Util.DecendingCompare);

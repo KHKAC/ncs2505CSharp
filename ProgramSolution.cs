@@ -7,6 +7,43 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 0 떼기
+    /// </summary>
+    /// <param name="n_str"></param>
+    /// <returns></returns>
+    public string Solution09092(string n_str)
+    {
+        string answer = string.Empty;
+        int num = int.Parse(n_str);
+        answer = num.ToString();
+        return answer;
+        // bool isZero = true;
+        // while (isZero)
+        // {
+        //     // if (n_str[0].CompareTo('0') == 0)
+        //     if(n_str[0].Equals('0'))
+        //     {
+        //         n_str = n_str.Substring(1);
+        //     }
+        //     else
+        //     {
+        //         isZero = false;
+        //         break;
+        //     }
+        // }
+        // return n_str;
+    }
+    /// <summary>
+    /// 부분 문자열
+    /// </summary>
+    /// <param name="str1"></param>
+    /// <param name="str2"></param>
+    /// <returns></returns>
+    public int Solution0909(string str1, string str2)
+    {
+        return str2.Contains(str1) ? 1 : 0;
+    }
+    /// <summary>
     /// 꼬리 문자열
     /// </summary>
     /// <param name="str_list"></param>

@@ -11,6 +11,30 @@ using System.Text.RegularExpressions;
 
 class CSharpStudy
 {
+    #region 
+    public void DicInit()
+    {
+        var score1 = new Dictionary<string, int>()
+        {
+            {"Kim", 100},
+            {"Lee", 90}
+        };
+        int sc = score1["Lee"];
+
+        var score2 = new Dictionary<string, int>()
+        {
+            ["Kim"] = 100,
+            ["Lee"] = 90
+        };
+        int sc2 = score2["Lee"];
+
+        var A = new[] { 1, 2, 3 };
+        var L = new List<int>(A) { [2] = 9 }; // Dictionary Initialize를 사용해서 만듦.
+        Console.WriteLine($"{L[0]}, {L[2]}");
+        var K = new List<int>() { [0] = 1 }; // 에러 발생
+        Console.WriteLine($"{K[0]}");
+    }
+    #endregion
     #region
     public EventHandler Clicked;
     public void Click1()
