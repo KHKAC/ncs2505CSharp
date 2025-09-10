@@ -12,6 +12,46 @@ using System.Text.RegularExpressions;
 class CSharpStudy
 {
     #region 
+    class Person
+    {
+        // 원래 Property 만드는 방식
+        // public string Name
+        // {
+        //     get
+        //     {
+        //         return Name;
+        //     }
+        //     set
+        //     {
+        //         Name = value;
+        //     }
+        // }
+        // 간략화
+        // public string Name { get; set; }
+        // 초기값 추가 가능해짐
+        public string Name { get; set; } = "No name";
+        public string NickName { get; }
+        public int Age { get; }
+        public bool Enabled { get; } = true;
+        public int Level { get; }
+        public Person()
+        {
+            this.Level = 1;
+        }
+    }
+
+    public void AutoPropertyInit()
+    {
+        Person p = new Person();
+        Console.WriteLine(p.Name);
+        Console.WriteLine(p.NickName);
+        Console.WriteLine(p.Enabled);
+        Console.WriteLine(p.Level);
+        Console.WriteLine(p.Age);
+    }
+    #endregion
+
+    #region Dictionary 초기자 강의
     public void DicInit()
     {
         var score1 = new Dictionary<string, int>()
@@ -35,7 +75,8 @@ class CSharpStudy
         Console.WriteLine($"{K[0]}");
     }
     #endregion
-    #region
+
+    #region null(널) 조건 연산자
     public EventHandler Clicked;
     public void Click1()
     {

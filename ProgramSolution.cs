@@ -6,6 +6,26 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    public int[,] Solution0910(int n)
+    {
+        int[,] answer = new int[n, n];
+        // for (int i = 0; i < n; i++)
+        // {
+        //     for (int j = 0; j < n; j++)
+        //     {
+        //         if (i == j)
+        //         {
+        //             answer[i, j] = 1;
+        //         }
+        //     }
+        // }
+        for (int i = 0; i < n; i++)
+        {
+            answer[i, i] = 1;
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 0 떼기
     /// </summary>
