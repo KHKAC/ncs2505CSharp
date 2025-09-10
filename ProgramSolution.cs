@@ -6,6 +6,27 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    public int Solution09102(int[,] arr)
+    {
+        int answer = 1;
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                if (arr[i, j] != arr[j, i])
+                {
+                    answer = 0;
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 특별한 이차원 배열
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int[,] Solution0910(int n)
     {
         int[,] answer = new int[n, n];
