@@ -32,22 +32,56 @@ class CSharpStudy
         public string Name { get; set; } = "No name";
         public string NickName { get; }
         public int Age { get; }
-        public bool Enabled { get; } = true;
+        // public bool Enabled { get; } = true;
+        public bool Enabled => true;
         public int Level { get; }
         public Person()
         {
             this.Level = 1;
         }
+
+        int height = 3;
+        int width = 2;
+
+        // public int Area
+        // {
+        //     get
+        //     {
+        //         return height * width;
+        //     }
+        // }
+        public int Area => height * width;
+        string strData = "EBM";
+        // public void Print()
+        // {
+        //     Console.WriteLine(strData);
+        // }
+        public void Print() => Console.WriteLine(strData);
+        int salary;
+        /*
+        public int Salary
+        {
+            get
+            {
+                // if (salary < 0) salary = 0;
+                // return salary;
+                return salary < 0 ? 0 : salary;
+            }
+        }
+        */
+        public int Salary => salary < 0 ? 0 : salary;
     }
 
     public void AutoPropertyInit()
     {
         Person p = new Person();
-        Console.WriteLine(p.Name);
-        Console.WriteLine(p.NickName);
-        Console.WriteLine(p.Enabled);
-        Console.WriteLine(p.Level);
-        Console.WriteLine(p.Age);
+        // Console.WriteLine(p.Name);
+        // Console.WriteLine(p.NickName);
+        // Console.WriteLine(p.Enabled);
+        // Console.WriteLine(p.Level);
+        // Console.WriteLine(p.Age);
+        Console.WriteLine(p.Area);
+        p.Print();
     }
     #endregion
 
@@ -85,10 +119,10 @@ class CSharpStudy
             tempClicked(this, null);
 
     }
-    public void Click2()
-    {
-        Clicked?.Invoke(this, null);
-    }
+    public void Click2() => Clicked?.Invoke(this, null);
+    // {
+    //     Clicked?.Invoke(this, null);
+    // }
     
     public void NullSample()
     {

@@ -6,6 +6,28 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    /// <summary>
+    /// 부분 문자열인지 확인하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="target"></param>
+    /// <returns></returns>
+    public int Solution0911(string my_string, string target)
+    {
+        // int answer = 0;
+        // if (my_string.Contains(target)) answer = 1;
+        // return answer;
+        // 아래의 방식으로 한줄로 쓸 수 있지만 오히려 보기 어려워지므로 지양할 것.
+        // public int Solution0911(string my_string, string target) => my_string.Contains(target) ? 1 : 0;
+        // return my_string.Contains(target) ? 1 : 0;
+        return my_string.IndexOf(target) < 0 ? 0 : 1;
+    }
+
+    /// <summary>
+    /// 특별한 이차원 배열 2
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
     public int Solution09102(int[,] arr)
     {
         for (int i = 0; i < arr.GetLength(0); i++)
@@ -21,7 +43,7 @@ class ProgramSolution
         return 1;
     }
     /// <summary>
-    /// 특별한 이차원 배열
+    /// 특별한 이차원 배열 1
     /// </summary>
     /// <param name="n"></param>
     /// <returns></returns>
@@ -50,12 +72,13 @@ class ProgramSolution
     /// </summary>
     /// <param name="n_str"></param>
     /// <returns></returns>
-    public string Solution09092(string n_str)
+    public string Solution09092(string n_str) => int.Parse(n_str).ToString();
+    /*
     {
-        string answer = string.Empty;
-        int num = int.Parse(n_str);
-        answer = num.ToString();
-        return answer;
+        // string answer = string.Empty;
+        // int num = int.Parse(n_str);
+        // answer = num.ToString();
+        // return answer;
         // bool isZero = true;
         // while (isZero)
         // {
@@ -71,7 +94,10 @@ class ProgramSolution
         //     }
         // }
         // return n_str;
+        // return int.Parse(n_str).ToString();
     }
+    */
+
     /// <summary>
     /// 부분 문자열
     /// </summary>
@@ -213,7 +239,8 @@ class ProgramSolution
     /// </summary>
     /// <param name="myString"></param>
     /// <returns></returns>
-    public string Solution0903(string myString)
+    public string Solution0903(string myString) => Regex.Replace(myString, "[a-k]", "l");
+    /*
     {
         // var sb = new StringBuilder();
         // foreach (var item in myString)
@@ -230,6 +257,8 @@ class ProgramSolution
         // return sb.ToString();
         return Regex.Replace(myString, "[a-k]", "l");
     }
+    */
+
     /// <summary>
     /// 이어 붙인 수
     /// </summary>
