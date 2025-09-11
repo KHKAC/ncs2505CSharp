@@ -7,6 +7,21 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 문자열로 변환
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution09112(int n) => $"{n}";
+    /*
+    {
+        // string answer = n.ToString();
+        // return "" + n;
+        // return string.Format("{0}", n);
+        return $"{n}";
+    }
+    */
+    public string Solution09113(int n) => n.ToString();
+    /// <summary>
     /// 부분 문자열인지 확인하기
     /// </summary>
     /// <param name="my_string"></param>
