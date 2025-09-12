@@ -11,7 +11,78 @@ using System.Text.RegularExpressions;
 
 class CSharpStudy
 {
-    #region 
+    #region C# 7.0 Expression-bodied
+    class Employee
+    {
+        int id;
+        string[] tags = new string[10];
+
+        // Expression-bodied 생성자
+        public Employee(int id) => this.id = id;
+        // 원래 생성자
+        // public Employee(int id)
+        // {
+        //     this.id = id;
+        // }
+
+        // Expression-bodied Finalizer(소멸자 : 솔직히 정말로 드물게 쓰임)
+        ~Employee() => Console.Write("~Employee");
+        // 원래 소멸자
+        // ~Employee()
+        // {
+        //     Console.Write("~Employee");
+        // }
+
+        // Expression-bodied property
+        public int Id
+        {
+            get => this.id;
+            set => this.id = value > 0 ? value : 0;
+        }
+        // 원래 property(속성)
+        // public int Id
+        // {
+        //     get
+        //     {
+        //         return id;
+        //     }
+        //     set
+        //     {
+        //         this.id = value > 0 ? value : 0;
+        //     }
+        // }
+
+        // Expression-bodied indexer
+        public string this[int index]
+        {
+            get => tags[index];
+            set => tags[index] = value;
+        }
+        // 원래 indexer
+        // public string this[int index]
+        // {
+        //     get
+        //     {
+        //         return tags[index];
+        //     }
+        //     set
+        //     {
+        //         tags[index] = value;
+        //     }
+        // }
+
+        // Expression-bodied event
+        EventHandler notified;
+        public event EventHandler Notified
+        {
+            add => notified += value;
+            remove => notified -= value;
+        }
+
+    }
+    #endregion
+
+    #region C# 6.0 Expression-bodied
     class Person
     {
         // 원래 Property 만드는 방식

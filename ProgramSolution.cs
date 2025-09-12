@@ -7,6 +7,49 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 뒤에서 5등 위로
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution09122(int[] num_list)
+    {
+        // list를 2개 사용해서 실행
+        /*
+        var list = new List<int>(num_list);
+        list.Sort();
+        var list2 = new List<int>();
+        for (int i = 5; i < list.Count; i++)
+        {
+            list2.Add(list[i]);
+        }
+        return list2.ToArray();
+        */
+        // list의 RemoveAt을 사용 
+        var list = new List<int>(num_list);
+        list.Sort();
+        for (int i = 0; i < 5; i++)
+        {
+            list.RemoveAt(0);
+        }
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 문자열 정수의 합
+    /// </summary>
+    /// <param name="num_str"></param>
+    /// <returns></returns>
+    public int Solution0912(string num_str)
+    {
+        int answer = 0;
+        foreach (var item in num_str)
+        {
+            // answer += int.Parse(item.ToString());
+            answer += item - '0';
+        }
+        return answer;
+    }
+    /// <summary>
     /// 문자열로 변환
     /// </summary>
     /// <param name="n"></param>
@@ -20,7 +63,9 @@ class ProgramSolution
         return $"{n}";
     }
     */
+    // Solution09112() 메서드를 Expression-bodied 형태로 변경
     public string Solution09113(int n) => n.ToString();
+
     /// <summary>
     /// 부분 문자열인지 확인하기
     /// </summary>
