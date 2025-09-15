@@ -7,6 +7,41 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 뒤에서 5등까지
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution09152(int[] num_list)
+    {
+        const int LENGTH = 5;
+        /*
+        int[] arr = new int[LENGTH];
+        Array.Sort(num_list);
+        for (int i = 0; i < LENGTH; i++)
+        {
+            arr[i] = num_list[i];
+        }
+        //Array.Copy(num_list, arr, LENGTH);
+        return arr;
+        */
+        var list = new List<int>(num_list);
+        list.Sort();
+        list.RemoveRange(LENGTH, list.Count - LENGTH);
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 문자열을 정수로 변환하기
+    /// </summary>
+    /// <param name="n_str"></param>
+    /// <returns></returns>
+    public int Solution0915(string n_str)
+    {
+        //return int.Parse(n_str);
+        return Convert.ToInt32(n_str);
+    }
+
+    /// <summary>
     /// 뒤에서 5등 위로
     /// </summary>
     /// <param name="num_list"></param>

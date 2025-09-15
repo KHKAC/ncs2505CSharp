@@ -11,6 +11,40 @@ using System.Text.RegularExpressions;
 
 class CSharpStudy
 {
+    #region C# 7.0 tuple 강의
+    (int count, int sum, double average) Calculate(List<int> data)
+    {
+        int cnt = 0, sum = 0;
+        double avg = 0;
+        foreach (var item in data)
+        {
+            cnt++;
+            sum += item;
+        }
+        avg = sum / cnt;
+        return (cnt, sum, avg);
+    }
+
+    public void TupleTest()
+    {
+        var list = new List<int> { 1, 2, 3, 4, 5 };
+        //var r = Calculate(list);
+        //Console.WriteLine($"{r.count}, {r.sum}, {r.average}");
+        //Console.WriteLine($"{r.Item1}, {r.Item2}, {r.Item3}");
+
+        //(int cnt, int sum, double avg) = Calculate(list);
+        //(var cnt, var sum, var avg) = Calculate(list);
+        //var(cnt, sum, avg) = Calculate(list);
+        int cnt, sum;
+        double avg;
+        (cnt, sum, avg) = Calculate(list);
+        Console.WriteLine($"cnt = {cnt}, sum = {sum}");
+        (cnt, sum) = (sum, cnt);
+        Console.WriteLine($"cnt = {cnt}, sum = {sum}");
+        
+    }
+    #endregion
+
     #region C# 7.0 Expression-bodied
     class Employee
     {
