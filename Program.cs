@@ -12,7 +12,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy study = new CSharpStudy();
 
-        var intArr = new int[] { 12, 4, 15, 46, 38, 1, 14 };
+        var intArr = new int[] { 444, 555, 666, 777 };
         var intArr2 = new int[] { 377, 823, 119, 43 };
         var int2Arrs = new int[,] { { 5, 192, 33 }, { 192, 72, 95 }, { 33, 95, 999 } };
         var strings = "8542";
@@ -20,9 +20,9 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strArr = new string[] { "abc", "bbc", "cbc" };
 
         //Console.WriteLine(sol.Solution0915(strings));
-        Util.PrintArray(sol.Solution09152(intArr));
+        Util.PrintArray(sol.Solution09162(intArr, 100));
         //sol.Solution09102(int2Arrs);
-        //study.TupleTest();
+        //study.OutSample();
 
         //Util.CompareDelegate cmp = Util.AscendingCompare;
         //Util.Sort(intArray, Util.DecendingCompare);

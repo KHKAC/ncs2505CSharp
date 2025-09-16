@@ -11,6 +11,18 @@ using System.Text.RegularExpressions;
 
 class CSharpStudy
 {
+    #region C# 7.0 편해진 out
+    public void OutSample()
+    {
+        // int x, y;
+        // GetData(0, 1, out x, out y);
+        // GetData(0, 1, out int x, out int y);
+        GetData(0, 1, out var x, out var y);
+        GetData(0, 1, out var z, out _);
+        Console.WriteLine($"{x}, {y}, {z}");
+    }
+
+    #endregion
     #region C# 7.0 tuple 강의
     (int count, int sum, double average) Calculate(List<int> data)
     {
