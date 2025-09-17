@@ -39,6 +39,13 @@ class ProgramSolution
             case 1: answer = 2 * (a + b); break;
             case 2: answer = (a * a) + (b * b); break;
         }
+        // C# 최신 switch : 프로그래머스에선 사용불가
+        // answer = oddCnt switch
+        // {
+        //     0 => answer = Math.Abs(a - b),
+        //     1 => answer = 2 * (a + b),
+        //     _ => answer = (a * a) + (b * b)
+        // };
         return answer;
     }
     /// <summary>

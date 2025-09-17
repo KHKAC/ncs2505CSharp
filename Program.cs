@@ -19,7 +19,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var string2 = "ana";
         var strArr = new string[] { "abc", "bbc", "cbc" };
 
-        Console.WriteLine(sol.Solution09172(2, 4));
+        Console.WriteLine(sol.Solution09172(3, 5));
         //Util.PrintArray(sol.Solution09162(intArr, 100));
         //sol.Solution09102(int2Arrs);
         //study.OutSample();
