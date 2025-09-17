@@ -6,6 +6,12 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    /// <summary>
+    /// 주사위 놀이 1
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
     public int Solution09172(int a, int b)
     {
         /*
@@ -29,9 +35,9 @@ class ProgramSolution
 
         switch (oddCnt)
         {
-            case 0: answer = Math.Abs(a - b);    break;
-            case 1: answer = 2 * (a + b);        break;
-            case 2: answer = (a * a) + (b * b);  break;
+            case 0: answer = Math.Abs(a - b); break;
+            case 1: answer = 2 * (a + b); break;
+            case 2: answer = (a * a) + (b * b); break;
         }
         return answer;
     }
