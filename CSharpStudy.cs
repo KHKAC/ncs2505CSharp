@@ -8,9 +8,18 @@ using MyExtension;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
+using System.Data.Common;
 
 class CSharpStudy
 {
+    void Button_Click(object sender, EventArgs e)
+    {
+        // var fransOrders = from ord in db.Orders where ord.Customer_ID == "FRANS" select ord;
+        // foreach (var o in fransOrders)
+        // {
+
+        // }
+    }
     #region C# 7.0 편해진 out
     public void OutSample()
     {

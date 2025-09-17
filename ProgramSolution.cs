@@ -7,6 +7,40 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 배열 비교하기
+    /// </summary>
+    /// <param name="arr1"></param>
+    /// <param name="arr2"></param>
+    /// <returns></returns>
+    public int Solution0917(int[] arr1, int[] arr2)
+    {
+        int answer = 0;
+        /*
+        int sum1 = arr1.Sum();
+        int sum2 = arr2.Sum();
+        if (arr1.Length > arr2.Length) { answer = 1; }
+        else if (arr1.Length < arr2.Length) { answer = -1; }
+        else
+        {
+            if (sum1 > sum2) { answer = 1; }
+            else if (sum1 < sum2) { answer = -1; }
+        }
+        */
+        if (arr1.Length > arr2.Length) { answer = 1; }
+        else if (arr1.Length < arr2.Length) { answer = -1; }
+        else
+        {
+            // int sum1 = 0;
+            // foreach (var item in arr1) { sum1 += item; }
+            int sum1 = arr1.Sum();
+            int sum2 = arr2.Sum();
+            if (sum1 > sum2) answer = 1;
+            else if (sum1 < sum2) answer = -1;
+            else answer = 0;
+        }
+        return answer;
+    }
+    /// <summary>
     /// 배열의 길이에 따라 다른 연산하기
     /// </summary>
     /// <param name="arr"></param>
