@@ -6,6 +6,35 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    public int Solution09172(int a, int b)
+    {
+        /*
+        if ((a % 2 != 0) && (b % 2 != 0))
+        {
+            return (a * a) + (b * b);
+        }
+        else if ((a % 2 == 0) && (b % 2 == 0))
+        {
+            return Math.Abs(a - b);
+        }
+        else
+        {
+            return 2 * (a + b);
+        }
+        */
+        int answer = 0;
+        int oddCnt = 0;
+        if (a % 2 == 1) oddCnt++;
+        if (b % 2 == 1) oddCnt++;
+
+        switch (oddCnt)
+        {
+            case 0: answer = Math.Abs(a - b);    break;
+            case 1: answer = 2 * (a + b);        break;
+            case 2: answer = (a * a) + (b * b);  break;
+        }
+        return answer;
+    }
     /// <summary>
     /// 배열 비교하기
     /// </summary>
