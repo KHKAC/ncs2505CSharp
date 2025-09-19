@@ -7,6 +7,67 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 홀수 vs 짝수
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution09192(int[] num_list)
+    {
+        int oddSum = 0;
+        int evenSum = 0;
+        /*
+        for (int i = 0; i < num_list.Length; i++)
+        {
+            if (i % 2 == 0)
+            {
+                oddSum += num_list[i];
+            }
+            else
+            {
+                evenSum += num_list[i];
+            }
+        }
+        */
+        bool isOdd = true;
+        foreach (var item in num_list)
+        {
+            if (isOdd == true)
+            {
+                oddSum += item;
+            }
+            else
+            {
+                evenSum += item;
+            }
+            isOdd = !isOdd;
+        }
+        return Math.Max(evenSum, oddSum);
+    }
+
+    /// <summary>
+    /// x 사이의 개수
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public int[] Solution0919(string myString)
+    {
+        string[] strArr = myString.Split('x');
+        int[] answer = new int[strArr.Length];
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = strArr[i].Length;
+        }
+        return answer;
+        // string[] strArr = myString.Split('x');
+        // var list = new List<int>();
+        // foreach (var item in strArr)
+        // {
+        //     list.Add(item.Length);
+        // }
+        // return list.ToArray();
+    }
+
+    /// <summary>
     /// 배열의 원소만큼 추가하기
     /// </summary>
     /// <param name="arr"></param>
