@@ -7,6 +7,45 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 공백으로 구분하기 2
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string[] Solution09222(string my_string)
+    {
+        /*
+        string[] strArr = my_string.Split();
+        
+        var list = new List<string>();
+        foreach (var item in strArr)
+        {
+            if (!item.Equals(string.Empty))
+            {
+                list.Add(item);
+            }
+        }
+        
+        var list = new List<string>(strArr);
+        foreach (var item in strArr)
+        {
+            list.Remove("");
+        }
+        return list.ToArray();
+        */
+        return my_string.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+    }
+    /// <summary>
+    /// 공백으로 구분하기 1
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string[] Solution0922(string my_string)
+    {
+        string[] answer = my_string.Split(' ');
+        return answer;
+    }
+
+    /// <summary>
     /// 홀수 vs 짝수
     /// </summary>
     /// <param name="num_list"></param>
