@@ -38,6 +38,18 @@ namespace MyExtension
             int position = str.IndexOf(ch);
             return position >= 0;
         }
+
+        /// <summary>
+        /// char를 string으로 Replace하게 할 수 있는 string의 확장 메서드
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="ch"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Replace(this String str, char ch, string value)
+        {
+            return str.Replace(ch.ToString(), value);
+        }
         #endregion
     }
 }

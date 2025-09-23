@@ -7,6 +7,44 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 배열에서 문자열 대소문자 변환하기
+    /// </summary>
+    /// <param name="strArr"></param>
+    /// <returns></returns>
+    public string[] Solution09232(string[] strArr)
+    {
+        /*
+        string[] answer = new string[strArr.Length];
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = (i % 2 == 0) ? strArr[i].ToLower() : strArr[i].ToUpper();
+        }
+        return answer;
+        */
+        var list = new List<string>();
+        bool isEven = true;
+        foreach (var item in strArr)
+        {
+            list.Add(isEven ? item.ToLower() : item.ToUpper());
+            isEven = !isEven;
+        }
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// rny_string
+    /// </summary>
+    /// <param name="rny_string"></param>
+    /// <returns></returns>
+    public string Solution0923(string rny_string)
+    {
+        // 아래 주석은 MyExtension에 있는 확장 메서드 사용한 것 (문제풀이에 사용 불가)
+        // string answer = rny_string.Replace('m', "rn");
+        string answer = rny_string.Replace("m", "rn");
+        return answer;
+    }
+
+    /// <summary>
     /// 공백으로 구분하기 2
     /// </summary>
     /// <param name="my_string"></param>
