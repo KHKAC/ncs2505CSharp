@@ -7,6 +7,55 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 소문자로 바꾸기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public string Solution09242(string myString) => myString.ToLower();
+    // {
+    //     return myString.ToLower();
+    // }
+
+    /// <summary>
+    /// 간단한 식 계산하기
+    /// </summary>
+    /// <param name="binomial"></param>
+    /// <returns></returns>
+    public int Solution0924(string binomial)
+    {
+        int answer = 0;
+        string[] str = binomial.Split(" ");
+        int a = int.Parse(str[0]);
+        int b = int.Parse(str[2]);
+        string c = str[1];
+        for (int i = 0; i < str.Length; i++)
+        {
+            // switch (str[1])
+            // {
+            //     case "+":
+            //         answer = a + b;
+            //         break;
+            //     case "-":
+            //         answer = a - b;
+            //         break;
+            //     case "*":
+            //         answer = a * b;
+            //         break;
+            //     default:
+            //         break;
+            // }
+            // 최신 switch로 변경
+            answer = str[1] switch
+            {
+                "+" => a + b,
+                "-" => a - b,
+                "*" => a * b,
+            };
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열에서 문자열 대소문자 변환하기
     /// </summary>
     /// <param name="strArr"></param>
