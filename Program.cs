@@ -20,9 +20,9 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strArr = new string[] { "aBc", "AbC" };
 
         //Console.WriteLine(sol.Solution0923(strings));
-        Util.PrintArray(sol.Solution09232(strArr));
+        //Util.PrintArray(sol.Solution09232(strArr));
         //sol.Solution09102(int2Arrs);
-        //study.OutSample();
+        study.LINQSample();
 
         //Util.CompareDelegate cmp = Util.AscendingCompare;
         //Util.Sort(intArray, Util.DecendingCompare);

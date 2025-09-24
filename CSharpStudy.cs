@@ -12,14 +12,62 @@ using System.Data.Common;
 
 class CSharpStudy
 {
-    void Button_Click(object sender, EventArgs e)
+    #region LINQ 강의
+    public class Orders
     {
-        // var fransOrders = from ord in db.Orders where ord.Customer_ID == "FRANS" select ord;
-        // foreach (var o in fransOrders)
-        // {
-
-        // }
+        public int Order_ID { get; set; }
+        public string Customer_ID { get; set; }
+        public string Ship_City { get; set; }
+        public DateTime Order_Date { get; set; }
     }
+    public void LINQSample()
+    {
+        var db = new List<Orders>
+        {
+            new Orders{Order_ID = 3, Customer_ID = "FRANS", Ship_City = "Seoul", Order_Date = new DateTime(2025, 9, 24)},
+            new Orders{Order_ID = 1, Customer_ID = "KYOUNG", Ship_City = "GwangJu", Order_Date = new DateTime(2025, 11, 22)},
+            new Orders{Order_ID = 2, Customer_ID = "FRANS", Ship_City = "BuSan", Order_Date = new DateTime(2025, 6, 25)}
+        };
+
+        // 쿼리식 표현
+        // var fransOrders = from ord in db
+        //                   where ord.Customer_ID == "FRANS"
+        //                   orderby ord.Order_Date ascending
+        //                   select ord;
+        //   select new
+        //   {
+        //     Id = ord.Order_ID,
+        //     City = ord.Ship_City.ToLower()
+        //   };
+
+        // 메서드식 표현
+        var fo = db.Where(order => order.Customer_ID == "FRANS");//.Select(o => o)
+        foreach (var o in fo)
+        {
+            //Console.WriteLine($"{o.Order_ID} : {o.Order_Date}");
+            //Console.WriteLine($"{o.Id} : {o.City}");
+        }
+        //var v = db.Where(o => o.Ship_City == "Seoul").SingleOrDefault();
+        //var v = db.Where(o => o.Customer_ID == "FRANS").FirstOrDefault();
+        //var v = db.Where(o => o.Customer_ID == "FRANS").OrderBy(m => m.Order_ID);
+        var v = db.Where(o => o.Customer_ID == "FRANS").Select(p => new
+        {
+            Id = p.Order_ID,
+            City = p.Ship_City.ToLower(),
+        });
+        if (v != null)
+        {
+            //Console.WriteLine($"{v.Order_Date}");
+            foreach (var o in v)
+            {
+                //Console.WriteLine($"{o.Order_ID} : {o.Order_Date}");
+                Console.WriteLine($"{o.Id} : {o.City}");
+            }
+        }
+
+    }
+    #endregion
+
     #region C# 7.0 편해진 out
     public void OutSample()
     {
