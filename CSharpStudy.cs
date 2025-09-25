@@ -12,6 +12,35 @@ using System.Data.Common;
 
 class CSharpStudy
 {
+    public void SimbolTest()
+    {
+        // 현재 내 입장에선 이게 제일 중요
+        string filename1 = "C:\\Temp\\1.txt";
+        string filename2 = @"C:\Temp\2.txt";
+
+        /*
+        string code = @"public string ReadFile(string filename)
+        {
+        if (!string.IsNullOrEmpty(filename))
+        {
+            return File.ReadAllText(filename);
+        }
+        return string.Empty;
+        }";
+        */
+
+        // string @object = "객체";
+        // @object += " 지향";
+        // Console.WriteLine(@object);
+
+        // @Html.ActionLink("Goto Menu", "Menu", null, new{@class = "linkStyle", target = "_blank"});
+        /*
+        < A href = "/Home/Menu" class = "linkStyle" target = "_blank">
+            Goto Menu
+        </A>
+        */
+    }
+    
     #region LINQ 강의
     public class Orders
     {

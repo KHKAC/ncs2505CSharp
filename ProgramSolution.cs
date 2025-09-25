@@ -7,6 +7,29 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 카운트 업
+    /// </summary>
+    /// <param name="start"></param>
+    /// <param name="end"></param>
+    /// <returns></returns>
+    public int[] Solution09252(int start, int end)
+    {
+        int len = end - start + 1;
+        int[] answer = new int[len];
+        for (int i = 0; i < len; i++)
+        {
+            answer[i] = start + i;
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 대문자로 바꾸기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public string Solution0925(string myString) => myString.ToUpper();
+
+    /// <summary>
     /// 소문자로 바꾸기
     /// </summary>
     /// <param name="myString"></param>
