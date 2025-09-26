@@ -12,6 +12,92 @@ using System.Data.Common;
 
 class CSharpStudy
 {
+    #region 날짜 형식 강의
+    public void DateTest()
+    {
+        DateTime today = DateTime.Now;
+        /*
+        Console.WriteLine(string.Format("{0:d}", today));
+        Console.WriteLine($"{today:d}");
+        Console.WriteLine(string.Format("{0:D}", today));
+        Console.WriteLine($"{today:D}");
+
+        Console.WriteLine(string.Format("{0:t}", today));
+        Console.WriteLine($"{today:t}");
+        Console.WriteLine(string.Format("{0:T}", today));
+        Console.WriteLine($"{today:T}");
+
+        Console.WriteLine(string.Format("{0:g}", today));
+        Console.WriteLine($"{today:g}");
+        Console.WriteLine(string.Format("{0:G}", today));
+        Console.WriteLine($"{today:G}");
+
+        Console.WriteLine(string.Format("{0:f}", today));
+        Console.WriteLine($"{today:f}");
+        Console.WriteLine(string.Format("{0:F}", today));
+        Console.WriteLine($"{today:F}");
+
+        Console.WriteLine(string.Format("{0:s}", today));
+        Console.WriteLine($"{today:s}");
+        Console.WriteLine(string.Format("{0:o}", today));
+        Console.WriteLine($"{today:o}");
+        Console.WriteLine(string.Format("{0:u}", today));
+        Console.WriteLine($"{today:u}");
+        */
+        string s = "";
+        CustomFormat(today, "{0:M/d/yyyy}");
+        CustomFormat(today, "{0:yyyy/MM/dd}");
+        CustomFormat(today, "{0:yyyy/MMM/ddd HH:mm:ss}");
+
+        Console.WriteLine(today.ToString(s));
+        Console.WriteLine(today.ToString("yyyy/MM/dd"));
+        Console.WriteLine(today.ToLongDateString());
+        Console.WriteLine(today.ToLongTimeString());
+        Console.WriteLine(today.ToShortDateString());
+        Console.WriteLine(today.ToShortTimeString());
+    }
+    #endregion
+    #region 숫자 형식 강의
+    public void FormatTest()
+    {
+        //decimal val = 1234.5678M;
+        //string s = string.Format("{0,10:N3}", val);
+        //string s = $"{val,10:N2}";
+        //Console.WriteLine(s);
+        /*
+        Console.WriteLine(string.Format("{0:N2}", 1234.567));
+        Console.WriteLine($"{1234.567:N2}");
+        Console.WriteLine(string.Format("{0:D9}", 12345));
+        Console.WriteLine($"{12345:D9}");
+        Console.WriteLine(string.Format("{0:C}", 12345));
+        Console.WriteLine($"{12345:C}");
+        Console.WriteLine(string.Format("{0:C0}", 12345));
+        Console.WriteLine($"{12345:C0}");
+        Console.WriteLine(string.Format("{0:X}", 1000));
+        Console.WriteLine($"{1000:X}");
+        Console.WriteLine(string.Format("{0:F3}", 12345.6));
+        Console.WriteLine($"{12345.6:F3}");
+        Console.WriteLine(string.Format("{0:E}", 12345.6));
+        Console.WriteLine($"{12345.6:E}");
+        */
+
+        int val = 0;
+        CustomFormat(val, "{0:#,##0}");
+        val = 123;
+        CustomFormat(val, "{0:#,##0;(#,##0)}");
+        val = -6540;
+        CustomFormat(val, "{0:#,##0;(#,##0);Zero}");
+    }
+
+    void CustomFormat<T>(T val, string cf)
+    {
+        string s = string.Format(cf, val);
+        Console.WriteLine(s);
+    }
+
+    #endregion
+
+    #region @ 사용법 강의
     public void SimbolTest()
     {
         // 현재 내 입장에선 이게 제일 중요
@@ -40,6 +126,7 @@ class CSharpStudy
         </A>
         */
     }
+    #endregion
     
     #region LINQ 강의
     public class Orders

@@ -7,6 +7,48 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 홀짝에 따라 다른 값 반환하기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution09262(int n)
+    {
+        int answer = 0;
+        if (n % 2 == 0)
+        {
+            for (int i = 2; i <= n; i += 2)
+            {
+                answer += i * i;
+            }
+        }
+        else
+        {
+            for (int i = 1; i <= n; i += 2)
+            {
+                answer += i;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 두 수의 연산값 비교하기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public int Solution0926(int a, int b)
+    {
+        //string abStr = a.ToString() + b.ToString();
+        //string abStr = "" + a + b;
+        string abStr = $"{a}{b}";
+        int ab = int.Parse(abStr);
+        int twoab = 2 * a * b;
+        //int answer = ab > twoab ? ab : twoab;
+        int answer = Math.Max(ab, twoab);
+        return answer;
+    }
+    /// <summary>
     /// 카운트 업
     /// </summary>
     /// <param name="start"></param>
