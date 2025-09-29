@@ -6,6 +6,46 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    public int Solution09292(int[] num_list)
+    {
+        int numTimes = 1;
+        int numSum = 0;
+        foreach (var item in num_list)
+        {
+            numTimes *= item;
+            numSum += item;
+        }
+        numSum = numSum * numSum;
+
+        return numTimes < numSum ? 1 : 0;
+    }
+
+    /// <summary>
+    /// 접미사인지 확인하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="is_suffix"></param>
+    /// <returns></returns>
+    public int Solution0929(string my_string, string is_suffix)
+    {
+        int msl = my_string.Length;
+        int isl = is_suffix.Length;
+        if (isl > msl) return 0;
+        else
+        {
+            // if (my_string.Substring(msl - isl, isl) == is_suffix)
+            // if(my_string.Substring(msl - isl, isl).Equals(is_suffix))
+            // {
+            //     return 1;
+            // }
+            // else
+            // {
+            //     return 0;
+            // }
+            return my_string.Substring(msl - isl, isl).Equals(is_suffix) ? 1 : 0;
+        }
+    }
+
     /// <summary>
     /// 홀짝에 따라 다른 값 반환하기
     /// </summary>
