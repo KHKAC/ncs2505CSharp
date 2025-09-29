@@ -6,6 +6,11 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    /// <summary>
+    /// 원소들의 곱과 합
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
     public int Solution09292(int[] num_list)
     {
         int numTimes = 1;
