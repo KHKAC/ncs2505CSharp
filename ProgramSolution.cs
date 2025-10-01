@@ -7,6 +7,49 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 배열 만들기 3
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="intervals"></param>
+    /// <returns></returns>
+    public int[] Solution10012(int[] arr, int[,] intervals)
+    {
+        int len1 = intervals[0, 1] - intervals[0, 0] + 1;
+        int len2 = intervals[1, 1] - intervals[1, 0] + 1;
+        int len = len1 + len2;
+        int[] answer = new int[len];
+        Array.Copy(arr, intervals[0, 0], answer, 0, len1);
+        Array.Copy(arr, intervals[1, 0], answer, len1, len2);
+        return answer;
+    }
+
+    /// <summary>
+    /// 길이에 따른 연산
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int Solution1001(int[] num_list)
+    {
+        int answer = 0;
+        int len = num_list.Length;
+        if (len > 10)
+        {
+            foreach (var item in num_list)
+            {
+                answer += item;
+            }
+        }
+        else
+        {
+            answer = 1;
+            foreach (var item in num_list)
+            {
+                answer *= item;
+            }
+        }
+        return answer;
+    }
+    /// <summary>
     /// 원소들의 곱과 합
     /// </summary>
     /// <param name="num_list"></param>
