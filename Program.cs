@@ -15,12 +15,13 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var intArr = new int[] { 1, 2, 3, 100, 99, 98 };
         var intArr2 = new int[] { 3, 3, 3, 3, 3 };
         var int2Arrs = new int[,] { { 1, 3 }, { 0, 4 } };
+        var boolArr = new bool[] { true, false, true, false };
         var strings = "ana";
         var string2 = "abanana";
-        var strArr = new string[] { "aBc", "AbC" };
+        var strArr = new string[] { "problemsolving", "practiceguitar", "swim", "studygraph" };
 
         //Console.WriteLine(sol.Solution1001(intArr));
-        Util.PrintArray(sol.Solution1002(intArr));
+        Util.PrintArray(sol.Solution10022(strArr, boolArr));
         //sol.Solution09102(int2Arrs);
         //study.DateTest();
 

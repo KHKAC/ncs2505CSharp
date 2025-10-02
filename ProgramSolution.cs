@@ -6,6 +6,37 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 9월 문제풀이
+    public string[] Solution10022(string[] todo_list, bool[] finished)
+    {
+        // var list = new List<string>();
+        // for (int i = 0; i < finished.Length; i++)
+        // {
+        //     if (finished[i] == false)
+        //     {
+        //         list.Add(todo_list[i]);
+        //     }
+        // }
+        // return list.ToArray();
+        int len = 0;
+        foreach (var item in finished)
+        {
+            if (item == false)
+            {
+                len++;
+            }
+        }
+        string[] answer = new string[len];
+        for (int i = 0, j = 0; i < finished.Length; i++)
+        {
+            if (finished[i] == false)
+            {
+                answer[j] = todo_list[i];
+                j++;
+            }
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 조건에 맞게 수열 변환하기 1
     /// </summary>
