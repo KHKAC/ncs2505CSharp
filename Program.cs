@@ -12,7 +12,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy study = new CSharpStudy();
 
-        var intArr = new int[] { 1, 2, 3, 4, 5 };
+        var intArr = new int[] { 1, 2, 3, 100, 99, 98 };
         var intArr2 = new int[] { 3, 3, 3, 3, 3 };
         var int2Arrs = new int[,] { { 1, 3 }, { 0, 4 } };
         var strings = "ana";
@@ -20,7 +20,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strArr = new string[] { "aBc", "AbC" };
 
         //Console.WriteLine(sol.Solution1001(intArr));
-        Util.PrintArray(sol.Solution10012(intArr, int2Arrs));
+        Util.PrintArray(sol.Solution1002(intArr));
         //sol.Solution09102(int2Arrs);
         //study.DateTest();
 

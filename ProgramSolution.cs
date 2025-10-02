@@ -7,6 +7,33 @@ class ProgramSolution
 {
     #region 9월 문제풀이
     /// <summary>
+    /// 조건에 맞게 수열 변환하기 1
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Solution1002(int[] arr)
+    {
+        int[] answer = new int[arr.Length];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            bool isEven = arr[i] % 2 == 0;
+            if (arr[i] < 50 && !isEven)
+            {
+                answer[i] = arr[i] * 2;
+            }
+            else if (arr[i] >= 50 && isEven)
+            {
+                answer[i] = arr[i] / 2;
+            }
+            else
+            {
+                answer[i] = arr[i];
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열 만들기 3
     /// </summary>
     /// <param name="arr"></param>
