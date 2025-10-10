@@ -5,7 +5,50 @@ using System.Text.RegularExpressions;
 
 class ProgramSolution
 {
-    #region 9월 문제풀이
+    #region 10월 문제풀이
+    public int Solution10102(string number)
+    {
+        int answer = 0;
+        foreach(var item in number)
+        {
+            answer += item - '0';
+        }
+        return answer % 9;
+    }
+
+    /// <summary>
+    /// n개 간격의 원소들
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution1010(int[] num_list, int n)
+    {
+        // List 사용했을 때
+        /*
+        var list = new List<int>();
+        for (int i = 0; i < num_list.Length; i += n)
+        {
+            list.Add(num_list[i]);
+        }
+        return list.ToArray();
+        */
+
+        int len = num_list.Length % n == 0 ? (num_list.Length / n) : (num_list.Length / n + 1);
+        int[] answer = new int[len];
+        for (int i = 0, j = 0; i < num_list.Length; i += n, j++)
+        {
+            answer[j] = num_list[i];
+        }
+        return answer;
+    }
+    
+    /// <summary>
+    /// 할 일 목록
+    /// </summary>
+    /// <param name="todo_list"></param>
+    /// <param name="finished"></param>
+    /// <returns></returns>
     public string[] Solution10022(string[] todo_list, bool[] finished)
     {
         // var list = new List<string>();
@@ -107,6 +150,10 @@ class ProgramSolution
         }
         return answer;
     }
+    #endregion
+
+    #region 9월 문제풀이
+    
     /// <summary>
     /// 원소들의 곱과 합
     /// </summary>
