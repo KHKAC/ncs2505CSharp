@@ -6,6 +6,54 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    /// <summary>
+    /// 5명씩
+    /// </summary>
+    /// <param name="names"></param>
+    /// <returns></returns>
+    public string[] Solution10132(string[] names)
+    {
+        int len = names.Length % 5 != 0 ? names.Length / 5 + 1 : names.Length / 5;
+        string[] answer = new string[len];
+        for(int i = 0, j = 0; i < names.Length; i += 5, j++)
+        {
+            answer[j] = names[i];
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// A 강조하기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public string Solution1013(string myString)
+    {
+        // var sb = new StringBuilder();
+        // foreach(var item in myString)
+        // {
+        //     if (item.Equals('a'))
+        //     {
+        //         sb.Append(item.ToString().ToUpper());
+        //     }
+        //     else if(item.Equals('A'))
+        //     {
+        //         sb.Append(item.ToString());
+        //     }
+        //     else
+        //     {
+        //         sb.Append(item.ToString().ToLower());
+        //     }
+        // }
+        // return sb.ToString();
+        return myString.ToLower().Replace('a', 'A');
+    }
+
+    /// <summary>
+    /// 9로 나눈 나머지
+    /// </summary>
+    /// <param name="number"></param>
+    /// <returns></returns>
     public int Solution10102(string number)
     {
         int answer = 0;
