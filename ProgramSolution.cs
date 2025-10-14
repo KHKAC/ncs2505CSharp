@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Hagoon;
 using System.Text;
 using MyExtension;
 using System.Text.RegularExpressions;
@@ -6,6 +7,42 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    /// <summary>
+    /// 피자 나눠먹기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution10142(int n)
+    {
+        int answer = 0;
+        /*
+        do
+        {
+            answer++;
+        } while (answer * 6 % n != 0);
+        */
+        answer = Util.LCM(6, n) / 6;
+        return answer;
+    }
+    /// <summary>
+    /// 외계 행성의 나이
+    /// </summary>
+    /// <param name="age"></param>
+    /// <returns></returns>
+    public string Solution1014(int age)
+    {
+        string answer = string.Empty;
+        string strAge = age.ToString();
+        while (age > 0)
+        {
+            int val = age % 10;
+            char chr = Convert.ToChar('a' + val);
+            answer = chr + answer;
+            age /= 10;
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 5명씩
     /// </summary>

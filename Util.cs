@@ -2,6 +2,35 @@ namespace Hagoon
 {
     class Util
     {
+        /// <summary>
+        /// 최소 공배수
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public static int LCM(int n, int m)
+        {
+            return n * m / GCD(n, m);
+        }
+
+        /// <summary>
+        /// 최대 공약수
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public static int GCD(int n, int m)
+        {
+            if (m == 0)
+            {
+                return n;
+            }
+            else
+            {
+                return n % m != 0 ? GCD(m, n % m) : m;
+            }
+        }
+
         public delegate int CompareDelegate(int i1, int i2);
         // Util에 있는 CompareDelegate와 동일한 Prototype
         public static int AscendingCompare(int i1, int i2)
