@@ -8,6 +8,60 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 369게임
+    /// </summary>
+    /// <param name="order"></param>
+    /// <returns></returns>
+    public int Solution10152(int order)
+    {
+        int answer = 0;
+        string strOrder = order.ToString();
+        foreach (var item in strOrder)
+        {
+            switch (item)
+            {
+                case '3':
+                    answer++;
+                    break;
+                case '6':
+                    answer++;
+                    break;
+                case '9':
+                    answer++;
+                    break;
+            }
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 배열 회전시키기
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <param name="direction"></param>
+    /// <returns></returns>
+    public int[] Solution1015(int[] numbers, string direction)
+    {
+        int len = numbers.Length;
+        int[] answer = new int[len];
+        if (direction.Equals("right"))
+        {
+            answer[0] = numbers[len - 1];
+            for (int i = 1; i < len; i++)
+            {
+                answer[i] = numbers[i - 1];
+            }
+        }
+        else
+        {
+            for (int i = 0; i < len - 1; i++)
+            {
+                answer[i] = numbers[i + 1];
+            }
+            answer[len - 1] = numbers[0];
+        }
+        return answer;
+    }
+    /// <summary>
     /// 피자 나눠먹기
     /// </summary>
     /// <param name="n"></param>
