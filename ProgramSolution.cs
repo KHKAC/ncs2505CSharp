@@ -8,6 +8,43 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 문자열 잘라서 정렬하기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <returns></returns>
+    public string[] Solution10162(string myString)
+    {
+        string[] strArr = myString.Split('x');
+        var list = new List<string>();
+        foreach (var item in strArr)
+        {
+            if (item.Length > 0)
+            {
+                list.Add(item);
+            }
+        }
+        list.Sort();
+        return list.ToArray();
+    }
+    
+    /// <summary>
+    /// 세로 읽기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="m"></param>
+    /// <param name="c"></param>
+    /// <returns></returns>
+    public string Solution1016(string my_string, int m, int c)
+    {
+        var sb = new StringBuilder();
+        for(int i = c - 1; i < my_string.Length; i += m)
+        {
+            sb.Append(my_string[i]);   
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
     /// 369게임
     /// </summary>
     /// <param name="order"></param>
@@ -289,7 +326,7 @@ class ProgramSolution
         }
         return answer;
     }
-    #endregion
+    #endregion 10월 문제풀이
 
     #region 9월 문제풀이
     
@@ -1191,7 +1228,7 @@ class ProgramSolution
             Console.WriteLine(item);
         }
     }
-    #endregion
+    #endregion 9월 문제풀이
 
     #region 8월 문제풀이
     /// <summary>
@@ -2100,7 +2137,7 @@ class ProgramSolution
         answer = list[middle];
         return answer;
     }
-    #endregion
+    #endregion 8월 문제풀이
 
     #region 7월 문제풀이
     /// <summary>
@@ -3002,5 +3039,5 @@ class ProgramSolution
         int answer = num1 % num2;
         return answer;
     }
-    #endregion
+    #endregion 7월 문제풀이
 }
