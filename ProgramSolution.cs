@@ -7,6 +7,30 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    
+    
+    /// <summary>
+    /// 이차원 배열 대각선 순회하기
+    /// </summary>
+    /// <param name="board"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution1017(int[,] board, int k)
+    {
+        int answer = 0;
+        for(int i = 0; i < board.GetLength(0); i++)
+        {
+            for(int j = 0; j < board.GetLength(1); j++)
+            {
+                if(i + j <= k)
+                {
+                    answer += board[i, j];
+                }
+            }
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 문자열 잘라서 정렬하기
     /// </summary>
