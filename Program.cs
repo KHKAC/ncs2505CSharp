@@ -16,11 +16,11 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var intArr2 = new int[] { 3, 3, 3, 3, 3 };
         var int2Arrs = new int[,] { { 0, 1, 2 }, { 1, 2, 3 }, { 2, 3, 4 }, { 3, 4, 5 } };
         var boolArr = new bool[] { true, false, true, false };
-        var strings = "axbxcxdx";
-        var string2 = "abanana";
+        var strings = "aaaaa";
+        var string2 = "bbbbb";
         var strArr = new string[] { "nami", "ahri", "jayce", "garen", "ivern", "vex", "jinx" };
 
-        Console.WriteLine(sol.Solution1017(int2Arrs, 2));
+        Console.WriteLine(sol.Solution10172(strings, string2));
         //Util.PrintArray(sol.Solution10162(strings));
         //sol.Solution09102(int2Arrs);
         //study.DateTest();

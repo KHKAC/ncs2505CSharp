@@ -7,7 +7,16 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
-    
+    public string Solution10172(string str1, string str2)
+    {
+        var sb = new StringBuilder();
+        for(int i = 0; i < str1.Length; i++)
+        {
+            sb.Append(str1[i]);
+            sb.Append(str2[i]);
+        }
+        return sb.ToString();
+    }
     
     /// <summary>
     /// 이차원 배열 대각선 순회하기
