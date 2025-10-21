@@ -8,6 +8,58 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 합성수 찾기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution10212(int n)
+    {
+        if (n < 4)
+            return 0;
+
+        bool[] isPrime = new bool[n + 1];
+        for (int i = 2; i <= n; i++)
+            isPrime[i] = true;
+
+        
+        for (int i = 2; i * i <= n; i++)
+        {
+            if (isPrime[i])
+            {
+                for (int j = i * i; j <= n; j += i)
+                    isPrime[j] = false;
+            }
+        }
+
+        int count = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            if (i > 1 && !isPrime[i])
+                count++;
+        }
+
+        return count;
+    }
+    
+    /// <summary>
+    /// 중복된 문자 제거
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public string Solution1021(string my_string)
+    {
+        string answer = string.Empty;
+        foreach (var item in my_string)
+        {
+            if (!answer.Contains(item))
+            {
+                answer += item;
+            }
+        }
+        return answer;
+
+    }
+    /// <summary>
     /// 날짜 비교하기
     /// </summary>
     /// <param name="date1"></param>
