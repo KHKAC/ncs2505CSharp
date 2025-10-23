@@ -7,6 +7,49 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    public int[] Solution10232(string[] intStrs, int k, int s, int l)
+    {
+        var list = new List<int>();
+        for (int i = 0, j = 0; i < intStrs.Length; i++)
+        {
+            j = int.Parse(intStrs[i].Substring(s, l));
+            if (j > k)
+            {
+                list.Add(j);
+            }
+        }
+        return list.ToArray();
+    }
+    /// <summary>
+    /// 글자 지우기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="indices"></param>
+    /// <returns></returns>
+    public string Solution1023(string my_string, int[] indices)
+    {
+        /*
+        var sb = new StringBuilder();
+        var list = new List<int>(indices);
+        for (int i = 0; i < my_string.Length; i++)
+        {
+            if(!list.Contains(i))
+            {
+                sb.Append(my_string[i]);
+            }
+        }
+        return sb.ToString();
+        */
+        char[] chars = my_string.ToCharArray();
+        for (int i = 0; i < indices.Length; i++)
+        {
+            chars[indices[i]] = ' ';
+        }
+        string answer = new string(chars);
+        answer = answer.Replace(" ", "");
+        return answer;
+    }
+    
     /// <summary>
     /// 합성수 찾기
     /// </summary>
