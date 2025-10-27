@@ -8,6 +8,48 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 문자열이 몇 번 등장하는지 세기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public int Solution10272(string myString, string pat)
+    {
+        int answer = 0;
+        for(int i = 0; i < myString.Length; i++)
+        {
+            if(myString.Substring(i).StartsWith(pat))
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 특정 문자열로 끝나는 가장 긴 부분 문자열 찾기
+    /// </summary>
+    /// <param name="myString"></param>
+    /// <param name="pat"></param>
+    /// <returns></returns>
+    public string Solution1027(string myString, string pat)
+    {
+        // int idx = myString.LastIndexOf(pat);
+        int idx = -1;
+        int len = myString.Length - pat.Length;
+        for(int i = 0; i <= len; i++)
+        {
+            string str = myString.Remove(0, i);
+            int last = str.IndexOf(pat);
+            if(last > -1)
+            {
+                idx = i;
+            }
+        }
+        string answer = myString.Substring(0, idx + pat.Length);
+        return answer;
+    }
+    
+    /// <summary>
     /// 문자열 뒤집기
     /// </summary>
     /// <param name="my_string"></param>
