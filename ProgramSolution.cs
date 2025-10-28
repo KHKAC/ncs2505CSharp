@@ -8,6 +8,45 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 배열의 길이를 2의 거듭제곱으로 만들기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Solution10282(int[] arr)
+    {
+        int len = arr.Length;
+        int twice = 1;
+        while (twice < len)
+        {
+            twice *= 2;
+        }
+        Array.Resize(ref arr, twice);
+        return arr;
+    }
+
+    /// <summary>
+    /// 수열과 구간 쿼리 3
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="queries"></param>
+    /// <returns></returns>
+    public int[] Solution1028(int[] arr, int[,] queries)
+    {
+        // int temp = 0;
+        // for (int i = 0; i < queries.GetLength(0); i++)
+        // {
+        //     temp = arr[queries[i, 0]];
+        //     arr[queries[i, 0]] = arr[queries[i, 1]];
+        //     arr[queries[i, 1]] = temp;
+        // }
+        for (int i = 0; i < queries.GetLength(0); i++)
+        {
+            (arr[queries[i, 0]], arr[queries[i, 1]]) = (arr[queries[i, 1]], arr[queries[i, 0]]);
+        }
+        return arr;
+    }
+
+    /// <summary>
     /// 문자열이 몇 번 등장하는지 세기
     /// </summary>
     /// <param name="myString"></param>
@@ -16,15 +55,16 @@ class ProgramSolution
     public int Solution10272(string myString, string pat)
     {
         int answer = 0;
-        for(int i = 0; i < myString.Length; i++)
+        for (int i = 0; i < myString.Length; i++)
         {
-            if(myString.Substring(i).StartsWith(pat))
+            if (myString.Substring(i).StartsWith(pat))
             {
                 answer++;
             }
         }
         return answer;
     }
+    
     /// <summary>
     /// 특정 문자열로 끝나는 가장 긴 부분 문자열 찾기
     /// </summary>
