@@ -8,6 +8,65 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 모스부호
+    /// </summary>
+    /// <param name="letter"></param>
+    /// <returns></returns>
+    public string Solution10292(string letter)
+    {
+        string answer = "";
+        string[] mos = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+        // Split()은 문자열을 잘라주고 현재 공백을 기준으로 자름
+        foreach(string a in letter.Split(" "))
+        {
+            // IndexOf()는 동일한 문자열이 존재할 경우 문자열의 위치를 반환한다. 문자열의 위치에 97을 더해 Covert.ToChar()로 변환하면 그에 맞는 문자로 변환된다.
+            answer += Convert.ToChar(Array.IndexOf(mos, a) + 97);
+        }
+        return answer;
+
+    }
+
+    /// <summary>
+    /// A로 B 만들기
+    /// </summary>
+    /// <param name="before"></param>
+    /// <param name="after"></param>
+    /// <returns></returns>
+    public int Solution1029(string before, string after)
+    {
+        /*
+        int answer = 0;
+        char[] bChars = before.ToCharArray();
+        char[] aChars = after.ToCharArray();
+        Array.Sort(bChars);
+        Array.Sort(aChars);
+        bool result = bChars.SequenceEqual(aChars);
+        if (result == true)
+        {
+            answer = 1;
+        }
+        return answer;
+        */
+        char[] arr = before.ToCharArray();
+        char[] arr2 = after.ToCharArray();
+
+        int answer = 1;
+
+        Array.Sort(arr);
+        Array.Sort(arr2);
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] != arr2[i])
+            {
+                answer = 0;
+                break;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 배열의 길이를 2의 거듭제곱으로 만들기
     /// </summary>
     /// <param name="arr"></param>
