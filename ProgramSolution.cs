@@ -8,6 +8,72 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// k의 개수
+    /// </summary>
+    /// <param name="i"></param>
+    /// <param name="j"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
+    public int Solution10302(int i, int j, int k)
+    {
+        int answer = 0;
+        for(int idx = i; idx <= j; idx++)
+        {
+            string strIdx = idx.ToString();
+            foreach(var item in strIdx)
+            {
+                int val = item - '0';
+                if(k == val)
+                {
+                    answer++;
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 2차원으로 만들기
+    /// </summary>
+    /// <param name="num_list"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[,] Solution1030(int[] num_list, int n)
+    {
+        int len = num_list.Length / n;
+        int[,] answer = new int[len, n];
+        for (int i = 0; i < len; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                answer[i, j] = num_list[i * n + j];
+            }
+        }
+        // 콘솔에 답을 찍자.
+        int di1 = answer.GetLength(0);
+        int di2 = answer.GetLength(1);
+        for (int i = 0; i < di1; i++)
+        {
+            Console.Write("[");
+            for (int j = 0; j < di2; j++)
+            {
+                Console.Write($"{answer[i, j]}");
+                if (j != di2 - 1)
+                {
+                    Console.Write(", ");
+                }
+            }
+            Console.Write("]");
+            if(i != di1-1)
+            {
+                Console.Write(", ");
+            }
+        }
+        Console.WriteLine();
+        return answer;
+    }
+    
+    /// <summary>
     /// 모스부호
     /// </summary>
     /// <param name="letter"></param>
