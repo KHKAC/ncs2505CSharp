@@ -8,6 +8,70 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 세 개의 구분자
+    /// </summary>
+    /// <param name="myStr"></param>
+    /// <returns></returns>
+    public string[] Solution10312(string myStr)
+    {
+        var list = new List<string>();
+        char[] splitArr = { 'a', 'b', 'c' };
+        string[] strArr = myStr.Split(splitArr);
+        foreach (var item in strArr)
+        {
+            if (item.Length > 0)
+            {
+                list.Add(item);
+            }
+        }
+        if (list.Count == 0)
+        {
+            list.Add("EMPTY");
+        }
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 문자열 묶기
+    /// </summary>
+    /// <param name="strArr"></param>
+    /// <returns></returns>
+    public int Solution1031(string[] strArr)
+    {
+        Dictionary<int, int> dic = new Dictionary<int, int>();
+        int answer = 0;
+        foreach (var item in strArr)
+        {
+            int len = item.Length;
+            if (dic.ContainsKey(len))
+            {
+                dic[len]++;
+            }
+            else
+            {
+                dic[len] = 1;
+            }
+        }
+        /*
+        foreach (var item in dic)
+        {
+            if (item.Value > answer)
+            {
+                answer = item.Value;
+            }
+        }
+        */
+        foreach (var item in dic.Values)
+        {
+            if (answer < item)
+            {
+                answer = item;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// k의 개수
     /// </summary>
     /// <param name="i"></param>
