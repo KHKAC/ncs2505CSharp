@@ -8,6 +8,80 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 숨어있는 숫자의 덧셈(2)
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution11032(string my_string)
+    {
+        string str = my_string.ToLower();
+        int answer = 0;
+
+        for (int i = 0; i < str.Length; i++)
+        {
+            if (str[i] >= 'a' && str[i] <= 'z')
+            {
+                str = str.Replace(str[i], ' ');
+            }
+        }
+
+        string[] arr = str.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            answer += int.Parse(arr[i]);
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 한 번만 등장한 문자
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public string Solution1103(string s)
+    {
+        string answer = string.Empty;
+        /*
+        // Dictionary 사용
+        var dic = new Dictionary<char, int>();
+        foreach (var item in s)
+        {
+            if (dic.TryGetValue(item, out int val))
+            {
+                dic[item]++;
+            }
+            else
+            {
+                dic.Add(item, 1);
+            }
+        }
+        var list = new List<char>();
+        foreach (var item in dic)
+        {
+            if (item.Value == 1)
+            {
+                list.Add(item.Key);
+            }
+        }
+        list.Sort();
+        foreach (var item in list)
+        {
+            answer += item;
+        }
+        */
+        for (char c = 'a'; c <= 'z'; c++)
+        {
+            if (s.Split(c).Length == 2)
+            {
+                answer += c;
+            }
+        }
+        return answer;
+        
+    }
+
+    /// <summary>
     /// 세 개의 구분자
     /// </summary>
     /// <param name="myStr"></param>
