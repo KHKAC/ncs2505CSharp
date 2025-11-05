@@ -8,6 +8,90 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 간단한 논리 연산
+    /// </summary>
+    /// <param name="x1"></param>
+    /// <param name="x2"></param>
+    /// <param name="x3"></param>
+    /// <param name="x4"></param>
+    /// <returns></returns>
+    public bool Solution11053(bool x1, bool x2, bool x3, bool x4)
+    {
+        /*
+        bool answer = true;
+        int i1 = (x1 == true) ? 1 : 0;
+        int i2 = (x2 == true) ? 1 : 0;
+        int i3 = (x3 == true) ? 1 : 0;
+        int i4 = (x4 == true) ? 1 : 0;
+        int sum = (i1 + i2) * (i3 + i4);
+        answer = (sum == 0) ? false : true;
+        */
+        bool answer = (x1 | x2) & (x3 | x4);
+        return answer;
+    }
+
+    /// <summary>
+    /// 리스트 자르기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="slicer"></param>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution11052(int n, int[] slicer, int[] num_list)
+    {
+        var list = new List<int>();
+        int a = slicer[0];
+        int b = slicer[1];
+        int c = slicer[2];
+        switch(n)
+        {
+            case 1:
+                for (int i = 0; i <= b; i++)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+            case 2:
+                for (int i = a; i < num_list.Length; i++)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+            case 3:
+                for (int i = a; i <= b; i++)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+            // case 4: 도 가능할 듯.
+            default:
+                for(int i = a; i <= b; i += c)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+        }
+        
+        return list.ToArray();
+    }
+
+    /// <summary>
+    /// 문자열 반복해서 출력하기
+    /// </summary>
+    public void Solution1105()
+    {
+        string[] input;
+        Console.Clear();
+        input = Console.ReadLine().Split();
+
+        string s1 = input[0];
+        int a = int.Parse(input[1]);
+        for(int i = 0; i < a; i++)
+        {
+            Console.Write(s1);
+        }
+    }
+    /// <summary>
     /// 숨어있는 숫자의 덧셈(2)
     /// </summary>
     /// <param name="my_string"></param>
