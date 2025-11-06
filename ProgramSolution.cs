@@ -8,6 +8,57 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 가까운 수
+    /// </summary>
+    /// <param name="array"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1106(int[] array, int n)
+    {
+        int answer = array[0];
+        int minDiff = Math.Abs(array[0] - n);
+
+        foreach (int num in array)
+        {
+            int diff = Math.Abs(num - n);
+            if (diff < minDiff || (diff == minDiff && num < answer))
+            {
+                minDiff = diff;
+                answer = num;
+            }
+        }
+        return answer;
+    }
+    /// <summary>
+    /// 진료 순서 정하기
+    /// </summary>
+    /// <param name="emergency"></param>
+    /// <returns></returns>
+    public int[] Solution1106(int[] emergency)
+    {
+        int[] answer = new int[emergency.Length];
+        /*
+        for (int i = 0; i < emergency.Length; i++)
+        {
+            for (int j = 0; j < emergency.Length; j++)
+            {
+                if (emergency[i] <= emergency[j])
+                {
+                    answer[i]++;
+                }
+            }
+        }
+        */
+        var list = new List<int>(emergency);
+        list.Sort();
+        list.Reverse();
+        for (int i = 0; i < answer.Length; i++)
+        {
+            answer[i] = list.IndexOf(emergency[i]) + 1;
+        }
+        return answer;
+    }
+    /// <summary>
     /// 간단한 논리 연산
     /// </summary>
     /// <param name="x1"></param>
