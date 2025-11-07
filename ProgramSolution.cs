@@ -7,6 +7,86 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    public int Solution11073(int[] array)
+    {
+        int answer = 0;
+        int num = 0;
+        
+        for(int i = 0; i < array.Length; i++)
+        {
+            num = array[i];
+            while(num > 0)
+            {
+                if(num % 10 == 7)
+                {
+                    answer++;
+                }
+                num /= 10;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 리스트 자르기
+    /// </summary>
+    /// <param name="n"></param>
+    /// <param name="slicer"></param>
+    /// <param name="num_list"></param>
+    /// <returns></returns>
+    public int[] Solution11072(int n, int[] slicer, int[] num_list)
+    {
+        var list = new List<int>();
+        int a = slicer[0];
+        int b = slicer[1];
+        int c = slicer[2];
+        switch (n)
+        {
+            case 1:
+                for (int i = 0; i <= b; i++)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+            case 2:
+                for (int i = a; i < num_list.Length; i++)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+            case 3:
+                for (int i = a; i <= b; i++)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+            // case 4: 도 가능할 듯.
+            default:
+                for (int i = a; i <= b; i += c)
+                {
+                    list.Add(num_list[i]);
+                }
+                break;
+        }
+
+        return list.ToArray();
+    }
+    
+    /// <summary>
+    /// 팩토리얼
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1107(int n)
+    {
+        int answer = 1, factorial = 1;
+        while (factorial <= n)
+        {
+            answer++;
+            factorial *= answer;
+        }
+        return answer - 1;
+    }
     /// <summary>
     /// 가까운 수
     /// </summary>
@@ -79,51 +159,6 @@ class ProgramSolution
         */
         bool answer = (x1 | x2) & (x3 | x4);
         return answer;
-    }
-
-    /// <summary>
-    /// 리스트 자르기
-    /// </summary>
-    /// <param name="n"></param>
-    /// <param name="slicer"></param>
-    /// <param name="num_list"></param>
-    /// <returns></returns>
-    public int[] Solution11052(int n, int[] slicer, int[] num_list)
-    {
-        var list = new List<int>();
-        int a = slicer[0];
-        int b = slicer[1];
-        int c = slicer[2];
-        switch(n)
-        {
-            case 1:
-                for (int i = 0; i <= b; i++)
-                {
-                    list.Add(num_list[i]);
-                }
-                break;
-            case 2:
-                for (int i = a; i < num_list.Length; i++)
-                {
-                    list.Add(num_list[i]);
-                }
-                break;
-            case 3:
-                for (int i = a; i <= b; i++)
-                {
-                    list.Add(num_list[i]);
-                }
-                break;
-            // case 4: 도 가능할 듯.
-            default:
-                for(int i = a; i <= b; i += c)
-                {
-                    list.Add(num_list[i]);
-                }
-                break;
-        }
-        
-        return list.ToArray();
     }
 
     /// <summary>
