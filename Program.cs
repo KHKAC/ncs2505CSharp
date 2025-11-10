@@ -12,16 +12,16 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         ProgramSolution sol = new ProgramSolution();
         CSharpStudy study = new CSharpStudy();
 
-        var intArr = new int[] { 7, 77, 17 };
+        var intArr = new int[] { 0, 1, 2, 4, 3 };
         var intArr2 = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        var int2Arrs = new int[,] { { 0, 3 }, { 1, 2 }, { 1, 4 } };
+        var int2Arrs = new int[,] { { 0, 4, 1 }, { 0, 3, 2 }, { 0, 3, 3 } };
         var boolArr = new bool[] { false, false, false, true, false, false, false };
-        var strings = "1a2b3c4d123Z";
+        var strings = "qjnwezgrpirldywt";
         var string2 = "hello";
         var strArr = new string[] { "a","bc","d","efg","hi" };
 
-        Console.WriteLine(sol.Solution11073(intArr));
-        //Util.PrintArray(sol.Solution11073(intArr));
+        Console.WriteLine(sol.Solution11102(3, 1, strings));
+        //Util.PrintArray(sol.Solution1110(intArr, int2Arrs));
         //sol.Solution1105();
         //study.DateTest();
 

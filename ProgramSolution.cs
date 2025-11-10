@@ -7,6 +7,60 @@ using System.Text.RegularExpressions;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    /// <summary>
+    /// QR코드
+    /// </summary>
+    /// <param name="q"></param>
+    /// <param name="r"></param>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public string Solution11102(int q, int r, string code)
+    {
+        var sb = new StringBuilder();
+        /*
+        for(int i = 0; i < code.Length; i++)
+        {
+            if(i % q == r)
+            {
+                sb.Append(code[i]);
+            }
+        }
+        */
+        for (int i = r; i < code.Length; i += q)
+        {
+            sb.Append(code[i]);
+        }
+        return sb.ToString();
+    }
+    /// <summary>
+    /// 수열과 쿼리 4
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="queries"></param>
+    /// <returns></returns>
+    public int[] Solution1110(int[] arr, int[,] queries)
+    {
+        for (int i = 0; i < queries.GetLength(0); i++)
+        {
+            int start = queries[i, 0];
+            int end = queries[i, 1];
+            int k = queries[i, 2];
+            for (int j = start; j <= end; j++)
+            {
+                if (j % k == 0)
+                {
+                    arr[j]++;
+                }
+            }
+        }
+        return arr;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
     public int Solution11073(int[] array)
     {
         int answer = 0;
