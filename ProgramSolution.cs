@@ -8,6 +8,48 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    ///  조건에 맞게 수열 변환하기 2
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int Solution11112(int[] arr)
+    {
+        int answer = 0;
+        while (true)
+        {
+            // 시퀀스 수행 전 배열 저장
+            int[] temp = (int[])arr.Clone();
+
+            // 수행
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] >= 50 && arr[i] % 2 == 0)
+                    arr[i] /= 2;
+
+                else if (arr[i] < 50 && arr[i] % 2 == 1)
+                    arr[i] = (arr[i] * 2) + 1;
+            }
+
+            // 전과 후가 같다면 break;
+            if (temp.SequenceEqual(arr))
+                break;
+
+            // 아니면 반복횟수 증가
+            answer++;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 특수문자 출력하기
+    /// </summary>
+    public void Solution1111()
+    {
+        Console.Write(@"!@#$%^&*(\'");
+        Console.Write("\"");
+        Console.Write("<>?:;");
+    }
+    /// <summary>
     /// QR코드
     /// </summary>
     /// <param name="q"></param>
@@ -57,7 +99,7 @@ class ProgramSolution
     }
 
     /// <summary>
-    /// 
+    /// 7의 개수
     /// </summary>
     /// <param name="array"></param>
     /// <returns></returns>
