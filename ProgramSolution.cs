@@ -8,6 +8,55 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 컨트롤 제트
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
+    public int Solution11122(string s)
+    {
+        int answer = 0;
+        string[] strArry = s.Split(" ");
+        for (int i = 0; i < strArry.Length; i++)
+        {
+            if (strArry[i].Equals("Z"))
+            {
+                answer -= int.Parse(strArry[i - 1]);
+            }
+            else
+            {
+                answer += int.Parse(strArry[i]);
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 커피 심부름
+    /// </summary>
+    /// <param name="order"></param>
+    /// <returns></returns>
+    public int Solution1112(string[] order)
+    {
+        int answer = 0;
+        string americano = "americano";
+        string cafelatte = "cafelatte";
+        string anything = "anything";
+        foreach (var item in order)
+        {
+            if (item.Contains(americano) || item.Equals(anything))
+            {
+                answer += 4500;
+            }
+            else if (item.Contains(cafelatte))
+            {
+                answer += 5000;
+            }
+        }
+
+        return answer;
+    }
+
+    /// <summary>
     ///  조건에 맞게 수열 변환하기 2
     /// </summary>
     /// <param name="arr"></param>
