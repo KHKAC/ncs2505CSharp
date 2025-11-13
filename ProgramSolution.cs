@@ -8,6 +8,74 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 배열 만들기 6
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[] Solution11132(int[] arr)
+    {
+        var list = new List<int>();
+        int i = 0;
+        while(i < arr.Length)
+        {
+            if(list.Count == 0)
+            {
+                list.Add(arr[i]);
+                i++;
+            }
+            else
+            {
+                if(list[list.Count - 1] == arr[i])
+                {
+                    list.RemoveAt(list.Count - 1);
+                    i++;
+                }
+                else
+                {
+                    list.Add(arr[i]);
+                    i++;
+                }
+            }
+        }
+        /*
+        if(list.Count == 0)
+        {
+            // list.Add(-1);
+            // return list.ToArray();
+            return [-1];
+        }
+        else
+        {
+            return list.ToArray();
+        }
+        */
+        return (list.Count == 0) ? [-1] : list.ToArray();
+    }
+
+    /// <summary>
+    /// 잘라서 배열로 저장하기
+    /// </summary>
+    /// <param name="my_str"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string[] Solution1113(string my_str, int n)
+    {
+        int len = (my_str.Length - 1) / n + 1;
+        string[] answer = new string[len];
+        int idx = 0, cnt = 0;
+        foreach (var item in my_str)
+        {
+            answer[idx] += item;
+            cnt++;
+            if(cnt == n)
+            {
+                idx++;
+                cnt = 0;
+            }
+        }
+        return answer;
+    }
+    /// <summary>
     /// 컨트롤 제트
     /// </summary>
     /// <param name="s"></param>
