@@ -18,10 +18,10 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var boolArr = new bool[] { false, false, false, true, false, false, false };
         var strings = "abcdef123";
         var string2 = "hello";
-        var strArr = new string[] { "cafelatte", "americanoice", "hotcafelatte", "anything" };
+        var strArr = new string[] { "l" };
 
         //Console.WriteLine(sol.Solution11122(strings));
-        Util.PrintArray(sol.Solution11132(intArr));
+        Util.PrintArray(sol.Solution11142(strArr));
         //sol.Solution1111();
         //study.DateTest();
 

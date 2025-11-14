@@ -3,10 +3,63 @@ using Hagoon;
 using System.Text;
 using MyExtension;
 using System.Text.RegularExpressions;
+using System.Linq;
+using System.Windows.Forms;
 
 class ProgramSolution
 {
     #region 10월 문제풀이
+    /// <summary>
+    /// 왼쪽 오른쪽
+    /// </summary>
+    /// <param name="str_list"></param>
+    /// <returns></returns>
+    public string[] Solution11142(string[] str_list)
+    {
+        string[]  strEmpty = new string[]{};
+        var listLeft = new List<string>();
+        var listRight = new List<string>();
+        for(int i = 0; i < str_list.Length; i++)
+        {
+            if(str_list[i].Equals("l"))
+            {
+                return listLeft.ToArray();
+            }
+            else if(str_list[i].Equals("r"))
+            {
+                for(int j = i + 1 ; j < str_list.Length; j++)
+                {
+                    listRight.Add(str_list[j]);
+                }
+                return listRight.ToArray();
+            }
+            else
+            {
+                listLeft.Add(str_list[i]);
+            }
+        }
+        return strEmpty;
+    }
+
+    /// <summary>
+    /// 소인수분해
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int[] Solution1114(int n)
+    {
+        var hs = new HashSet<int>();
+        for(int i = 2; i <= n; i++)
+        {
+            while(n % i == 0)
+            {
+                n = n / i;
+                hs.Add(i);
+            }
+        }
+        return hs.ToArray();
+    }
+
     /// <summary>
     /// 배열 만들기 6
     /// </summary>
