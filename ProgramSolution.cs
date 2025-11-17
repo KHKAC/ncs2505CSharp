@@ -10,6 +10,64 @@ class ProgramSolution
 {
     #region 10월 문제풀이
     /// <summary>
+    /// 문자 개수 세기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int[] Solution11172(string my_string)
+    {
+        int[] answer = new int[52];
+        for(int i = 0; i < my_string.Length; i++)
+        {
+            if(my_string[i] >= 'A' && my_string[i] <= 'Z')
+            {
+                answer[(int)my_string[i] - 'A'] += 1;
+            }
+            else if(my_string[i] >= 'a' && my_string[i] <= 'z')
+            {
+                answer[(int)my_string[i] - 'a' + 26] += 1;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 조건 문자열
+    /// </summary>
+    /// <param name="ineq"></param>
+    /// <param name="eq"></param>
+    /// <param name="n"></param>
+    /// <param name="m"></param>
+    /// <returns></returns>
+    public int Solution1117(string ineq, string eq, int n, int m)
+    {
+        int answer = 0;
+        if(ineq.Equals(">"))
+        {
+            if(eq.Equals("="))
+            {
+                answer = n >= m ? 1 : 0;
+            }
+            else
+            {
+                answer = n > m ? 1 : 0;
+            }
+        }
+        else
+        {
+            if(eq.Equals("="))
+            {
+                answer = n <= m ? 1 : 0;
+            }
+            else
+            {
+                answer = n < m ? 1 : 0;
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 왼쪽 오른쪽
     /// </summary>
     /// <param name="str_list"></param>
