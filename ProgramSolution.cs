@@ -9,6 +9,49 @@ using System.Windows.Forms;
 class ProgramSolution
 {
     #region 10월 문제풀이
+    // 이진수 더하기
+    public string Solution11182(string bin1, string bin2)
+    {
+        int int1 = Convert.ToInt32(bin1, 2);
+        int int2 = Convert.ToInt32(bin2, 2);
+        int int3 = int1 + int2;
+        string answer = Convert.ToString(int3, 2);
+        return answer;
+    }
+
+    // 배열 만들기 4
+    public int[] Solution1118(int[] arr)
+    {
+        int i = 0;
+        var stk = new Stack<int>();
+        while(i < arr.Length)
+        {
+            if(stk.Count == 0)
+            {
+                stk.Push(arr[i]);
+                i++;
+            }
+            else
+            {
+                if(stk.Peek() < arr[i])
+                {
+                    stk.Push(arr[i]);
+                    i++;
+                }
+                else
+                {
+                    stk.Pop();
+                }
+            }
+        }
+        int[] answer = new int[stk.Count];
+        for(i = stk.Count - 1; i >= 0; i--)
+        {
+            answer[i] = stk.Pop();
+        }
+        return answer;
+    }
+
     /// <summary>
     /// 문자 개수 세기
     /// </summary>
@@ -160,7 +203,7 @@ class ProgramSolution
             return list.ToArray();
         }
         */
-        return (list.Count == 0) ? [-1] : list.ToArray();
+        return list.ToArray();
     }
 
     /// <summary>
