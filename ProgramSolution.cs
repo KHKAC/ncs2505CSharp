@@ -4,12 +4,65 @@ using System.Text;
 using MyExtension;
 using System.Text.RegularExpressions;
 using System.Linq;
-using System.Windows.Forms;
 
 class ProgramSolution
 {
     #region 10월 문제풀이
-    // 이진수 더하기
+    /// <summary>
+    /// 문자열 계산하기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <returns></returns>
+    public int Solution11192(string my_string)
+    {
+        int answer = 0;
+        var str = my_string.Split(" ");
+        int pm = 1;
+        foreach (var item in str)
+        {
+            int temp = 0;
+            if(item.Equals("+"))
+            {
+                pm = 1;
+            }
+            else if(item.Equals("-"))
+            {
+                pm = -1;
+            }
+            else
+            {
+                temp = int.Parse(item);
+            }
+            answer += temp * pm;
+        }
+        return answer;
+    }
+    
+    /// <summary>
+    /// 문자열 여러번 뒤집기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="queries"></param>
+    /// <returns></returns>
+    public string Solution1119(string my_string, int[,] queries)
+    {
+        char[] answer = my_string.ToCharArray();
+        for (int i = 0; i < queries.GetLength(0); i++)
+        {
+            int s = queries[i, 0];
+            int e = queries[i, 1] - queries[i, 0] + 1;
+
+            Array.Reverse(answer, s, e);
+        }
+        return new string(answer);
+    }
+    
+    /// <summary>
+    /// 이진수 더하기
+    /// </summary>
+    /// <param name="bin1"></param>
+    /// <param name="bin2"></param>
+    /// <returns></returns>
     public string Solution11182(string bin1, string bin2)
     {
         int int1 = Convert.ToInt32(bin1, 2);
@@ -19,7 +72,11 @@ class ProgramSolution
         return answer;
     }
 
-    // 배열 만들기 4
+    /// <summary>
+    /// 배열 만들기 4
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
     public int[] Solution1118(int[] arr)
     {
         int i = 0;

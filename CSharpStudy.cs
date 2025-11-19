@@ -5,7 +5,6 @@ using System.Text;
 using Hagoon;
 using MyExtension;
 // Forms를 사용하려면 csproj에 <ItemGroup> 추가해야함
-using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using System.Text.RegularExpressions;
 using System.Data.Common;
@@ -527,7 +526,7 @@ class CSharpStudy
         }
     }
     #endregion
-
+    /*
     #region 델리게이트 강의 3 + 무명 메서드 강의 + 람다식 강의
     class MyArea : Form // Form 클래스는 using System.Windows.Forms; 가 필요
     {
@@ -568,6 +567,7 @@ class CSharpStudy
         }
     }
 
+    
     MyArea area;
     public void TestMyArea()
     {
@@ -599,6 +599,7 @@ class CSharpStudy
         area.Text += " AfterClick 클릭!";
     }
     #endregion
+    */
 
     #region 델리게이트 강의 2
     public void ComPareRun()
