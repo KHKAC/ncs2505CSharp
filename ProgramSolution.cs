@@ -191,19 +191,7 @@ class ProgramSolution
                 }
             }
         }
-        /*
-        if(list.Count == 0)
-        {
-            // list.Add(-1);
-            // return list.ToArray();
-            return [-1];
-        }
-        else
-        {
-            return list.ToArray();
-        }
-        */
-        return list.ToArray();
+        return (list.Count == 0) ? new int[1] {-1} : list.ToArray();
     }
 
     /// <summary>
