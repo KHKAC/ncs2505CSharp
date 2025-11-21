@@ -7,7 +7,13 @@ using System.Linq;
 
 class ProgramSolution
 {
+    // 영어가 싫어요
     #region 10월 문제풀이
+    public long Solution1121(string numbers)
+    {
+        long answer = 0;
+        return answer;
+    }
     /// <summary>
     /// 문자열 계산하기
     /// </summary>
