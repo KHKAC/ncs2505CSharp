@@ -2,6 +2,23 @@ namespace Hagoon
 {
     class Util
     {
+        // n개에서 m개 뽑는 방법의 수(순서 상관 없음)
+        public static double Combi(int n, int m)
+        {
+            return Factorial(n) / (Factorial(n - m) * Factorial(m));
+        }
+
+        // 팩토리얼 값 구하기
+        public static double Factorial(int n)
+        {
+            double f = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                f *= i;
+            }
+            return f;
+        }
+
         /// <summary>
         /// 최소 공배수
         /// </summary>

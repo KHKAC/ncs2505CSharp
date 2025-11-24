@@ -7,6 +7,56 @@ using System.Linq;
 
 class ProgramSolution
 {
+    // 구슬을 나누는 경우의 수
+    public int Solution11242(int balls, int share)
+    {
+        // double temp = Util.Combi(balls, share);
+        // int answer = Convert.ToInt32(temp);
+        return Convert.ToInt32(Util.Combi(balls, share));
+    }
+    /*
+    double Sol(int n, int m)
+    {
+        return Factorial(n) / (Factorial(n - m) * Factorial(m));
+    }
+    double Factorial(int n)
+    {
+        double f = 1;
+        for(int i = 2; i <= n; i++)
+        {
+            f *= i;
+        }
+        return f;
+    }
+    */
+
+    //
+    public int[] Solution1124(int[] arr, int k)
+    {
+        int[] answer = new int[k];
+        for(int i = 0; i < k; i++)
+        {
+            answer[i] = -1;
+        }
+
+        var hs = new HashSet<int>();
+        int idx = 0;
+        foreach (var item in arr)
+        {
+            if(hs.Contains(item))
+            {
+                continue;
+            }
+            else
+            {
+                answer[idx] = item;
+                hs.Add(item);
+                idx++;
+                if(idx == k) break;
+            }
+        }
+        return answer;
+    }
     // 영어가 싫어요
     #region 10월 문제풀이
     public long Solution1121(string numbers)
