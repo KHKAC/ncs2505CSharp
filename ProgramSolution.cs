@@ -7,6 +7,84 @@ using System.Linq;
 
 class ProgramSolution
 {
+    #region 11월 문제풀이
+    // 그림 확대
+    public string[] Solution11252(string[] picture, int k)
+    {
+        // 확대 전 원본 그림
+        foreach (var item in picture)
+        {
+            Console.WriteLine(item);
+        }
+        //x값 구하기
+        int x = picture.Length;
+        // 반환 그림의 크기만큼 answer를 잡는다
+        string[] answer = new string[x * k];
+        // 인덱스 값 하나 잡고
+        int idx = 0;
+        // string형의 변수 하나 잡고 => StringBuilder 사용
+        var sb = new StringBuilder();
+        
+        foreach(string s in picture)
+        {
+            sb.Clear();
+            // picture의 string 하나를 다시 char 별로 순회
+            foreach(char c in s)
+            {
+                for(int i = 0; i < k; i++)
+                {
+                    sb.Append(c);
+                }
+            }
+            //k 만큼 반복
+            for (int i = 0; i < k; i++)
+            {
+                answer[idx * k + i] = sb.ToString();
+            }
+            idx++;
+        }
+        foreach(var item in answer)
+        {
+            Console.WriteLine(item); 
+        }
+        return answer;
+
+        /*
+        string[] result = new string[picture.Length];
+        
+        for(int i = 0; i < picture.Length; i++)
+        {
+            char[] arr = picture[i].ToCharArray();
+            {
+                for (int j = 0; j < arr.Length;j++)
+                {
+                    for(int z = 0; z < k; z++)
+                    {
+                        result[i] += arr[j];
+                    }
+                }
+            }
+        }
+        List<string> res= new List<string>();
+        for(int y = 0; y < result.Length; y++)
+        {
+            for(int s = 0; s < k; s++)
+            {
+                res.Add(result[y]);
+            }
+        }
+        return res.ToArray();
+        */
+    }
+    // 삼각형의 완성 조건(2)
+    public int Solution1125(int[] sides)
+    {
+        int a = sides.Max() - sides.Min();
+        int b = sides.Max() + sides.Min();
+        int answer = b - a - 1;
+        return answer;
+        
+    }
     // 구슬을 나누는 경우의 수
     public int Solution11242(int balls, int share)
     {
@@ -58,7 +136,7 @@ class ProgramSolution
         return answer;
     }
     // 영어가 싫어요
-    #region 10월 문제풀이
+    
     public long Solution1121(string numbers)
     {
         long answer = 0;
@@ -718,7 +796,9 @@ class ProgramSolution
         return answer;
         
     }
+    #endregion
 
+    #region 10월 문제풀이
     /// <summary>
     /// 세 개의 구분자
     /// </summary>
@@ -1553,7 +1633,7 @@ class ProgramSolution
         }
         return answer;
     }
-    #endregion 10월 문제풀이
+    #endregion
 
     #region 9월 문제풀이
     
