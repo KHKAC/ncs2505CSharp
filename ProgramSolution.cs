@@ -8,6 +8,36 @@ using System.Linq;
 class ProgramSolution
 {
     #region 11월 문제풀이
+    public string Solution11262(string my_string, string overwrite_string, int s)
+    {
+        // Remove, Insert
+        // return my_string.Remove(s, overwrite_string.Length).Insert(s, overwrite_string);
+        
+        // Substring
+        /*
+        var sb = new StringBuilder();
+        sb.Append(my_string.Substring(0,s));
+        sb.Append(overwrite_string);
+        sb.Append(my_string.Substring(s + overwrite_string.Length));
+        return sb.ToString();
+        */
+        var sb = new StringBuilder();
+        sb.Append(my_string.Take(s).ToArray());
+        sb.Append(overwrite_string);
+        sb.Append(my_string.Skip(s + overwrite_string.Length).ToArray());
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// a와 b 출력하기
+    /// </summary>
+    public void Solution1126()
+    {
+        Console.Clear();
+        string[] s = Console.ReadLine().Split(' ');
+        Console.WriteLine($"a = {s[0]}\nb = {s[1]}");
+    }
+
     /// <summary>
     /// 그림 확대
     /// </summary>
@@ -162,7 +192,7 @@ class ProgramSolution
         long answer = 0;
         return answer;
     }
-    
+
     /// <summary>
     /// 문자열 계산하기
     /// </summary>
