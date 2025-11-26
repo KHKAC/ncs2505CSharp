@@ -8,7 +8,12 @@ using System.Linq;
 class ProgramSolution
 {
     #region 11월 문제풀이
-    // 그림 확대
+    /// <summary>
+    /// 그림 확대
+    /// </summary>
+    /// <param name="picture"></param>
+    /// <param name="k"></param>
+    /// <returns></returns>
     public string[] Solution11252(string[] picture, int k)
     {
         // 확대 전 원본 그림
@@ -76,7 +81,12 @@ class ProgramSolution
         return res.ToArray();
         */
     }
-    // 삼각형의 완성 조건(2)
+
+    /// <summary>
+    /// 삼각형의 완성 조건(2)
+    /// </summary>
+    /// <param name="sides"></param>
+    /// <returns></returns>
     public int Solution1125(int[] sides)
     {
         int a = sides.Max() - sides.Min();
@@ -85,7 +95,13 @@ class ProgramSolution
         return answer;
         
     }
-    // 구슬을 나누는 경우의 수
+    
+    /// <summary>
+    /// 구슬을 나누는 경우의 수
+    /// </summary>
+    /// <param name="balls"></param>
+    /// <param name="share"></param>
+    /// <returns></returns>
     public int Solution11242(int balls, int share)
     {
         // double temp = Util.Combi(balls, share);
@@ -135,13 +151,18 @@ class ProgramSolution
         }
         return answer;
     }
-    // 영어가 싫어요
     
+    /// <summary>
+    /// 영어가 싫어요
+    /// </summary>
+    /// <param name="numbers"></param>
+    /// <returns></returns>
     public long Solution1121(string numbers)
     {
         long answer = 0;
         return answer;
     }
+    
     /// <summary>
     /// 문자열 계산하기
     /// </summary>
