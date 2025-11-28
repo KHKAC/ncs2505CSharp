@@ -8,6 +8,72 @@ using System.Linq;
 class ProgramSolution
 {
     #region 11월 문제풀이
+    /// <summary>
+    /// 정사각형으로 만들기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <returns></returns>
+    public int[,] Solution11282(int[,] arr)
+    {
+        // arr 배열의 행,열 중 큰 수를 찾는다
+        int xLen = arr.GetLength(0);
+        int ylen = arr.GetLength(1);
+        int len = Math.Max(xLen, ylen);
+        // 찾아진 큰 수만큼의 정사각형 배열을 만든다
+        int[,] answer = new int[len, len];
+        // 기본 값인 0이 다 들어가있다.
+        // arr을 순회하면서 answer에 넣는다
+        // 정확히 넣어야할 위치가 필요하므로 foreach가 아닌 for 사용
+        for (int x = 0; x < xLen; x++)
+        {
+            for (int y = 0; y < ylen; y++)
+            {
+                answer[x,y] = arr[x,y];
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 외계어 사전
+    /// </summary>
+    /// <param name="spell"></param>
+    /// <param name="dic"></param>
+    /// <returns></returns>
+    public int Solution1128(string[] spell, string[] dic)
+    {
+        // 단어가 존재할 때 바로 1을 리턴하면 되므로 없을 때 2를 리턴하는 것을 기본으로 한다
+        // int answer = 2;
+        // dic을 순회하면서
+        foreach (var item in dic)
+        {
+            // spell의 길이가 검사는 각 항목의 길이보다, 큰 경우 바로 다음으로
+            if(item.Length < spell.Length) continue;
+            // spell의 각 항목을 검사하기 위한 list를 선언
+            var list = new List<string>(spell);
+            // item을 char별로 순회하면서
+            foreach (char c in item)
+            {
+                // list에 있는 경우 list에서 삭제
+                if(list.Contains(c.ToString()))
+                {
+                    list.Remove(c.ToString());
+                }
+            }
+            // list의 크기가 0이면 1을 리턴
+            if(list.Count == 0) return 1;
+        }
+        // 여기까지 왔다면 단어가 없는 것이므로 2리턴
+        return 2;
+    }
+
+    /// <summary>
+    /// 문자열 겹쳐쓰기
+    /// </summary>
+    /// <param name="my_string"></param>
+    /// <param name="overwrite_string"></param>
+    /// <param name="s"></param>
+    /// <returns></returns>
     public string Solution11262(string my_string, string overwrite_string, int s)
     {
         // Remove, Insert
