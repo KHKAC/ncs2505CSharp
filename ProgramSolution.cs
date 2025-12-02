@@ -9,6 +9,50 @@ using System.Collections.Generic;
 class ProgramSolution
 {
     #region 12월 문제풀이
+    public int Solution12022(int[,] dots)
+    {
+        // 가로, 세로로 사용할 변수
+        int w = 0, h = 0;
+        // 첫번째 x좌표 = 두번째 x좌표
+        if(dots[0,0] == dots[1,0])
+        {
+            h = Math.Abs(dots[0,1] - dots[1,1]);
+            w = Math.Abs(dots[0,0] - dots[2,0]);
+        }
+        else if(dots[0,0] == dots[2,0])
+        {
+            h = Math.Abs(dots[0,1] - dots[2,1]);
+            w = Math.Abs(dots[0,0] - dots[1,0]);
+        }
+        else
+        {
+            h = Math.Abs(dots[0,1] - dots[3,1]);
+            w = Math.Abs(dots[0,0] - dots[1,0]);
+        }
+        return w * h;
+    }
+    /// <summary>
+    /// 대소문자 바꿔서 출력하기
+    /// </summary>
+    public void Solution1202()
+    {
+        string s;
+        Console.Clear();
+        s = Console.ReadLine();
+        var sb = new StringBuilder();
+        foreach(var item in s)
+        {
+            if(item >= 'a' && item <= 'z')
+            {
+                sb.Append(item.ToString().ToUpper());
+            }
+            else if(item >= 'A' && item <= 'Z')
+            {
+                sb.Append(item.ToString().ToLower());
+            }
+        }
+        Console.WriteLine(sb.ToString());
+    }
     /// <summary>
     /// 로그인 성공?
     /// </summary>
