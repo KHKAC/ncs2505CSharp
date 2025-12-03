@@ -9,6 +9,60 @@ using System.Collections.Generic;
 class ProgramSolution
 {
     #region 12월 문제풀이
+    /// <summary>
+    /// 등수 매기기
+    /// </summary>
+    /// <param name="score"></param>
+    /// <returns></returns>
+    public int[] Solution12032(int[,] score)
+    {
+        // 등수를 담을 리스트 선언
+        var answer = new List<int>();
+        // 합산 점수를 담을 리스트 선언
+        var sum = new List<int>();
+        // 합산 점수 리스트에 값 채우기
+        for (int i = 0; i < score.GetLength(0); i++)
+        {
+            // 합산 값으로
+            sum.Add(score[i,0] + score[i,1]);
+        }
+        // 내림차순으로 정렬해서 새로운 리스트에 넣는다.
+        var newList = sum.OrderByDescending(x => x).ToList();
+        // 순회
+        for (int i = 0; i < newList.Count; i++)
+        {
+            // 정렬된 리스트에서의 인덱스를 찾아 등수 매기기
+            // 먼저 찾아지는 인덱스로 공동 등수를 처리
+            int rank = newList.FindIndex(x => x == sum[i]) + 1;
+            answer.Add(rank);
+        }
+        // 배열형으로 변환한 것을 반환
+        return answer.ToArray();
+    }
+    
+    /// <summary>
+    /// 치킨 쿠폰
+    /// </summary>
+    /// <param name="chicken"></param>
+    /// <returns></returns>
+    public int Solution1203(int chicken)
+    {
+        int answer = 0;
+        int coupon = chicken;
+        while(coupon >= 10)
+        {
+            coupon -= 10;
+            answer++;
+            coupon++;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 직사각형 넓이 구하기
+    /// </summary>
+    /// <param name="dots"></param>
+    /// <returns></returns>
     public int Solution12022(int[,] dots)
     {
         // 가로, 세로로 사용할 변수
@@ -31,6 +85,7 @@ class ProgramSolution
         }
         return w * h;
     }
+
     /// <summary>
     /// 대소문자 바꿔서 출력하기
     /// </summary>
@@ -53,6 +108,7 @@ class ProgramSolution
         }
         Console.WriteLine(sb.ToString());
     }
+
     /// <summary>
     /// 로그인 성공?
     /// </summary>
@@ -116,8 +172,8 @@ class ProgramSolution
         return answer;
     }
     #endregion
+
     #region 11월 문제풀이
-    
     /// <summary>
     /// 정사각형으로 만들기
     /// </summary>
