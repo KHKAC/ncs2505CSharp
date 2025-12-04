@@ -10,6 +10,78 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 문자열 밀기
+    /// </summary>
+    /// <param name="A"></param>
+    /// <param name="B"></param>
+    /// <returns></returns>
+    public int Solution12042(string A, string B)
+    {
+        /*
+        for (int i = 0; i < A.Length; i++)
+        {
+            A = A.Substring(A.Length - 1, 1) + A.Substring(0, A.Length - 1);
+            if(A.Equals(B))
+            {
+                return i + 1;
+            }
+        }
+        return -1;
+        */
+        // A와 B가 같다면 바로 0 리턴
+        if(A.Equals(B)) return 0;
+        // A의 크기 -1만큼 반복 (한번 밀었다고 가정해야하니 i는 1부터 시작)
+        for (int i = 1; i < A.Length; i++)
+        {
+            // A를 밀기
+            A = StringPush(A);
+            // A와 B를 비교
+            if(A.Equals(B))
+            {
+                // 같다면 현재 인덱스를 리턴
+                return i;
+            }
+        }
+        // 여기까지 왔다면 -1 리턴
+        return -1;
+    }
+    // string을 오른쪽으로 밀기
+    string StringPush(string A)
+    {
+        var sb = new StringBuilder();
+        // string의 크기를 변수로 잡고
+        int cnt = A.Length;
+        // 마지막 글자를 얻어와서
+        string last = A.Substring(cnt - 1, 1);
+        string remain = A.Substring(0, cnt -1);
+        // 맨 앞에 넣고
+        sb.Append(last);
+        sb.Append(remain);
+        // 리턴
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 저주의 숫자 3
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1204(int n)
+    {
+        int answer = 0;
+        // n만큼 반복
+        for (int i = 0; i < n; i++)
+        {
+            // 특정조건(3을 포함하거나 3으로 나누어 떨어질 때)만 건너뛰기
+            do // 0부터 시작이니 처음 한번은 무조건 실행할 수 있도록
+            {
+                answer++;
+            } while(answer % 3 == 0 || answer.ToString().Contains("3"));
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 등수 매기기
     /// </summary>
     /// <param name="score"></param>
