@@ -10,6 +10,80 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 유한소수 판별하기
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public int Solution12052(int a, int b)
+    {
+        // 기약분수로 만들기 (a/b에서 b를 gcd로 나눔)
+        int gcd = Util.GCD(a, b);
+        b /= gcd;
+
+        // 분모에서 2 제거
+        while (b % 2 == 0)
+        {
+            b /= 2;
+        }
+        // 분모에서 5 제거
+        while (b % 5 == 0)
+        {
+            b /= 5;
+        }
+        // 모두 제거하고 1이면 유한소수, 아니면 무한소수
+        return (b == 1) ? 1 : 2;
+    }
+    
+    /// <summary>
+    /// 배열 만들기 2
+    /// </summary>
+    /// <param name="l"></param>
+    /// <param name="r"></param>
+    /// <returns></returns>
+    public int[] Solution1205(int l, int r)
+    {
+        int[] answer;
+        var list = new List<int>();
+
+        /*
+        for (int i = l; i <= r; i++) 
+        {
+            string s = i.ToString();
+            bool isCorrect = true;
+
+            foreach (char c in s)
+            {
+                if (c != '0' && c != '5')
+                {
+                    isCorrect = false;
+                    break;
+                }
+            }
+            if (isCorrect) list.Add(i);
+        }
+
+        if (list.Count == 0) return new int[] { -1 };
+
+        return list.ToArray();
+        */
+        for (int i = l; i <= r; i++)
+        {
+            if(i % 5 != 0) continue;
+            string str = i.ToString();
+            if(str.Replace("0","").Replace("5","").Length == 0)
+            {
+                list.Add(i);
+            }
+        }
+        answer = list.ToArray();
+        if(list.Count == 0)
+        {
+            answer = new int[]{-1};
+        }
+        return answer;
+    }
+    /// <summary>
     /// 문자열 밀기
     /// </summary>
     /// <param name="A"></param>
