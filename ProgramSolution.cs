@@ -5,10 +5,94 @@ using MyExtension;
 using System.Text.RegularExpressions;
 using System.Linq;
 using System.Collections.Generic;
+using System.Globalization;
 
 class ProgramSolution
 {
     #region 12월 문제풀이
+    public int[] Solution12082(int[] numlist, int n)
+    {
+        //i는 두번째 요소부터 마지막까지 순회
+        for (int i = 1; i < numlist.Length; i++)
+        {
+            // 첫번째부터 i까지 순회
+            for(int j = 0; j < i + 1; j++)
+            {
+                // i for문에서 n까지의 절대값
+                int iAbs = Math.Abs(numlist[i] - n);
+                // j for문에서 n까지의 절대값
+                int jAbs = Math.Abs(numlist[j] - n);
+                // 두 값을 비교
+                if(iAbs < jAbs)
+                {
+                    //두 값을 교환
+                    int temp = numlist[j];
+                    numlist[j] = numlist[i];
+                    numlist[i] = temp;
+                }
+                // 두 값이 같을 경우
+                else if(iAbs == jAbs)
+                {
+                    if(numlist[i] > numlist[j])
+                    {
+                        //두 값을 교환
+                        int temp = numlist[j];
+                        numlist[j] = numlist[i];
+                        numlist[i] = temp;
+                    }
+                }
+            }
+        }
+        return numlist;
+    }
+
+    /// <summary>
+    /// 코드 처리하기
+    /// </summary>
+    /// <param name="code"></param>
+    /// <returns></returns>
+    public string Solution1208(string code)
+    {
+        var sb = new StringBuilder();
+        // mode, idx 변수 만들기
+        bool mode = false;
+        int idx = 0;
+        // code를 순회하면서
+        foreach (var item in code)
+        {
+            //item이 1인경우 모드 체인지
+            if(item.Equals('1'))
+            {
+                mode = !mode;
+                idx++;
+                continue;
+            }
+            // mode의 값에 따라
+            if(mode == false)
+            {
+                // idx의 값에 따라
+                if(idx % 2 == 0)
+                {
+                    sb.Append(item);
+                }
+            }
+            else
+            {
+                //idx의 값에 따라
+                if(idx % 2 != 0)
+                {
+                    sb.Append(item);
+                }
+            }
+            idx++;
+        }
+        // 리턴 값이 없을 경우
+        if(sb.ToString().Length == 0)
+        {
+            return "EMPTY";
+        }
+        return sb.ToString();;
+    }
     /// <summary>
     /// 유한소수 판별하기
     /// </summary>
