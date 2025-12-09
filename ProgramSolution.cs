@@ -6,10 +6,106 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Diagnostics.Tracing;
 
 class ProgramSolution
 {
     #region 12월 문제풀이
+    /// <summary>
+    /// 다항식 더하기
+    /// </summary>
+    /// <param name="polynomial"></param>
+    /// <returns></returns>
+    public string Solution12092(string polynomial)
+    {
+        // 문자열 계산이므로 StringBuilder 사용
+        var sb = new StringBuilder();
+        // 주어진 다항식을 분리
+        string[] sArr = polynomial.Split(" + ");
+        // 필요한 변수들 선언
+        int xNum = 0, num = 0, xTotal = 0, total = 0;
+        // 분리된 배열의 크기만큼 순회
+        foreach(var item in sArr)
+        {
+            // 'x'를 포함하고 있으면
+            if(item.Contains('x'))
+            {
+                // 크기가 1이면 값도 1
+                if(item.Length == 1)
+                {
+                    xNum = 1;
+                }
+                // 아니면 값만 떼어서 계산
+                else
+                {
+                    xNum = int.Parse(item.Remove(item.Length -1));
+                }
+                xTotal += xNum;
+            }
+            else
+            {
+                num = int.Parse(item);
+                total += num;
+            }
+            
+        }
+        // 'x'변수가 0이 아니면
+        if(xTotal != 0)
+        {
+            sb.Append(xTotal == 1 ? "x" : $"{xTotal}x");
+        }
+        // 상수 변수가 0이 아니면
+        if(total != 0)
+        {
+            if(xTotal != 0) sb.Append(" + ");
+            sb.Append(total);
+        }
+        return sb.ToString();
+    }
+
+    /// <summary>
+    /// 배열 조각하기
+    /// </summary>
+    /// <param name="arr"></param>
+    /// <param name="query"></param>
+    /// <returns></returns>
+    public int[] Solution1209(int[] arr, int[] query)
+    {
+        // 인덱스 변수 정의
+        int idx = 0;
+        // query를 순회
+        foreach(var item in query)
+        {
+            // 인덱스가 짝수면
+            if(idx % 2 == 0)
+            {
+                //arr의 크기 조정
+                Array.Resize(ref arr, item + 1);
+            }
+            else
+            {
+                // arr의 임시 배열 정의
+                int[] temp = arr;
+                // arr의 크기 조정
+                Array.Resize(ref arr, arr.Length - item);
+                // arr에 값 넣기
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i] = temp[i + item];
+                }
+            }
+            // 인덱스 증가
+            idx++;
+        }
+        return arr;
+    }
+
+    /// <summary>
+    /// 특이한 정렬
+    /// </summary>
+    /// <param name="numlist"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
     public int[] Solution12082(int[] numlist, int n)
     {
         //i는 두번째 요소부터 마지막까지 순회
