@@ -23,7 +23,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strArr2 = new string[] { "moos", "dzx", "smm", "sunmmo", "som" };
         var str2Arr = new string[,] {{"programmer02", "111111"}, {"programmer00", "134"}, {"programmer01", "1145"}};
 
-        Console.WriteLine(sol.Solution12092(string1));
+        Console.WriteLine(sol.Solution12102(13));
         //Util.PrintArray(sol.Solution1209(intArr, intArr2)); // 배열 2차원 이상의 배열을 출력 불가
         //sol.Solution1202();
         //study.DateTest();

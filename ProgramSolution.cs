@@ -12,6 +12,33 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 하샤드 수
+    /// </summary>
+    /// <param name="x"></param>
+    /// <returns></returns>
+    public bool Solution12102(int x)
+    {
+        string xStr = x.ToString();
+        int sum = 0;
+        foreach(var item in xStr)
+        {
+            sum += item - '0';
+        }
+        if(x % sum == 0) return true;
+        else return false;
+    }
+
+    /// <summary>
+    /// 문자열 출력하기
+    /// </summary>
+    public void Solution1210()
+    {
+        string s;
+        Console.Clear();
+        s = Console.ReadLine();
+        Console.WriteLine(s);
+    }
+    /// <summary>
     /// 다항식 더하기
     /// </summary>
     /// <param name="polynomial"></param>
