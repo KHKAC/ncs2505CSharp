@@ -12,6 +12,79 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 최빈값 구하기
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
+    public int Solution12112(int[] array)
+    {
+        var dic = new Dictionary<int,int>();
+        foreach (var item in array)
+        {
+            if(dic.ContainsKey(item))
+            {
+                dic[item]++;
+            }
+            else
+            {
+                dic.Add(item, 1);
+            }
+        }
+        if(dic.Count == 1)
+        {
+            // return dic.Keys.ToArray()[0];
+            return array[0];
+        }
+        int[] arr = new int[dic.Count];
+        int idx = 0;
+        foreach(var item in dic)
+        {
+            arr[idx] = item.Value;
+            idx++;
+        }
+        Array.Sort(arr);
+        if(arr[arr.Length - 1] == arr[arr.Length - 2])
+        {
+            return -1;
+        }
+        foreach (var item in dic)
+        {
+            if(arr[arr.Length - 1] == item.Value)
+            {
+                return item.Key;
+            }
+        }
+        return -1;
+    }
+
+    /// <summary>
+    /// OX 퀴즈
+    /// </summary>
+    /// <param name="quiz"></param>
+    /// <returns></returns>
+    public string[] Solution1211(string[] quiz)
+    {
+        string[] answer = new string[quiz.Length];
+        for(int i = 0; i < quiz.Length; i++)
+        {
+            string[] sArr = quiz[i].Split(" ");
+            int a = int.Parse(sArr[0]);
+            int b = int.Parse(sArr[2]);
+            int c = int.Parse(sArr[4]);
+            string d = sArr[1];
+            if(d.Equals("-"))
+            {
+                answer[i] = a - b == c ? "O" : "X";
+            }
+            else
+            {
+                answer[i] = a + b == c ? "O" : "X";
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
     /// 하샤드 수
     /// </summary>
     /// <param name="x"></param>
