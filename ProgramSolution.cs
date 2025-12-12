@@ -12,6 +12,54 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 연속된 수의 합
+    /// </summary>
+    /// <param name="num"></param>
+    /// <param name="total"></param>
+    /// <returns></returns>
+    public int[] Solution12122(int num, int total)
+    {
+        // answer 배열을 생성
+        int[] answer = new int[num];
+        // total을 num으로 나눈 인덱스 변수 생성
+        int idx = total / num;
+        // 인덱스의 처음 시작 위치 조정
+        idx = idx - ((num - 1) / 2);
+        // for문 num만큼 반복
+        for(int i = 0; i < num; i++)
+        {
+            // answer 배열에 값 넣기
+            answer[i] = idx + i;
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 다음에 올 숫자
+    /// </summary>
+    /// <param name="common"></param>
+    /// <returns></returns>
+    public int Solution1212(int[] common)
+    {
+        int answer = 0;
+        int len = common.Length;
+        for(int i = 0; i < len; i++)
+        {
+            int a = common[0];
+            int b = common[1];
+            int c = common[2];
+            if((c - b) == (b - a))
+            {
+                answer = common[len - 1] + (b - a);
+            }
+            else
+            {
+                answer = common[len - 1] * (b / a);
+            }
+        }
+        return answer;
+    }
+    /// <summary>
     /// 최빈값 구하기
     /// </summary>
     /// <param name="array"></param>
