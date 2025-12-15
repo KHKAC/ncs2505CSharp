@@ -12,6 +12,65 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 안전지대
+    /// </summary>
+    /// <param name="board"></param>
+    /// <returns></returns>
+    public int Solution12152(int[,] board)
+    {
+         int answer = 0;
+        int len = board.GetLength(0);
+            int [,] temp = new int [len+2, len+2];
+            for(int x = 1; x <= len; x++)
+            {
+                for(int y = 1; y <= len; y++)
+                {
+                    if(board[x - 1, y - 1] == 1)
+                    {
+                        temp[x - 1, y - 1]++;
+                        temp[x - 1, y    ]++;
+                        temp[x - 1, y + 1]++;
+                        temp[x, y - 1]++;
+                        temp[x, y    ]++;
+                        temp[x, y + 1]++;
+                        temp[x + 1, y - 1]++;
+                        temp[x + 1, y    ]++;
+                        temp[x + 1, y + 1]++;
+
+                    }
+                }
+            }
+            for(int x = 1; x <= len; x++)
+            {
+                for(int y = 1; y <= len; y++)
+                {
+                    if (temp[x, y] == 0)
+                    {
+                        answer++;
+                    }
+                }
+            }
+        return answer;
+    }
+
+    /// <summary>
+    /// 두 정수 사이의 합
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <returns></returns>
+    public long Solution1215(int a, int b)
+    {
+        int answer = 0;
+        int max = Math.Max(a, b);
+        int min = Math.Min(a, b);
+        for(int i = min; i <= max; i++)
+        {
+            answer += i;
+        }
+        return Convert.ToInt64(answer);
+    }
+    /// <summary>
     /// 연속된 수의 합
     /// </summary>
     /// <param name="num"></param>

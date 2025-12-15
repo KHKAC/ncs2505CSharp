@@ -15,7 +15,7 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
 
         var intArr = new int[] { 2, 4, 8 };
         var intArr2 = new int[] { 4, 1, 2 };
-        var int2Arrs = new int[,] { { 80, 70 }, { 90, 50 }, { 40, 70 }, { 50, 80 } };
+        var int2Arrs = new int[,] { { 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1, 1 }, { 1, 1, 1, 1, 1, 1 } };
         var boolArr = new bool[] { false, false, false, true, false, false, false };
         var string1 = "3 + 5";
         var string2 = "pleap";
@@ -23,8 +23,8 @@ internal class Program // internal폴더(Assembly) 내에 있는 파일(class)�
         var strArr2 = new string[] { "moos", "dzx", "smm", "sunmmo", "som" };
         var str2Arr = new string[,] {{"programmer02", "111111"}, {"programmer00", "134"}, {"programmer01", "1145"}};
 
-        //Console.WriteLine(sol.Solution1212(intArr));
-        Util.PrintArray(sol.Solution12122(5, 5)); // 배열 2차원 이상의 배열을 출력 불가
+        Console.WriteLine(sol.Solution12152(int2Arrs));
+        //Util.PrintArray(sol.Solution12122(5, 5)); // 배열 2차원 이상의 배열을 출력 불가
         //sol.Solution1202();
         //study.DateTest();
 
