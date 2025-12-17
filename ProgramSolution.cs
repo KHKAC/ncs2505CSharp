@@ -12,6 +12,189 @@ class ProgramSolution
 {
     #region 12월 문제풀이
     /// <summary>
+    /// 주사위 게임 3
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="c"></param>
+    /// <param name="d"></param>
+    /// <returns></returns>
+    public int Solution12172(int a, int b, int c, int d)
+    {
+        /*
+        int[] dice = { a, b, c, d };
+
+        // 등장 횟수 세기
+        Dictionary<int, int> cnt = new Dictionary<int, int>();
+        foreach (int x in dice)
+        {
+            if (cnt.ContainsKey(x))
+                cnt[x]++;
+            else
+                cnt[x] = 1;
+        }
+
+        int kinds = cnt.Count; // 서로 다른 눈의 개수
+
+        // 1. 네 개가 모두 같은 경우 (p p p p)
+        if (kinds == 1)
+        {
+            int p = dice[0];
+            return 1111 * p;
+        }
+
+        // 2. 서로 다른 숫자가 2개인 경우
+        if (kinds == 2)
+        {
+            foreach (var kv in cnt)
+            {
+                if (kv.Value == 3)
+                {
+                    int p = kv.Key;
+                    int q = cnt.Keys.First(x => x != p);
+                    int val = 10 * p + q;
+                    return val * val;
+                }
+            }
+
+            var keys = cnt.Keys.ToArray();
+            int p2 = keys[0];
+            int q2 = keys[1];
+            return (p2 + q2) * Math.Abs(p2 - q2);
+        }
+
+        // 3. 서로 다른 숫자가 3개인 경우 (p p q r)
+        if (kinds == 3)
+        {
+            List<int> ones = new List<int>();
+            int two = 0;
+
+            foreach (var kv in cnt)
+            {
+                if (kv.Value == 2)
+                    two = kv.Key;
+                else
+                    ones.Add(kv.Key); // 1번씩 나온 눈들
+            }
+
+            return ones[0] * ones[1];
+        }
+
+        // 4. 모두 다른 경우 (kinds == 4)
+        return dice.Min();
+        */
+        int answer = 0;
+        // 주사위 눈을 인덱스로 하는 배열 정의
+        int[] dice = new int[7];
+        // 주사위 배열에 값을 더하는 함수 호출
+        dice[a]++;
+        dice[b]++;
+        dice[c]++;
+        dice[d]++;
+        // 4개가 모두 같은 숫자인 경우
+        if(dice.Contains(4))
+        {
+            for(int p = 1; p <= 6; p++)
+            {
+                if(dice[p] == 4)
+                {
+                    answer = 1111 * p;
+                    break;
+                }
+            }
+        }
+        else if(dice.Contains(3)) // 3 - 1
+        {
+            for(int p = 1; p <= 6; p++)
+            {
+                if(dice[p] == 3)
+                {
+                    for(int q = 1; q <= 6; q++)
+                    {
+                        if(dice[q] == 1)
+                        {
+                            answer = (10 * p + q) * (10 * p + q);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else if(dice.Contains(2)) // 2
+        {
+            if(dice.Contains(1)) // 2 - 1 - 1
+            {
+                // p를 구할 필요가 없다.
+                for(int q = 1; q <= 6; q++)
+                {
+                    if(dice[q] == 1)
+                    {
+                        for(int r = q + 1; r <= 6; r++)
+                        {
+                            if(dice[r] == 1)
+                            {
+                                answer = q * r;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            else // 2 - 2
+            {
+                for(int p = 1; p <= 6; p++)
+                {
+                    if(dice[p] == 2)
+                    {
+                        for(int q = p + 1; q <= 6; q++)
+                        {
+                            if(dice[q] == 2)
+                            {
+                                // q는 p보다 크다
+                                answer = (p + q) * (q - p);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else // 1 - 1 - 1 - 1
+        {
+            answer = 6;
+            for(int i = 1; i <= 6; i++)
+            {
+                if(dice[i] == 1 && (answer > i))
+                {
+                    answer = i;
+                }
+            }
+        }
+        return answer;
+    }
+
+    /// <summary>
+    /// 콜라츠 추측
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public int Solution1217(int n)
+    {
+        int answer = 0;
+        long num = n;
+        for(int i = 0; i <= 500; i++)
+        {
+            if(num == 1)
+            {
+                return i;
+            }
+            num = num % 2 == 0 ? num / 2 : num * 3 + 1;
+        }
+        answer = -1;
+        return answer;
+    }
+
+    /// <summary>
     /// 안전지대
     /// </summary>
     /// <param name="board"></param>
@@ -28,13 +211,13 @@ class ProgramSolution
                     if(board[x - 1, y - 1] == 1)
                     {
                         temp[x - 1, y - 1]++;
-                        temp[x - 1, y    ]++;
+                        temp[x - 1, y]++;
                         temp[x - 1, y + 1]++;
                         temp[x, y - 1]++;
-                        temp[x, y    ]++;
+                        temp[x, y]++;
                         temp[x, y + 1]++;
                         temp[x + 1, y - 1]++;
-                        temp[x + 1, y    ]++;
+                        temp[x + 1, y]++;
                         temp[x + 1, y + 1]++;
 
                     }
