@@ -11,6 +11,51 @@ using System.Diagnostics.Tracing;
 class ProgramSolution
 {
     #region 12월 문제풀이
+    public int Solution12182(int[,] lines)
+    {
+        int answer = 0;
+
+        int[] dots = new int[201];
+
+        for(int i = 0; i < 3; i++)
+        {
+            for(int k = lines[i,0]; k < lines[i,1]; k++){
+                dots[k + 100]++;
+            }
+        }
+
+        for(int i = 0; i < 201; i++)
+        {
+            if(dots[i] > 1){
+                answer++;
+            }
+        }
+
+        return answer;
+    }
+
+    /// <summary>
+    /// 핸드폰 번호 가리기
+    /// </summary>
+    /// <param name="phone_number"></param>
+    /// <returns></returns>
+    public string Solution1218(string phone_number)
+    {
+        var sb = new StringBuilder();
+        for(int i = 0; i < phone_number.Length; i++)
+        {
+            if(i < phone_number.Length - 4)
+            {
+                sb.Append('*');
+            }
+            else
+            {
+                sb.Append(phone_number[i]);
+            }
+        }
+        return sb.ToString();
+    }
+    
     /// <summary>
     /// 주사위 게임 3
     /// </summary>
