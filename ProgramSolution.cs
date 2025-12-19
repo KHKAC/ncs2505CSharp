@@ -11,6 +11,39 @@ using System.Diagnostics.Tracing;
 class ProgramSolution
 {
     #region 12월 문제풀이
+    public int Solution12192(int[,] dots)
+    {
+        if ((double)(dots[0, 0] - dots[1, 0]) / (dots[0, 1] - dots[1, 1]) == (double)(dots[2, 0] - dots[3, 0]) / (dots[2, 1] - dots[3, 1]))
+        {
+            return 1;
+        }
+        if ((double)(dots[0, 0] - dots[2, 0]) / (dots[0, 1] - dots[2, 1]) == (double)(dots[1, 0] - dots[3, 0]) / (dots[1, 1] - dots[3, 1]))
+        {
+            return 1;
+        }
+        if ((double)(dots[0, 0] - dots[3, 0]) / (dots[0, 1] - dots[3, 1]) == (double)(dots[1, 0] - dots[2, 0]) / (dots[1, 1] - dots[2, 1]))
+        {
+            return 1;
+        }
+
+        return 0;
+    }
+
+    /// <summary>
+    /// 수박수박수박수박수박수?
+    /// </summary>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution1219(int n)
+    {
+        var sb = new StringBuilder();
+        for(int i = 0; i < n; i++)
+        {
+            sb.Append((i % 2 == 0) ? "수" : "박");
+        }
+        return sb.ToString();
+    }
+
     public int Solution12182(int[,] lines)
     {
         int answer = 0;
