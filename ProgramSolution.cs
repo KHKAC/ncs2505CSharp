@@ -11,6 +11,95 @@ using System.Diagnostics.Tracing;
 class ProgramSolution
 {
     #region 12월 문제풀이
+    public int[,] Solution12222(int n)
+    {
+        int[,] answer = new int[n,n];
+        int count = 1;
+        int idX = 0;
+        int idY = 0;
+        do
+        {
+            // left -> right
+            for(int i = 0; i < n; i++)
+            {
+                answer[idX, idY + i] = count + i;
+            }
+            // up -> down
+            count += n - 1;
+            idY += n - 1;
+            for(int i = 0; i < n; i++)
+            {
+                answer[idX + i, idY] = count + i;
+            }
+            // right -> left
+            count += n - 1;
+            idX += n - 1;
+            for(int i = 0; i < n; i++)
+            {
+                answer[idX, idY - i] = count + i;
+            }
+            // down -> up
+            count += n - 1;
+            idY -= n - 1;
+            for(int i = 0; i < n - 1; i++)
+            {
+                answer[idX - i, idY] = count + i;
+            }
+            // 정리
+            count += n - 1;
+            n -= 2;
+            idX -= n;
+            idY++;
+        } while (n > 0);
+        return answer;
+    }
+
+    /// <summary>
+    /// 시저 암호
+    /// </summary>
+    /// <param name="s"></param>
+    /// <param name="n"></param>
+    /// <returns></returns>
+    public string Solution1222(string s, int n)
+    {
+        /*
+        char[] charArray = s.ToCharArray();
+        
+        for(int i = 0; i < charArray.Length; i++)
+        {
+            if(char.IsLetter(charArray[i]))
+            {
+                char baseChar = char.IsUpper(charArray[i]) ? 'A' : 'a';
+                charArray[i] = (char)(((charArray[i] - baseChar + n) % 26) + baseChar);
+            }
+        }
+        return new string(charArray);
+        */
+        var sb = new StringBuilder();
+        foreach(var item in s)
+        {
+            char chr = ' ';
+            if(!item.Equals(chr))
+            {
+                if(char.IsUpper(item))
+                {
+                    chr = Convert.ToChar((item + n - 'A') % 26 + 'A');
+                }
+                else
+                {
+                    chr = Convert.ToChar((item + n - 'a') % 26 + 'a');
+                }
+            }
+            sb.Append(chr);
+        }
+        return sb. ToString();
+    }
+
+    /// <summary>
+    /// 평행
+    /// </summary>
+    /// <param name="dots"></param>
+    /// <returns></returns>
     public int Solution12192(int[,] dots)
     {
         if ((double)(dots[0, 0] - dots[1, 0]) / (dots[0, 1] - dots[1, 1]) == (double)(dots[2, 0] - dots[3, 0]) / (dots[2, 1] - dots[3, 1]))
